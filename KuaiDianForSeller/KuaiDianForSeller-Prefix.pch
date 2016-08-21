@@ -1,0 +1,25 @@
+//
+//  KuaiDianPlan-Prefix.pch
+//  KuaiDianPlan
+//
+//  Created by ppnd on 16/6/11.
+//  Copyright © 2016年 zy. All rights reserved.
+//
+#import <Availability.h>
+
+#ifndef __IPHONE_7_0
+#warning "This project uses features only available in iOS SDK 7.0 and later."
+#endif
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CocoaLumberjack/DDLog.h>
+#import <YYModel/YYModel.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+#import "KDDefines.h"
+#import "NSString+Tools.h"
+#import "KDTools.h"
+
+#endif

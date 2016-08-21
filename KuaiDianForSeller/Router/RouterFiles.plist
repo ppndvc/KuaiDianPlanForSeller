@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MallVC</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDMallViewController</string>
+		<key>Description</key>
+		<string>商品展示页面</string>
+	</dict>
+	<key>LoginVC</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDLoginViewController</string>
+		<key>Description</key>
+		<string>登陆页面</string>
+	</dict>
+	<key>ForgotPasswordVC</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDForgotPasswordViewController</string>
+		<key>Description</key>
+		<string>忘记密码页面</string>
+	</dict>
+	<key>MyAccountVC</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDMyAccountViewController</string>
+		<key>Description</key>
+		<string>我的账户页面</string>
+	</dict>
+	<key>LoginVC - 4</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDLoginViewController</string>
+		<key>Description</key>
+		<string>登陆页面</string>
+	</dict>
+	<key>LoginVC - 5</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDLoginViewController</string>
+		<key>Description</key>
+		<string>登陆页面</string>
+	</dict>
+	<key>LoginVC - 6</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDLoginViewController</string>
+		<key>Description</key>
+		<string>登陆页面</string>
+	</dict>
+	<key>LoginVC - 7</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDLoginViewController</string>
+		<key>Description</key>
+		<string>登陆页面</string>
+	</dict>
+	<key>LoginVC - 8</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDLoginViewController</string>
+		<key>Description</key>
+		<string>登陆页面</string>
+	</dict>
+	<key>LoginVC - 9</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDLoginViewController</string>
+		<key>Description</key>
+		<string>登陆页面</string>
+	</dict>
+	<key>LoginVC - 10</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDLoginViewController</string>
+		<key>Description</key>
+		<string>登陆页面</string>
+	</dict>
+	<key>LoginVC - 11</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDLoginViewController</string>
+		<key>Description</key>
+		<string>登陆页面</string>
+	</dict>
+	<key>LoginVC - 12</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDLoginViewController</string>
+		<key>Description</key>
+		<string>登陆页面</string>
+	</dict>
+	<key>LoginVC - 13</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDLoginViewController</string>
+		<key>Description</key>
+		<string>登陆页面</string>
+	</dict>
+</dict>
+</plist>
