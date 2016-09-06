@@ -31,6 +31,18 @@
 //分割栏高度
 #define GENERAL_SEPERATOR_HEIGHT 10.0f
 
+//view和屏幕边缘的水平间距
+#define VIEW_HORIZONTAL_PADDING_TO_SCREEN_BORDER 14.0f
+
+//view之间的垂直间距
+#define VIEW_VERTICAL_PADDING 14.0f
+
+//按钮高度
+#define BUTTON_HEIGHT 37.5f
+
+//圆角半径
+#define CORNER_RADIUS 5.0f
+
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
 #pragma mark - Colors
@@ -66,6 +78,9 @@
 
 //导航栏标题字体
 #define NAVIBAR_TITLE_FONT_SIZE 20.0f
+
+//文本字体巨大
+#define TEXT_FONT_HUGE_SIZE 27.0f
 
 //文本字体特大
 #define TEXT_FONT_VERY_BIG_SIZE 20.0f
@@ -159,6 +174,64 @@ typedef NS_ENUM(NSInteger, KDInputState)
     //输入新密码状态
     KDInputNewPasswordState = 3,
 };
+
+//活动类型
+typedef NS_ENUM(NSInteger, KDActivityType)
+{
+    //新品
+    KDActivityTypeOfNew = 1 << 0,
+    //赠送
+    KDActivityTypeOfPresent = 1 << 1,
+    //减价
+    KDActivityTypeOfReduce = 1 << 2,
+    //特价
+    KDActivityTypeOfSpecialOffer = 1 << 3,
+};
+
+//口味类型
+typedef NS_ENUM(NSInteger, KDTasteType)
+{
+    //酸
+    KDTasteSour = 1 << 0,
+    //甜
+    KDTasteSweet = 1 << 1,
+    //辣
+    KDTasteHot = 1 << 2,
+    //麻
+    KDTasteSpicy = 1 << 3,
+};
+
+//菜品做法
+typedef NS_ENUM(NSInteger, KDFoodCookieStyle)
+{
+    //煎
+    KDFoodCookieStyleOfFried = 1,
+    //炸
+    KDFoodCookieStyleOfBlast = 2,
+    //烤
+    KDFoodCookieStyleOfRoast = 3,
+    //蒸
+    KDFoodCookieStyleOfSteam = 4,
+    //煮
+    KDFoodCookieStyleOfBoil = 5,
+};
+
+typedef NS_ENUM(NSInteger, KDEvalueStarLevel)
+{
+    //一星
+    KDOneStar = 1,
+    //二星
+    KDTwoStar = 2,
+    //三星
+    KDThreeStar = 3,
+    //四星
+    KDFourStar = 4,
+    //五星
+    KDFiveStar = 5,
+    //全部
+    KDNoneSpecific = 6,
+};
+
 #pragma mark - Blocks
 
 //错误页面的点击回调
@@ -199,6 +272,12 @@ extern NSString *const kUserCacheNameForTest;
 //通用内存缓存
 extern NSString *const kCommonCacheInMemoryName;
 
+//订单
+extern NSString *const kOrderTableViewCell;
+
+//订单详情
+extern NSString *const kOrderDetailTableViewCell;
+
 #pragma mark - defined strings
 
 
@@ -234,7 +313,7 @@ extern NSString *const kCommonCacheInMemoryName;
 #define ALREADY_EVALUATE_BUTTON_TITLE @"已评价"
 
 #define LOGIN_TITLE @"登录"
-#define FORGOT_PASSWORD @"找回密码"
+#define FORGOT_PASSWORD @"修改密码"
 
 #define PLACEHOLDER_FOR_CELLPHONE_NUMBER @"请输入手机号码"
 #define PLACEHOLDER_FOR_CODE_NUMBER @"请输入验证码"
@@ -253,28 +332,63 @@ extern NSString *const kCommonCacheInMemoryName;
 #define WEICHAT_PAY_NAME @"微信支付"
 #define BANK_PAY_NAME @"银行卡"
 
+#pragma mark - 未处理页面
+
+#define UNHANDLE_TITLE @"未处理"
+
+
+#pragma mark - 已处理页面
+
+#define HANDLE_LIST_TITLE @"已处理"
+
+#pragma mark - 设置页面
 #define MY_ACCOUNT @"我的账户"
 #define CONNECT_US @"联系我们"
 #define FEEDBACK @"帮助与反馈"
 
 #define USER_NAME @"用户名"
 #define MY_MONEY @"我的余额"
+#define SEE_DETAIL @"查看明细"
 #define BIND_PHONE_NUMBER @"绑定手机"
 #define CHANGE_PASSWORD @"修改密码"
 #define LOGOU_CURRENT_USER @"退出当前账号"
 
+#pragma mark - 管理页面
+
+#define MANAGE_TITLE @"管理"
+
+#define FOOD_MANAGE_TITLE @"菜品管理"
+#define FOOD_EVALUE_TITLE @"菜品评价"
+#define SALE_ACTIVITY_TITLE @"营销活动"
+#define RESTAURANT_INFO_TITLE @"餐厅信息"
+
+#define FOOD_EDIT_TITLE @"编辑菜品"
+
+#define FOOD_NAME @"菜名"
+#define FOOD_DESCRIPTION @"描述"
+#define FOOD_CATEFORY @"分类"
+#define FOOD_PRICE @"单价"
+#define FOOD_LABEL @"标签"
+
 #pragma mark - image name strings
 
 //tabbar
-#define TABBAR_MAINPAGE_IMAGE_NORMAL @"main_page_normal"
-#define TABBAR_MAINPAGE_IMAGE_SELECTED @"main_page_selected"
+#define TABBAR_UNHANDLED_IMAGE_NORMAL @"tabbar_unhandled_normal"
+#define TABBAR_UNHANDLED_IMAGE_SELECTED @"tabbar_unhandled_selected"
 
-#define TABBAR_ORDER_IMAGE_NORMAL @"order_normal"
-#define TABBAR_ORDER_IMAGE_SELECTED @"order_selected"
+#define TABBAR_HANDLED_IMAGE_NORMAL @"tabbar_handled_normal"
+#define TABBAR_HANDLED_IMAGE_SELECTED @"tabbar_handled_selected"
 
-#define TABBAR_FASTMEAL_IMAGE_NORMAL @"fast_meal_normal"
-#define TABBAR_FASTMEAL_IMAGE_SELECTED @"fast_meal_selected"
+#define TABBAR_MANAGMENT_IMAGE_NORMAL @"tabbar_managent_normal"
+#define TABBAR_MANAGMENT_IMAGE_SELECTED @"tabbar_managent_selected"
 
-#define TABBAR_MINE_IMAGE_NORMAL @"mine_normal"
-#define TABBAR_MINE_IMAGE_SELECTED @"mine_selected"
+#define TABBAR_SETTING_IMAGE_NORMAL @"tabbar_setting_normal"
+#define TABBAR_SETTING_IMAGE_SELECTED @"tabbar_setting_selected"
 
+
+#pragma mark - tools
+
+//136-3476-5666
+#define PHONE_FORMATER_344 @"3-4-4"
+
+#define YYYY_MM_DD_DATE_FORMATER @"yyyy-MM-dd"

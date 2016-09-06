@@ -10,4 +10,6 @@
 
 @interface KDBaseTableViewCell : MGSwipeTableCell
 
+//配置model
+-(void)configureCellWithModel:(id)model;
 @end

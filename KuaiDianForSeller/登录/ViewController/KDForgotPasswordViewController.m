@@ -7,6 +7,7 @@
 //
 
 #import "KDForgotPasswordViewController.h"
+#import "KDChangePasswordViewModel.h"
 
 #define CELLPHONE_IMAGE @"cell_phone"
 #define BOOK_IMAGE @"book"
@@ -18,13 +19,18 @@
 //输入状态
 @property(nonatomic,assign)KDInputState state;
 
+//viewmodel
+@property(nonatomic,strong)KDChangePasswordViewModel *viewModel;
+
 @end
 
 @implementation KDForgotPasswordViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = FORGOT_PASSWORD;
+    self.navigationItem.title = FORGOT_PASSWORD;
+    _viewModel = [[KDChangePasswordViewModel alloc] init];
+    
     [self setInputState:KDInputCellPhoneNumberState];
     [self setNaviBarItemWithType:KDNavigationBackToPreviousVC];
     _rightImageView.userInteractionEnabled = YES;
@@ -111,22 +117,29 @@
 
 - (IBAction)onTapActionBTN:(id)sender
 {
+    WS(ws);
     switch (_state)
     {
         case KDInputCellPhoneNumberState:
         {
-            [self setInputState:KDInputCodeState];
-            
+            [_viewModel getCodeWithParams:nil beginBlock:nil completeBlock:^(BOOL isSuccess, id params, NSError *error) {
+                [ws setInputState:KDInputCodeState];
+
+            }];
         }
             break;
         case KDInputCodeState:
         {
-            [self setInputState:KDInputNewPasswordState];
+            [_viewModel startVerifyCodeWithParams:nil beginBlock:nil completeBlock:^(BOOL isSuccess, id params, NSError *error) {
+                [ws setInputState:KDInputNewPasswordState];
+            }];
         }
             break;
         case KDInputNewPasswordState:
         {
-            [self setInputState:KDInputCellPhoneNumberState];
+            [_viewModel changePWDWithParams:nil beginBlock:nil completeBlock:^(BOOL isSuccess, id params, NSError *error) {
+                [ws setInputState:KDInputCellPhoneNumberState];
+            }];
         }
             break;
         default:

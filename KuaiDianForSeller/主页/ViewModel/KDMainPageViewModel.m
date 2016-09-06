@@ -85,28 +85,28 @@
     {
         KDActionModel *model = [[KDActionModel alloc] init];
         model.title = @"美食";
-        model.imageName = TABBAR_ORDER_IMAGE_SELECTED;
+        model.imageName = TABBAR_MANAGMENT_IMAGE_NORMAL;
         model.actionString = @"push://MallVC?type=1&title=美食";
         [cvArray addObject:model];
     }
     {
         KDActionModel *model = [[KDActionModel alloc] init];
         model.title = @"品牌馆";
-        model.imageName = TABBAR_ORDER_IMAGE_SELECTED;
+        model.imageName = TABBAR_MANAGMENT_IMAGE_NORMAL;
         model.actionString = @"push://MallVC?type=2&title=品牌馆";
         [cvArray addObject:model];
     }
     {
         KDActionModel *model = [[KDActionModel alloc] init];
         model.title = @"早餐";
-        model.imageName = TABBAR_ORDER_IMAGE_SELECTED;
+        model.imageName = TABBAR_MANAGMENT_IMAGE_NORMAL;
         model.actionString = @"push://MallVC?type=4&title=早餐";
         [cvArray addObject:model];
     }
     {
         KDActionModel *model = [[KDActionModel alloc] init];
         model.title = @"商城";
-        model.imageName = TABBAR_ORDER_IMAGE_SELECTED;
+        model.imageName = TABBAR_MANAGMENT_IMAGE_NORMAL;
         model.actionString = @"push://MallVC?type=3&title=商城";
         [cvArray addObject:model];
     }

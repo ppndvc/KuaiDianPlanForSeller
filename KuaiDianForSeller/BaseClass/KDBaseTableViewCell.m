@@ -19,5 +19,8 @@
 
     // Configure the view for the selected state
 }
-
+-(void)configureCellWithModel:(id)model
+{
+    //子类实现
+}
 @end

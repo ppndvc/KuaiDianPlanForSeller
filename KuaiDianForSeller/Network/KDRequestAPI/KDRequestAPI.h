@@ -20,4 +20,10 @@
 +(void)sendGetOrderRequestWithParam:(NSDictionary *)param completeBlock:(KDRequestCompletionBlock)completeBlock;
 //查询订单（模糊查询）
 +(void)sendGetBlurOrderRequestWithParam:(NSDictionary *)param completeBlock:(KDRequestCompletionBlock)completeBlock;
+//获取验证码请求
++(void)sendGetVerifyCodeRequestWithParam:(NSDictionary *)param completeBlock:(KDRequestCompletionBlock)completeBlock;
+//修改订单状态请求
++(void)sendModifyOrderStatusRequestWithParam:(NSDictionary *)param completeBlock:(KDRequestCompletionBlock)completeBlock;
+//修改用户信息请求
++(void)sendModifyUserInfoRequestWithParam:(NSDictionary *)param completeBlock:(KDRequestCompletionBlock)completeBlock;
 @end

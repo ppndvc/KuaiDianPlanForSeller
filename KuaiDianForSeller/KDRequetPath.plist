@@ -12,12 +12,12 @@
 	<string>kuaidian-sellerapp/order/info/like</string>
 	<key>logout_request</key>
 	<string>kuaidian-sellerapp/seller/logout</string>
-	<key>get_userinfo - 5</key>
-	<string>kuaidian-sellerapp/seller/info/13</string>
-	<key>get_userinfo - 6</key>
-	<string>kuaidian-sellerapp/seller/info/13</string>
-	<key>get_userinfo - 7</key>
-	<string>kuaidian-sellerapp/seller/info/13</string>
+	<key>get_phone_code</key>
+	<string>kuaidian-sellerapp/seller/info/phone</string>
+	<key>modify_order_status</key>
+	<string>kuaidian-sellerapp/seller/order/info/confirm</string>
+	<key>modify_user_info</key>
+	<string>kuaidian-sellerapp/seller/info/u</string>
 	<key>get_userinfo - 8</key>
 	<string>kuaidian-sellerapp/seller/info/13</string>
 	<key>get_userinfo - 9</key>

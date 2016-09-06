@@ -8,6 +8,7 @@
 
 #import "KDUserManager.h"
 #import "KDCacheManager.h"
+#import "KDCacheManager.h"
 
 #define USER_INFO @"user_info"
 @interface KDUserManager()
@@ -59,6 +60,10 @@
 {
     if (userInfo && [userInfo isKindOfClass:[KDUserModel class]])
     {
+        //可能切换了用户，要重置用户缓存
+        [[KDCacheManager sharedInstance] switchUser:userInfo.identifier];
+        
+        //重置用户缓存后，才可以缓存用户数据
         [[KDCacheManager userCache] setObject:userInfo forKey:USER_INFO];
 
         if (_storedUserInfo)

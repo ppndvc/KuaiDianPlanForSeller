@@ -30,7 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = LOGIN_TITLE;
+    self.navigationItem.title = LOGIN_TITLE;
     _viewModel = [[KDLoginViewModel alloc] init];
     [self setupRightButton];
     

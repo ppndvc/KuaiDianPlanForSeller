@@ -11,6 +11,9 @@
 
 @interface KDCacheManager ()
 
+//登陆用户id
+@property(nonatomic,copy)NSString *userID;
+
 @property (strong, readonly) YYCache *systemCacheInDisk;
 
 @property (strong, readonly) YYCache *userCacheInDisk;
@@ -54,15 +57,17 @@
 }
 -(YYCache *)_userCache
 {
-    if (!_systemCacheInDisk)
+    if (!_userCacheInDisk)
     {
         if([[KDEnvironmentManager sharedInstance] getEnvironmentType] == KDEnvironmentTypeOfTest)
         {
-            _userCacheInDisk = [YYCache cacheWithName:kUserCacheNameForTest];
+            NSString *cacheName = [NSString stringWithFormat:@"%@_%@",_userID,kUserCacheNameForTest];
+            _userCacheInDisk = [YYCache cacheWithName:cacheName];
         }
         else
         {
-            _userCacheInDisk = [YYCache cacheWithName:kUserCacheName];
+            NSString *cacheName = [NSString stringWithFormat:@"%@_%@",_userID,kUserCacheName];
+            _userCacheInDisk = [YYCache cacheWithName:cacheName];
         }
     }
     
@@ -79,6 +84,14 @@
     return _commonCacheInMemory;
 }
 
+-(void)switchUser:(NSString *)userID
+{
+    if (VALIDATE_STRING(userID))
+    {
+        _userID = userID;
+        _userCacheInDisk = nil;
+    }
+}
 #pragma mark - public methods
 +(YYCache *)systemCache
 {

@@ -29,9 +29,9 @@
 #define GET_ORDER_REQUEST_PATH @"get_order"
 #define GET_ORDER_LIKE_REQUEST_PATH @"get_order_like"
 #define LOGOUT_REQUEST_PATH @"logout_request"
-#define _REQUEST_PATH @""
-#define _REQUEST_PATH @""
-//#define _REQUEST_PATH @""
+#define GET_VERIFY_CODE_REQUEST_PATH @"get_phone_code"
+#define MODIFY_ORDER_STATUS_REQUEST_PATH @"modify_order_status"
+#define MODIFY_USER_INFO_REQUEST_PATH @"modify_user_info"
 //#define _REQUEST_PATH @""
 //#define _REQUEST_PATH @""
 //#define _REQUEST_PATH @""
@@ -151,7 +151,7 @@ typedef void (^KDConstructBodyBlock)(id <AFMultipartFormData> formData);
 +(instancetype)uploadRequestWithRelativeURL:(NSString *)relativeURL parameters:(NSDictionary *)parameters method:(KDRequestMethod)method constructBodyBlock:(KDConstructBodyBlock)constructBodyBlock progressBlock:(KDRequestProgressBlock)progressBlock requestComplete:(KDRequestCompletionBlock)requestComplete;
 
 //上传请求初始化(使用附件)
-+(instancetype)uploadRequestWithRelativeURL:(NSString *)relativeURL parameters:(NSDictionary *)parameters method:(KDRequestMethod)method attachment:(NSDictionary *)attachment progressBlock:(KDRequestProgressBlock)progressBlock requestComplete:(KDRequestCompletionBlock)requestComplete;
++(instancetype)uploadRequestWithRelativeURL:(NSString *)relativeURL parameters:(NSDictionary *)parameters method:(KDRequestMethod)method attachment:(NSData *)attachment progressBlock:(KDRequestProgressBlock)progressBlock requestComplete:(KDRequestCompletionBlock)requestComplete;
 
 //处理服务器响应的统一入口
 -(void)handleResponse:(NSURLResponse *)response responseData:(id)responseData error:(NSError *)error;

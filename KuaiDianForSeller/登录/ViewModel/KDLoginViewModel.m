@@ -7,7 +7,6 @@
 //
 
 #import "KDLoginViewModel.h"
-#import "KDRequestAPI.h"
 #import "KDUserManager.h"
 
 @implementation KDLoginViewModel

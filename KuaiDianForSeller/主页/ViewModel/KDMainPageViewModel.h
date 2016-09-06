@@ -6,12 +6,12 @@
 //  Copyright © 2016年 zy. All rights reserved.
 //
 
-#import "KDBaseModel.h"
+#import "KDBaseViewModel.h"
 @class KDShopCellTableViewCell;
 @class KDActionCollectionViewCell;
 @class KDActionModel;
 
-@interface KDMainPageViewModel : KDBaseModel
+@interface KDMainPageViewModel : KDBaseViewModel
 
 //开始更新
 -(void)beginUpdate;

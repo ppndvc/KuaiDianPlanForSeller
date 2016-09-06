@@ -22,6 +22,9 @@
 //通用内存缓存
 -(YYMemoryCache *)_commonCache;
 
+//切换用户
+-(void)switchUser:(NSString *)userID;
+
 //系统配置的cache
 +(YYCache *)systemCache;
 

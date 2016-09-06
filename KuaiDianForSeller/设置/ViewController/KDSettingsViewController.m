@@ -31,6 +31,9 @@
 //银行卡label
 @property(nonatomic,strong)KDPayBrandView *payView;
 
+//红色背景view
+@property(nonatomic,strong)UIView *bgRedView;
+
 @end
 
 @implementation KDSettingsViewController
@@ -38,17 +41,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     _viewModel = [KDSettingViewModel new];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    [_tableView setTableHeaderView:self.tableViewHeaderView];
+    
+    [self setupSubViews];
 }
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self updateHeaderView];
 }
-
+-(void)setupSubViews
+{
+    [_tableView setTableHeaderView:self.tableViewHeaderView];
+}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     NSInteger section = 0;
@@ -95,8 +103,8 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    KDActionModel *model = [_viewModel tableViewActionModelForIndexPath:indexPath];
-    if (model)
+    KDActionModel *model = [_viewModel tableViewModelForIndexPath:indexPath];
+    if (model && [model isKindOfClass:[KDActionModel class]])
     {
         if ([model.title isEqualToString:MY_ACCOUNT])
         {
@@ -112,6 +120,7 @@
         }
     }
 }
+
 -(UIView *)tableViewHeaderView
 {
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, IMAGEVIEW_HEIGHT + TEXT_FONT_BIG_SIZE + 2*VERTICAL_PADDING + PAYVIEW_HEIGHT + STATUS_BAR_HEIHT)];

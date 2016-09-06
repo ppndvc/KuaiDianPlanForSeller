@@ -15,6 +15,9 @@
 #define TODAY_STRING @"今天"
 #define YESTODAY_STRING @"昨天"
 
+#define ARRAY_SEPERATOR @"-"
+#define PHONE_SEPERATOR @"-"
+
 @implementation NSString (Tools)
 
 -(BOOL)containSubStr:(NSString *)subStr
@@ -39,6 +42,12 @@
     }
     
     return contain;
+}
+-(CGSize)getStringDrawRectWithConstrainSize:(CGSize)constrainSize font:(UIFont *)font
+{
+    CGSize realSize = [self boundingRectWithSize:constrainSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:font} context:nil].size;
+    
+    return realSize;
 }
 +(NSString *)weiboFormateTimeWithTimeInterval:(NSTimeInterval)dateStamp
 {
@@ -140,4 +149,30 @@
     
     return nil;
 }
+
++(NSString *)getPhoneNumberWithString:(NSString *)srcStr formater:(NSString *)formater
+{
+    if (VALIDATE_STRING(srcStr) && VALIDATE_STRING(formater))
+    {
+        NSArray *posArray = [formater componentsSeparatedByString:ARRAY_SEPERATOR];
+        NSMutableString *result = [[NSMutableString alloc] initWithString:srcStr];
+        
+        NSInteger offset = 0;
+        NSInteger postion = 0;
+        
+        for(int i = 0 ; i < (int)[posArray count] - 1; i++)
+        {
+            postion += [posArray[i] integerValue];
+            postion += (offset++);
+            if (result.length > postion)
+            {
+                [result insertString:PHONE_SEPERATOR atIndex:postion];
+            }
+        }
+        return result;
+    }
+    
+    return nil;
+}
+
 @end

@@ -161,7 +161,6 @@ static NSString *kCollectionViewCellIdentifier = @"MainPageCollectionViewCell";
     {
         [[KDRouterManger sharedManager] routeVCWithURL:action.actionString];
     }
-    
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath

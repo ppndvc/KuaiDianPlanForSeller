@@ -127,17 +127,43 @@
 #pragma mark - HUD methods
 -(void)showHUD
 {
-    [SVProgressHUD show];
+    if ([NSThread isMainThread])
+    {
+        [SVProgressHUD show];
+    }
+    else
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD show];
+        });
+    }
 }
 -(void)hideHUD
 {
-    [SVProgressHUD dismiss];
+    if ([NSThread isMainThread])
+    {
+        [SVProgressHUD dismiss];
+    }
+    else
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+        });
+    }
 }
 
 -(void)showHUDWithInfo:(NSString *)info
 {
-    [SVProgressHUD showErrorWithStatus:info];
-
+    if ([NSThread isMainThread])
+    {
+        [SVProgressHUD showErrorWithStatus:info];
+    }
+    else
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD showErrorWithStatus:info];
+        });
+    }
 }
 
 -(void)setVCParams:(NSDictionary *)params

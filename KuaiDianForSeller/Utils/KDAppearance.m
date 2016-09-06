@@ -11,6 +11,7 @@
 @implementation KDAppearance
 + (void) setupAppearance
 {
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleCustom];
     [SVProgressHUD setBackgroundColor:HUD_BG_COLOR];
     [SVProgressHUD setForegroundColor:HUD_FG_COLOR];
     [SVProgressHUD setFont:[UIFont systemFontOfSize:HUD_FONT_SIZE]];

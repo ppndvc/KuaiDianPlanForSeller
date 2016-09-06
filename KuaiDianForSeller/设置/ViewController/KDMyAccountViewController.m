@@ -76,22 +76,22 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    KDActionModel *model = [_viewModel tableViewActionModelForIndexPath:indexPath];
-//    if (model)
-//    {
-//        if ([model.title isEqualToString:MY_ACCOUNT])
-//        {
-//            [[KDRouterManger sharedManager] pushVCWithKey:@"" parentVC:self];
-//        }
-//        else if ([model.title isEqualToString:CONNECT_US])
-//        {
-//            [self onTapConnectUS];
-//        }
-//        else if ([model.title isEqualToString:FEEDBACK])
-//        {
-//            
-//        }
-//    }
+    KDActionModel *model = [_viewModel tableViewModelForIndexPath:indexPath];
+    if (model)
+    {
+        if ([model.title isEqualToString:BIND_PHONE_NUMBER])
+        {
+            [[KDRouterManger sharedManager] routeVCWithURL:model.actionString];
+        }
+        else if ([model.title isEqualToString:MY_MONEY])
+        {
+            [[KDRouterManger sharedManager] routeVCWithURL:model.actionString];
+        }
+        else if ([model.title isEqualToString:FEEDBACK])
+        {
+            
+        }
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

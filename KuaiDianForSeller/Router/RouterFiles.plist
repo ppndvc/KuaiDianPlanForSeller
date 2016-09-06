@@ -30,33 +30,33 @@
 		<key>Description</key>
 		<string>我的账户页面</string>
 	</dict>
-	<key>LoginVC - 4</key>
+	<key>KDChangePhoneNumberVC</key>
 	<dict>
 		<key>ClassName</key>
-		<string>KDLoginViewController</string>
+		<string>KDChangePhoneNumberViewController</string>
 		<key>Description</key>
-		<string>登陆页面</string>
+		<string>修改手机号码页面</string>
 	</dict>
-	<key>LoginVC - 5</key>
+	<key>KDMyMoneyVC</key>
 	<dict>
 		<key>ClassName</key>
-		<string>KDLoginViewController</string>
+		<string>KDMyMoneyViewController</string>
 		<key>Description</key>
-		<string>登陆页面</string>
+		<string>我的余额页面</string>
 	</dict>
-	<key>LoginVC - 6</key>
+	<key>KDEditFoodVC</key>
 	<dict>
 		<key>ClassName</key>
-		<string>KDLoginViewController</string>
+		<string>KDEditFoodViewController</string>
 		<key>Description</key>
-		<string>登陆页面</string>
+		<string>编辑菜品页面</string>
 	</dict>
-	<key>LoginVC - 7</key>
+	<key>KDFoodEvalueVC</key>
 	<dict>
 		<key>ClassName</key>
-		<string>KDLoginViewController</string>
+		<string>KDFoodEvalueViewController</string>
 		<key>Description</key>
-		<string>登陆页面</string>
+		<string>菜品评价页面</string>
 	</dict>
 	<key>LoginVC - 8</key>
 	<dict>

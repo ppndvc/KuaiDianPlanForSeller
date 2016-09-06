@@ -13,6 +13,9 @@
 //包含字符串
 -(BOOL)containSubStr:(NSString *)subStr;
 
+//获取字符串的绘制大小
+-(CGSize)getStringDrawRectWithConstrainSize:(CGSize)constrainSize font:(UIFont *)font;
+
 //微博时间格式
 +(NSString *)weiboFormateTimeWithTimeInterval:(NSTimeInterval)dateStamp;
 
@@ -24,4 +27,7 @@
 
 //获得虚拟银行卡号 比如： *****5958
 +(NSString *)getVertualStringWithString:(NSString *)srcString;
+
+//格式化电话号码
++(NSString *)getPhoneNumberWithString:(NSString *)srcStr formater:(NSString *)formater;
 @end

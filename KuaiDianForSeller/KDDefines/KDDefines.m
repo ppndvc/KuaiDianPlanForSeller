@@ -19,3 +19,7 @@ NSString *const kSystemCacheNameForTest = @"kSystemCacheNameForTest";
 NSString *const kUserCacheNameForTest = @"kUserCacheNameForTest";
 
 NSString *const kCommonCacheInMemoryName = @"kCommonCacheInMemoryName";
+
+NSString *const kOrderTableViewCell = @"kOrderTableViewCell";
+
+NSString *const kOrderDetailTableViewCell = @"kOrderDetailTableViewCell";

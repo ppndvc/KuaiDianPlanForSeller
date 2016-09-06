@@ -14,6 +14,10 @@
 #import "KDLoginViewController.h"
 #import "KDUserManager.h"
 #import "KDSettingsViewController.h"
+#import "KDUnhandleOrderViewController.h"
+#import "KDEditFoodViewController.h"
+#import "KDManageViewController.h"
+#import "KDHandleListViewController.h"
 //#import "KDVCViewController.h"
 
 @interface AppDelegate ()
@@ -47,10 +51,10 @@
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     
-    if (![KDUserManager isUserLogin])
-    {
-        [self.tabBarController presentViewController:self.loginVC animated:NO completion:nil];
-    }
+//    if (![KDUserManager isUserLogin])
+//    {
+//        [self.tabBarController presentViewController:self.loginVC animated:NO completion:nil];
+//    }
     
     // Override point for customization after application launch.
     return YES;
@@ -106,32 +110,32 @@
         
         
         //
-        KDMainPageController * mainPage =[[KDMainPageController alloc] init];
+        KDHandleListViewController * mainPage =[[KDHandleListViewController alloc] init];
         UINavigationController *mainPageNavi = [[UINavigationController alloc] initWithRootViewController:mainPage];
         mainPageNavi.navigationBar.translucent = NO;
-        mainPageNavi.tabBarItem.title = TABBAR_UNHANDLE_TITLE;
+        mainPageNavi.tabBarItem.title = TABBAR_HANDLE_TITLE;
         //创建图片
-        mainPageNavi.tabBarItem.image = [UIImage imageNamed:TABBAR_MAINPAGE_IMAGE_SELECTED];
-        mainPageNavi.tabBarItem.selectedImage = [[UIImage imageNamed:TABBAR_MAINPAGE_IMAGE_SELECTED]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        mainPageNavi.tabBarItem.image = [UIImage imageNamed:TABBAR_UNHANDLED_IMAGE_NORMAL];
+        mainPageNavi.tabBarItem.selectedImage = [[UIImage imageNamed:TABBAR_UNHANDLED_IMAGE_SELECTED]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         
         
         //创建
-        UIViewController * vc2 =[[UIViewController alloc] init];
+        KDUnhandleOrderViewController * vc2 =[[KDUnhandleOrderViewController alloc] init];
         UINavigationController *orderPageNavi = [[UINavigationController alloc] initWithRootViewController:vc2];
         orderPageNavi.navigationBar.translucent = NO;
-        orderPageNavi.tabBarItem.title = TABBAR_HANDLE_TITLE;
+        orderPageNavi.tabBarItem.title = TABBAR_UNHANDLE_TITLE;
         //创建图片
-        orderPageNavi.tabBarItem.image = [UIImage imageNamed:TABBAR_ORDER_IMAGE_SELECTED];
-        orderPageNavi.tabBarItem.selectedImage = [[UIImage imageNamed:TABBAR_ORDER_IMAGE_SELECTED] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        orderPageNavi.tabBarItem.image = [UIImage imageNamed:TABBAR_HANDLED_IMAGE_NORMAL];
+        orderPageNavi.tabBarItem.selectedImage = [[UIImage imageNamed:TABBAR_HANDLED_IMAGE_SELECTED] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         
         //创建
-        KDLoginViewController * vc3 =[[KDLoginViewController alloc] init];
+        KDManageViewController * vc3 =[[KDManageViewController alloc] init];
         UINavigationController *secKillPageNavi = [[UINavigationController alloc] initWithRootViewController:vc3];
         secKillPageNavi.navigationBar.translucent = NO;
         secKillPageNavi.tabBarItem.title = TABBAR_MANAGEMENT_TITLE;
         //创建图片
-        secKillPageNavi.tabBarItem.image = [UIImage imageNamed:TABBAR_FASTMEAL_IMAGE_SELECTED];
-        secKillPageNavi.tabBarItem.selectedImage = [[UIImage imageNamed:TABBAR_FASTMEAL_IMAGE_SELECTED] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        secKillPageNavi.tabBarItem.image = [UIImage imageNamed:TABBAR_MANAGMENT_IMAGE_NORMAL];
+        secKillPageNavi.tabBarItem.selectedImage = [[UIImage imageNamed:TABBAR_MANAGMENT_IMAGE_SELECTED] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         
         //创建
         KDSettingsViewController * vc4 =[[KDSettingsViewController alloc] init];
@@ -139,12 +143,12 @@
         myPageNavi.navigationBar.translucent = NO;
         myPageNavi.tabBarItem.title = TABBAR_SETTING_TITLE;
         //创建图片
-        myPageNavi.tabBarItem.image = [UIImage imageNamed:TABBAR_MINE_IMAGE_SELECTED];
-        myPageNavi.tabBarItem.selectedImage = [[UIImage imageNamed:TABBAR_MINE_IMAGE_SELECTED] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        myPageNavi.tabBarItem.image = [UIImage imageNamed:TABBAR_SETTING_IMAGE_NORMAL];
+        myPageNavi.tabBarItem.selectedImage = [[UIImage imageNamed:TABBAR_SETTING_IMAGE_SELECTED] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 
         
-        _tabBarController.viewControllers = @[mainPageNavi,orderPageNavi,secKillPageNavi,myPageNavi];
-        [_tabBarController setSelectedViewController:mainPageNavi];
+        _tabBarController.viewControllers = @[orderPageNavi,mainPageNavi,secKillPageNavi,myPageNavi];
+        [_tabBarController setSelectedViewController:orderPageNavi];
     }
     
     return _tabBarController;

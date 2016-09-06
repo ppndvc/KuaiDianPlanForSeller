@@ -13,7 +13,7 @@
 #define IMAGE_NAME @"image_name"
 #define ROW_NAME @"row_name"
 
-#define IMAGE_WIDTH 20
+#define IMAGE_WIDTH 18
 
 @interface KDSettingViewModel()
 
@@ -30,13 +30,13 @@
     {
         KDActionModel *model = [KDActionModel new];
         model.title = MY_ACCOUNT;
-        model.imageName = @"b27_icon_star_yellow";
+        model.imageName = @"user";
         KDActionModel *model2 = [KDActionModel new];
         model2.title = CONNECT_US;
-        model2.imageName = @"b27_icon_star_yellow";
+        model2.imageName = @"server";
         KDActionModel *model3 = [KDActionModel new];
         model3.title = FEEDBACK;
-        model3.imageName = @"b27_icon_star_yellow";
+        model3.imageName = @"help";
         _dataSource = @[@[model],@[model2,model3]];
     }
     return self;
@@ -90,7 +90,7 @@
     }
 }
 
--(KDActionModel *)tableViewActionModelForIndexPath:(NSIndexPath *)indexPath
+-(id)tableViewModelForIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath)
     {
@@ -106,8 +106,5 @@
     
     return nil;
 }
--(KDUserModel *)getUserInfoModel
-{
-    return [[KDUserManager sharedInstance] getUserInfo];
-}
+
 @end

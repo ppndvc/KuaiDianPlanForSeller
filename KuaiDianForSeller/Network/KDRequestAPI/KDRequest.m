@@ -43,7 +43,7 @@
 }
 
 //上传请求初始化(使用附件)
-+(instancetype)uploadRequestWithRelativeURL:(NSString *)relativeURL parameters:(NSDictionary *)parameters method:(KDRequestMethod)method attachment:(NSDictionary *)attachment progressBlock:(KDRequestProgressBlock)progressBlock requestComplete:(KDRequestCompletionBlock)requestComplete
++(instancetype)uploadRequestWithRelativeURL:(NSString *)relativeURL parameters:(NSDictionary *)parameters method:(KDRequestMethod)method attachment:(NSData *)attachment progressBlock:(KDRequestProgressBlock)progressBlock requestComplete:(KDRequestCompletionBlock)requestComplete
 {
     return [[KDRequest alloc] initRequestWithURL:nil relativeURL:relativeURL parameters:parameters method:method requestType:KDUploadRequest attachment:attachment timeoutInterval:LONG_TASK_TIMEOUT_INTERVAL constructBodyBlock:nil progressBlock:progressBlock downloadSettingBlock:nil downloadCompleteBlock:nil requestComplete:requestComplete];
 }
@@ -238,7 +238,7 @@
 }
 
 //请求初始化
--(instancetype)initRequestWithURL:(NSString *)url relativeURL:(NSString *)relativeURL parameters:(NSDictionary *)parameters method:(KDRequestMethod)method requestType:(KDRequestType)requestType attachment:(NSDictionary *)attachment timeoutInterval:(NSTimeInterval)timeoutInterval constructBodyBlock:(KDConstructBodyBlock)constructBodyBlock progressBlock:(KDRequestProgressBlock)progressBlock downloadSettingBlock:(KDDownloadSettingBlock)downloadSettingBlock downloadCompleteBlock:(KDDownloadCompleteBlock)downloadCompleteBlock requestComplete:(KDRequestCompletionBlock)requestComplete
+-(instancetype)initRequestWithURL:(NSString *)url relativeURL:(NSString *)relativeURL parameters:(NSDictionary *)parameters method:(KDRequestMethod)method requestType:(KDRequestType)requestType attachment:(NSData *)attachment timeoutInterval:(NSTimeInterval)timeoutInterval constructBodyBlock:(KDConstructBodyBlock)constructBodyBlock progressBlock:(KDRequestProgressBlock)progressBlock downloadSettingBlock:(KDDownloadSettingBlock)downloadSettingBlock downloadCompleteBlock:(KDDownloadCompleteBlock)downloadCompleteBlock requestComplete:(KDRequestCompletionBlock)requestComplete
 {
     self = [super init];
     
