@@ -10,4 +10,6 @@
 
 @interface KDFoodEvalueViewModel : KDBaseViewModel
 
+//获取model，并设置是否选中
+-(id)collectionViewModelForIndexPath:(NSIndexPath *)indexPath setSelected:(BOOL)selected;
 @end

@@ -86,7 +86,7 @@ static NSString *kManageCollectionCellIdentifier = @"kManageCollectionCell";
             break;
         case 2:
         {
-            
+            [[KDRouterManger sharedManager] pushVCWithKey:@"KDSaleActivityVC" parentVC:self];
         }
             break;
         case 3:

@@ -47,6 +47,8 @@
 
 #pragma mark - Colors
 
+//导航栏背景
+#define NAVIBAR_BG_IMAGE @"navi_bg"
 //导航栏颜色
 #define NAVIBAR_BG_COLOR ([UIColor colorWithRed:234/255.0 green:64/255.0 blue:54/255.0 alpha:1])
 //导航栏标题颜色

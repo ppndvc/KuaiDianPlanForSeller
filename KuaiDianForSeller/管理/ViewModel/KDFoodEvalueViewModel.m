@@ -9,10 +9,14 @@
 #import "KDFoodEvalueViewModel.h"
 #import "KDCustomerReplyModel.h"
 #import "KDEvalueTableCell.h"
+#import "KDEvalueFilterCollectionCell.h"
+#import "KDEvalueFilterItemModel.h"
 
 @interface KDFoodEvalueViewModel ()
 
 @property(nonatomic,strong)NSArray *dataSource;
+
+@property(nonatomic,strong)NSArray *collectionViewDataSource;
 
 @end
 
@@ -50,6 +54,33 @@
         c3.date = @"1473084359";
         
         _dataSource = @[c1,c3,c2];
+        
+        KDEvalueFilterItemModel *m1 = [[KDEvalueFilterItemModel alloc] init];
+        m1.title = @"一星";
+        m1.level = KDOneStar;
+        
+        KDEvalueFilterItemModel *m2 = [[KDEvalueFilterItemModel alloc] init];
+        m2.title = @"二星";
+        m2.level = KDTwoStar;
+        
+        KDEvalueFilterItemModel *m3 = [[KDEvalueFilterItemModel alloc] init];
+        m3.title = @"三星";
+        m3.level = KDThreeStar;
+        
+        KDEvalueFilterItemModel *m4 = [[KDEvalueFilterItemModel alloc] init];
+        m4.title = @"四星";
+        m4.level = KDFourStar;
+        
+        KDEvalueFilterItemModel *m5 = [[KDEvalueFilterItemModel alloc] init];
+        m5.title = @"五星";
+        m5.level = KDFiveStar;
+        
+        KDEvalueFilterItemModel *m6 = [[KDEvalueFilterItemModel alloc] init];
+        m6.title = @"全部";
+        m6.level = KDNoneSpecific;
+        m6.isSelected = YES;
+        
+        _collectionViewDataSource = @[m6,m1,m2,m3,m4,m5];
     }
     
     return self;
@@ -72,6 +103,50 @@
         if (_dataSource && _dataSource.count > indexPath.row)
         {
             [((KDEvalueTableCell *)cell) configureCellWithModel:_dataSource[indexPath.row]];
+        }
+    }
+}
+-(id)collectionViewModelForIndexPath:(NSIndexPath *)indexPath
+{
+    if (_collectionViewDataSource && _collectionViewDataSource.count > indexPath.row)
+    {
+        return _collectionViewDataSource[indexPath.row];
+    }
+    return nil;
+}
+-(id)collectionViewModelForIndexPath:(NSIndexPath *)indexPath setSelected:(BOOL)selected
+{
+    if (_collectionViewDataSource && _collectionViewDataSource.count > indexPath.row)
+    {
+        [_collectionViewDataSource enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            KDEvalueFilterItemModel *m = obj;
+            m.isSelected = NO;
+        }];
+        
+        KDEvalueFilterItemModel *model = _collectionViewDataSource[indexPath.row];
+        model.isSelected = selected;
+        return model;
+    }
+    return nil;
+}
+
+-(NSInteger)collectionViewRowsForSection:(NSInteger)section
+{
+    NSInteger rows = 0;
+    if (_collectionViewDataSource && _collectionViewDataSource.count > 0)
+    {
+        rows = _collectionViewDataSource.count;
+    }
+    return rows;
+}
+-(void)configureCollectionViewCell:(UICollectionViewCell *)cell indexPath:(NSIndexPath *)indexPath
+{
+    if (cell && indexPath)
+    {
+        if (_collectionViewDataSource && _collectionViewDataSource.count > indexPath.row)
+        {
+            KDEvalueFilterItemModel *model = _collectionViewDataSource[indexPath.row];
+            [((KDEvalueFilterCollectionCell *)cell) configureCellWithModel:model];
         }
     }
 }

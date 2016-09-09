@@ -34,6 +34,8 @@
 
 //获取对应航的model
 -(id)tableViewModelForIndexPath:(NSIndexPath *)indexPath;
+//获取对应航的model
+-(id)collectionViewModelForIndexPath:(NSIndexPath *)indexPath;
 
 //获取用户信息
 -(KDUserModel *)getUserInfoModel;

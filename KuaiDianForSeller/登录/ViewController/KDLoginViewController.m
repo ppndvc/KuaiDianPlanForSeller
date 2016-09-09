@@ -32,18 +32,19 @@
     [super viewDidLoad];
     self.navigationItem.title = LOGIN_TITLE;
     _viewModel = [[KDLoginViewModel alloc] init];
-    [self setupRightButton];
+    [self setupUI];
     
 }
--(void)setupRightButton
+-(void)setupUI
 {
     UIButton *rightBTN = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, BUTTON_WIDTH, TEXT_FONT_BIG_SIZE)];
     rightBTN.titleLabel.font = [UIFont systemFontOfSize:TEXT_FONT_MEDIUM_SIZE];
     [rightBTN setTitle:FORGOT_PASSWORD forState:UIControlStateNormal];
     [rightBTN addTarget:self action:@selector(onTapRightBTN) forControlEvents:UIControlEventTouchUpInside];
     rightBTN.backgroundColor = [UIColor clearColor];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightBTN];
+
 }
+
 //设置结束回调
 -(void)setDisapperBlock:(KDRouterVCDisappearBlock)disappearBlock
 {
@@ -103,17 +104,19 @@
         [_viewModel startLoginWithParams:@{LOGIN_NAME:name,LOGIN_PWD:pwd} beginBlock:^{
             [ws showHUD];
         } completeBlock:^(BOOL isSuccess, id params, NSError *error) {
-            if (isSuccess)
-            {
-                [ws hideHUD];
-//                [ws dismissVC];
-                [ws request];
-            }
-            else
-            {
-                [ws showHUDWithInfo:[error localizedDescription]];
-                
-            }
+            [ws hideHUD];
+            ws.disappearBlock(nil,nil);
+//            if (isSuccess)
+//            {
+//                [ws hideHUD];
+////                [ws dismissVC];
+//                [ws request];
+//            }
+//            else
+//            {
+//                [ws showHUDWithInfo:[error localizedDescription]];
+//                
+//            }
         }];
     }
 }

@@ -16,6 +16,7 @@
     _bgView.layer.borderColor = (APP_BG_COLOR).CGColor;
     // Initialization code
 }
+
 -(void)configureCellWithModel:(KDEvalueFilterItemModel *)model
 {
     if (model && [model isKindOfClass:[KDEvalueFilterItemModel class]])
@@ -24,15 +25,18 @@
         [self setCellSelected:model.isSelected];
     }
 }
+
 -(void)setCellSelected:(BOOL)selected
 {
     if (selected)
     {
         _bgView.backgroundColor = APPD_RED_COLOR;
+        _titleLabel.textColor = [UIColor whiteColor];
     }
     else
     {
         _bgView.backgroundColor = [UIColor whiteColor];
+        _titleLabel.textColor = [UIColor darkGrayColor];
     }
 }
 @end

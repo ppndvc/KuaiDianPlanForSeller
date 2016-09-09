@@ -18,7 +18,8 @@
 #import "KDEditFoodViewController.h"
 #import "KDManageViewController.h"
 #import "KDHandleListViewController.h"
-//#import "KDVCViewController.h"
+#import "KDTabBarController.h"
+#import "KDMallViewController.h"
 
 @interface AppDelegate ()
 
@@ -32,11 +33,8 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//    [[KDUserManager sharedInstance] logout];
-    
     //设置主题颜色
     [KDAppearance setupAppearance];
     
@@ -46,15 +44,9 @@
     //设置window
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    
-
-    self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     
-//    if (![KDUserManager isUserLogin])
-//    {
-//        [self.tabBarController presentViewController:self.loginVC animated:NO completion:nil];
-//    }
+    [self initTabBarController];
     
     // Override point for customization after application launch.
     return YES;
@@ -91,16 +83,13 @@
     {
         WS(ws);
         KDLoginViewController *vc = [[KDLoginViewController alloc] init];
-        [vc setDisapperBlock:^(NSString *vcKey, id params) {
-            ws.window.rootViewController = ws.tabBarController;
-        }];
-        
         _loginVC = [[UINavigationController alloc] initWithRootViewController:vc];
+        [_loginVC.navigationBar setBarTintColor:NAVIBAR_BG_COLOR];
     }
     
     return _loginVC;
 }
-- (UITabBarController *)tabBarController
+- (void)initTabBarController
 {
     if (!_tabBarController)
     {
@@ -149,8 +138,12 @@
         
         _tabBarController.viewControllers = @[orderPageNavi,mainPageNavi,secKillPageNavi,myPageNavi];
         [_tabBarController setSelectedViewController:orderPageNavi];
+        [self.window setRootViewController:_tabBarController];
+        
+//        if (![KDUserManager isUserLogin])
+        {
+            [self.window.rootViewController presentViewController:self.loginVC animated:NO completion:nil];
+        }
     }
-    
-    return _tabBarController;
 }
 @end

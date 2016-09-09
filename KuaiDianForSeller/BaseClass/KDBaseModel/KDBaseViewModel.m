@@ -39,7 +39,11 @@
     //子类实现
     return nil;
 }
-
+-(id)collectionViewModelForIndexPath:(NSIndexPath *)indexPath
+{
+    //子类实现
+    return nil;
+}
 -(NSInteger)collectionViewRowsForSection:(NSInteger)section
 {
     //子类实现

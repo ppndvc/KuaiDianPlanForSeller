@@ -21,10 +21,10 @@
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:TABBAR_SELECTED_TEXT_COLOR} forState:UIControlStateSelected];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:TEXT_FONT_SMALL_SIZE]} forState:UIControlStateNormal];
     
-    [[UINavigationBar appearance] setBarTintColor:NAVIBAR_BG_COLOR];
+//    [[UINavigationBar appearance] setBarTintColor:NAVIBAR_BG_COLOR];
     [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:0.0 forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:NAVIBAR_TITLE_COLOR,NSFontAttributeName:[UIFont systemFontOfSize:NAVIBAR_TITLE_FONT_SIZE],}];
-    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:NAVIBAR_BG_IMAGE] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
 }
 @end

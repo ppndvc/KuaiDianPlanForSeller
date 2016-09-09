@@ -10,10 +10,19 @@
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "KDEvalueTableCell.h"
 #import "KDFoodEvalueViewModel.h"
+#import "KDEvalueFilterItemModel.h"
+#import "KDEvalueFilterCollectionCell.h"
+
+#define COLLECTION_VIEW_HEIGHT 80
+
+#define COLLECTION_CELL_INSET 20
+#define COLLECTION_CELL_TOP_INSET 10
+#define COLLECTION_CELL_BOTTOM_INSET 10
 
 static NSString *kEvalueTableCell = @"kEvalueTableCell";
+static NSString *kEvauleCollectionViewCellIdentifier = @"kEvauleCollectionViewCellIdentifier";
 
-@interface KDFoodEvalueViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface KDFoodEvalueViewController ()<UITableViewDataSource,UITableViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 
 //viewmodel
 @property(nonatomic,strong)KDFoodEvalueViewModel *viewModel;
@@ -36,7 +45,7 @@ static NSString *kEvalueTableCell = @"kEvalueTableCell";
     _tableView.delegate = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_tableView registerNib:[UINib nibWithNibName:@"KDEvalueTableCell" bundle:nil] forCellReuseIdentifier:kEvalueTableCell];
-    
+    [_tableView setTableHeaderView:self.headerView];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -79,6 +88,92 @@ static NSString *kEvalueTableCell = @"kEvalueTableCell";
     }];
     DDLogInfo(@"height:%.0f",height);
     return height;
+}
+-(UICollectionView *)headerView
+{
+    if (!_headerView)
+    {
+        //collectionView初始化
+        UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc] init];
+        [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+        
+        _headerView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, COLLECTION_VIEW_HEIGHT) collectionViewLayout:flowLayout];
+        _headerView.delegate = self;
+        _headerView.dataSource = self;
+        
+        _headerView.scrollEnabled = NO;
+        
+        _headerView.showsVerticalScrollIndicator = NO;
+        _headerView.showsHorizontalScrollIndicator = NO;
+        
+        //注册
+        UINib *cellNib = [UINib nibWithNibName:@"KDEvalueFilterCollectionCell" bundle:nil];
+        [_headerView registerNib:cellNib forCellWithReuseIdentifier:kEvauleCollectionViewCellIdentifier];
+        _headerView.backgroundColor = [UIColor whiteColor];
+    }
+    
+    return _headerView;
+}
+#pragma mark - collection view delegate methods
+
+//每个分区上的元素个数
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    NSInteger rows = 0;
+    
+    if (_viewModel)
+    {
+        rows = [_viewModel collectionViewRowsForSection:section];
+    }
+    return rows;
+}
+
+//设置元素内容
+- (UICollectionViewCell *)collectionView:(UICollectionView*)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    KDEvalueFilterCollectionCell *cell = (KDEvalueFilterCollectionCell*)[collectionView dequeueReusableCellWithReuseIdentifier:kEvauleCollectionViewCellIdentifier forIndexPath:indexPath];
+    
+    [cell sizeToFit];
+    
+    if (_viewModel)
+    {
+        [_viewModel configureCollectionViewCell:cell indexPath:indexPath];
+    }
+    
+    return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    KDEvalueFilterItemModel *model = [_viewModel collectionViewModelForIndexPath:indexPath setSelected:YES];
+    if (model)
+    {
+        [self.headerView reloadData];
+    }
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat cellWidth = SCREEN_WIDTH/6.5;
+    CGFloat cellHeight = cellWidth/2.2;
+    return CGSizeMake(cellWidth, cellHeight);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    if (_viewModel)
+    {        
+        return ((SCREEN_WIDTH/6.5)/2.0);
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(COLLECTION_CELL_TOP_INSET, COLLECTION_CELL_INSET, COLLECTION_CELL_BOTTOM_INSET, COLLECTION_CELL_INSET);
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

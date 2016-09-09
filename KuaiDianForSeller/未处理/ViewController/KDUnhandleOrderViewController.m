@@ -24,18 +24,31 @@
     [super viewDidLoad];
     
     self.navigationItem.title = UNHANDLE_TITLE;
-    
     _viewModel = [[KDUnhandleViewModel alloc] init];
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
     [_tableView registerNib:[UINib nibWithNibName:@"KDOrderTableViewCell" bundle:nil] forCellReuseIdentifier:kOrderTableViewCell];
     [_tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     [_tableView setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self showHUD];
+    
+    //防止和登录页面冲突，延迟加载
+    [self performSelector:@selector(loadingView) withObject:nil afterDelay:0.5];
+
+//    [self showHUD];
     // Do any additional setup after loading the view from its nib.
 }
+- (void)loadingView
+{
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    [_tableView reloadData];
 
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+//    _tableView.delegate = self;
+//    _tableView.dataSource = self;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSInteger rows = 0;
