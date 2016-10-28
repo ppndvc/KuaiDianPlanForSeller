@@ -29,6 +29,7 @@
 		5B31BAF01D54DC77004B3E45 /* navi_back_array@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B31BAEC1D54DC77004B3E45 /* navi_back_array@3x.png */; };
 		5B31BAF11D54DC77004B3E45 /* up_trangle_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B31BAED1D54DC77004B3E45 /* up_trangle_red@2x.png */; };
 		5B31BAF21D54DC77004B3E45 /* up_trangle_red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B31BAEE1D54DC77004B3E45 /* up_trangle_red@3x.png */; };
+		5B3896D41DB2530300E6F16A /* KDSetFoodLabelViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3896D31DB2530300E6F16A /* KDSetFoodLabelViewModel.m */; };
 		5B3F53ED1D0AF4F3004DB523 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3F53EC1D0AF4F3004DB523 /* main.m */; };
 		5B3F53F01D0AF4F3004DB523 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3F53EF1D0AF4F3004DB523 /* AppDelegate.m */; };
 		5B3F53F31D0AF4F3004DB523 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3F53F21D0AF4F3004DB523 /* ViewController.m */; };
@@ -42,8 +43,12 @@
 		5B66B3CD1D5EF7050004ADF4 /* KDNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B66B3C81D5EF7050004ADF4 /* KDNetworkManager.m */; };
 		5B66B3CE1D5EF7050004ADF4 /* KDRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B66B3CA1D5EF7050004ADF4 /* KDRequest.m */; };
 		5B66B3CF1D5EF7050004ADF4 /* KDRequestAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B66B3CC1D5EF7050004ADF4 /* KDRequestAPI.m */; };
+		5B6BA5651DB2989A00100AB3 /* KDEditFoodViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6BA5641DB2989A00100AB3 /* KDEditFoodViewModel.m */; };
 		5B6E73481D64915800BB8123 /* KDTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E73471D64915800BB8123 /* KDTools.m */; };
 		5B78BD451D52331F007FAAD5 /* KDBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B78BD441D52331F007FAAD5 /* KDBaseTableViewCell.m */; };
+		5B80333E1D996E6600F418B5 /* KDDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B80333D1D996E6600F418B5 /* KDDatePicker.m */; };
+		5B8449B31DABCA0600B3FD90 /* KDFoodManageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8449B21DABCA0600B3FD90 /* KDFoodManageViewModel.m */; };
+		5B8449B61DABCD0A00B3FD90 /* KDFoodCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8449B51DABCD0A00B3FD90 /* KDFoodCategoryModel.m */; };
 		5B846AFE1D6353C800D536D9 /* KDForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B846AFC1D6353C800D536D9 /* KDForgotPasswordViewController.m */; };
 		5B846AFF1D6353C800D536D9 /* KDForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B846AFD1D6353C800D536D9 /* KDForgotPasswordViewController.xib */; };
 		5B846B031D63596400D536D9 /* gray_sharp_right_array@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B846B011D63596400D536D9 /* gray_sharp_right_array@2x.png */; };
@@ -67,6 +72,8 @@
 		5B84D8C01D805D00000F90E2 /* activity8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B84D8B81D805D00000F90E2 /* activity8@2x.png */; };
 		5B84D8C11D805D00000F90E2 /* activity8@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B84D8B91D805D00000F90E2 /* activity8@3x.png */; };
 		5B84D8C41D805D32000F90E2 /* KDSaleActivityViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B84D8C31D805D32000F90E2 /* KDSaleActivityViewModel.m */; };
+		5B8506861DC23E750059680B /* KDBusinessStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8506841DC23E750059680B /* KDBusinessStatisticsViewController.m */; };
+		5B8506871DC23E750059680B /* KDBusinessStatisticsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B8506851DC23E750059680B /* KDBusinessStatisticsViewController.xib */; };
 		5B85148A1D4F84DF00718FD2 /* b27_icon_star_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B8514861D4F84DF00718FD2 /* b27_icon_star_gray@2x.png */; };
 		5B85148B1D4F84DF00718FD2 /* b27_icon_star_yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B8514871D4F84DF00718FD2 /* b27_icon_star_yellow@2x.png */; };
 		5B85148C1D4F84DF00718FD2 /* CWStarRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8514891D4F84DF00718FD2 /* CWStarRateView.m */; };
@@ -129,6 +136,8 @@
 		5B93E3771D689E8E0042E116 /* KDMyAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B93E3751D689E8E0042E116 /* KDMyAccountViewController.m */; };
 		5B93E3781D689E8E0042E116 /* KDMyAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B93E3761D689E8E0042E116 /* KDMyAccountViewController.xib */; };
 		5B93E37B1D68A30F0042E116 /* KDAccountViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B93E37A1D68A30F0042E116 /* KDAccountViewModel.m */; };
+		5B95B2501DB272EA00C55EA5 /* image_placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B95B24E1DB272EA00C55EA5 /* image_placeholder@2x.png */; };
+		5B95B2511DB272EA00C55EA5 /* image_placeholder@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B95B24F1DB272EA00C55EA5 /* image_placeholder@3x.png */; };
 		5B9747001D50D0BB000EEF8E /* KDMainPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9746FF1D50D0BB000EEF8E /* KDMainPageModel.m */; };
 		5B9DCF6A1D47A6C600DD409A /* KDMainPageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9DCF691D47A6C600DD409A /* KDMainPageViewModel.m */; };
 		5B9DCF6D1D48F1E900DD409A /* KDShopCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9DCF6C1D48F1E900DD409A /* KDShopCellTableViewCell.m */; };
@@ -137,6 +146,26 @@
 		5BA25E791D6B407A00885343 /* KDChangePhoneNumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BA25E771D6B407A00885343 /* KDChangePhoneNumberViewController.xib */; };
 		5BA25E7C1D6B42F800885343 /* KDChangePasswordViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA25E7B1D6B42F800885343 /* KDChangePasswordViewModel.m */; };
 		5BA25E7F1D6B467F00885343 /* KDChangePWDViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA25E7E1D6B467F00885343 /* KDChangePWDViewModel.m */; };
+		5BA5C1921D884680008E9274 /* KDLeftLinkTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA5C1911D884680008E9274 /* KDLeftLinkTableCell.m */; };
+		5BA5C1951D884B53008E9274 /* KDLinkTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA5C1941D884B53008E9274 /* KDLinkTableViewModel.m */; };
+		5BA5C19C1D8C4DC1008E9274 /* KDRightLinkTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA5C19A1D8C4DC1008E9274 /* KDRightLinkTableCell.m */; };
+		5BA5C19D1D8C4DC1008E9274 /* KDRightLinkTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BA5C19B1D8C4DC1008E9274 /* KDRightLinkTableCell.xib */; };
+		5BA5C1A11D8C55F0008E9274 /* UIButton+NSIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA5C1A01D8C55F0008E9274 /* UIButton+NSIndexPath.m */; };
+		5BA5C1AC1D8D3C45008E9274 /* KDTasteLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA5C1AB1D8D3C45008E9274 /* KDTasteLabelView.m */; };
+		5BA5C1B51D8D424F008E9274 /* taste1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA5C1AD1D8D424F008E9274 /* taste1@2x.png */; };
+		5BA5C1B61D8D424F008E9274 /* taste1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA5C1AE1D8D424F008E9274 /* taste1@3x.png */; };
+		5BA5C1B71D8D424F008E9274 /* taste2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA5C1AF1D8D424F008E9274 /* taste2@2x.png */; };
+		5BA5C1B81D8D424F008E9274 /* taste2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA5C1B01D8D424F008E9274 /* taste2@3x.png */; };
+		5BA5C1B91D8D424F008E9274 /* taste4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA5C1B11D8D424F008E9274 /* taste4@2x.png */; };
+		5BA5C1BA1D8D424F008E9274 /* taste4@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA5C1B21D8D424F008E9274 /* taste4@3x.png */; };
+		5BA5C1BB1D8D424F008E9274 /* taste8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA5C1B31D8D424F008E9274 /* taste8@2x.png */; };
+		5BA5C1BC1D8D424F008E9274 /* taste8@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA5C1B41D8D424F008E9274 /* taste8@3x.png */; };
+		5BA5C1BF1D8D4BCE008E9274 /* KDFoodManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA5C1BE1D8D4BCE008E9274 /* KDFoodManageViewController.m */; };
+		5BAAD4CE1DB66AB200D87EA3 /* KDAvatarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAAD4CC1DB66AB200D87EA3 /* KDAvatarViewController.m */; };
+		5BAAD4CF1DB66AB200D87EA3 /* KDAvatarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BAAD4CD1DB66AB200D87EA3 /* KDAvatarViewController.xib */; };
+		5BAAD4D61DB90FD700D87EA3 /* KDCheckViewItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAAD4D41DB90FD700D87EA3 /* KDCheckViewItemCell.m */; };
+		5BAAD4D71DB90FD700D87EA3 /* KDCheckViewItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BAAD4D51DB90FD700D87EA3 /* KDCheckViewItemCell.xib */; };
+		5BAAD4DA1DB9182D00D87EA3 /* KDCheckViewItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAAD4D91DB9182D00D87EA3 /* KDCheckViewItemModel.m */; };
 		5BAB46BE1D82F2C800B2687C /* KDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAB46BD1D82F2C800B2687C /* KDTabBarController.m */; };
 		5BAB46C31D82F6F200B2687C /* launchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BAB46C01D82F6F200B2687C /* launchImage@2x.png */; };
 		5BAB46C41D82F6F200B2687C /* launchImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BAB46C11D82F6F200B2687C /* launchImage@3x.png */; };
@@ -171,10 +200,18 @@
 		5BB032051D78708C00813085 /* KDHandleListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB032041D78708C00813085 /* KDHandleListViewModel.m */; };
 		5BB032091D7C0E4700813085 /* KDHandleOrderDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB032081D7C0E4700813085 /* KDHandleOrderDetailView.m */; };
 		5BB0320B1D7C0E5A00813085 /* KDHandleOrderDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB0320A1D7C0E5A00813085 /* KDHandleOrderDetailView.xib */; };
+		5BB2A50E1DB20EA8009C32CD /* KDCheckViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB2A50C1DB20EA8009C32CD /* KDCheckViewCell.m */; };
+		5BB2A50F1DB20EA8009C32CD /* KDCheckViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB2A50D1DB20EA8009C32CD /* KDCheckViewCell.xib */; };
+		5BB2A5121DB210E2009C32CD /* selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BB2A5101DB210E2009C32CD /* selected.png */; };
+		5BB2A5131DB210E2009C32CD /* selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BB2A5111DB210E2009C32CD /* selected@2x.png */; };
+		5BB2A5161DB213D4009C32CD /* KDFoodLabelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB2A5151DB213D4009C32CD /* KDFoodLabelModel.m */; };
+		5BB2A51A1DB21D41009C32CD /* KDSetFoodLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB2A5181DB21D41009C32CD /* KDSetFoodLabelViewController.m */; };
+		5BB2A51B1DB21D41009C32CD /* KDSetFoodLabelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB2A5191DB21D41009C32CD /* KDSetFoodLabelViewController.xib */; };
 		5BC2F2691D5630920020E9BE /* gray_right_array@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BC2F2671D5630920020E9BE /* gray_right_array@2x.png */; };
 		5BC2F26A1D5630920020E9BE /* gray_right_array@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BC2F2681D5630920020E9BE /* gray_right_array@3x.png */; };
-		5BCA7BEF1D6DE4C20090EA0F /* KDEditFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA7BED1D6DE4C20090EA0F /* KDEditFoodViewController.m */; };
-		5BCA7BF01D6DE4C20090EA0F /* KDEditFoodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BCA7BEE1D6DE4C20090EA0F /* KDEditFoodViewController.xib */; };
+		5BC8E5F41DBCB38B007A4DE0 /* KDCheckView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC8E5F31DBCB38B007A4DE0 /* KDCheckView.m */; };
+		5BCA7BEF1D6DE4C20090EA0F /* KDEditFoodItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA7BED1D6DE4C20090EA0F /* KDEditFoodItemViewController.m */; };
+		5BCA7BF01D6DE4C20090EA0F /* KDEditFoodItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BCA7BEE1D6DE4C20090EA0F /* KDEditFoodItemViewController.xib */; };
 		5BCAA9441D4DF851006665D0 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BCAA93D1D4DF851006665D0 /* UITableView+FDIndexPathHeightCache.m */; };
 		5BCAA9451D4DF851006665D0 /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BCAA93F1D4DF851006665D0 /* UITableView+FDKeyedHeightCache.m */; };
 		5BCAA9461D4DF851006665D0 /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BCAA9411D4DF851006665D0 /* UITableView+FDTemplateLayoutCell.m */; };
@@ -189,6 +226,19 @@
 		5BD91D211D0BFD6B006F64BE /* KDBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD91D201D0BFD6B006F64BE /* KDBaseModel.m */; };
 		5BD91D251D0C0578006F64BE /* KDNetworkReachableManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD91D241D0C0578006F64BE /* KDNetworkReachableManager.m */; };
 		5BD91D2A1D0C5128006F64BE /* KDAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD91D291D0C5128006F64BE /* KDAppearance.m */; };
+		5BE2B3B31D8533AB00D848CA /* KDShopInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2B3B11D8533AB00D848CA /* KDShopInfoViewController.m */; };
+		5BE2B3B41D8533AB00D848CA /* KDShopInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE2B3B21D8533AB00D848CA /* KDShopInfoViewController.xib */; };
+		5BE2B3B71D85358200D848CA /* KDShopInfoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2B3B61D85358200D848CA /* KDShopInfoViewModel.m */; };
+		5BE2B3BB1D8551B900D848CA /* KDCommonTextEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2B3B91D8551B900D848CA /* KDCommonTextEditViewController.m */; };
+		5BE2B3BC1D8551B900D848CA /* KDCommonTextEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE2B3BA1D8551B900D848CA /* KDCommonTextEditViewController.xib */; };
+		5BE3C0AE1D97C16B00BCFB2A /* UIButton+BackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE3C0AD1D97C16B00BCFB2A /* UIButton+BackgroundColor.m */; };
+		5BE3C0B21D97F69D00BCFB2A /* KDSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE3C0B01D97F69D00BCFB2A /* KDSearchViewController.m */; };
+		5BE3C0B31D97F69D00BCFB2A /* KDSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE3C0B11D97F69D00BCFB2A /* KDSearchViewController.xib */; };
+		5BE3C0B61D9805D200BCFB2A /* search_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE3C0B41D9805D200BCFB2A /* search_icon.png */; };
+		5BE3C0B71D9805D200BCFB2A /* search_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE3C0B51D9805D200BCFB2A /* search_icon@2x.png */; };
+		5BE3C0BA1D9806AC00BCFB2A /* KDSearchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE3C0B91D9806AC00BCFB2A /* KDSearchViewModel.m */; };
+		5BE3C0BD1D981C9100BCFB2A /* KDErrorPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE3C0BC1D981C9100BCFB2A /* KDErrorPageView.m */; };
+		5BE3C0BF1D981CB800BCFB2A /* KDErrorPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE3C0BE1D981CB800BCFB2A /* KDErrorPageView.xib */; };
 		775CEA995711C67CD7C292B4 /* libPods-KuaiDianForSeller.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0BC42266F2C83D0EEE5A2E /* libPods-KuaiDianForSeller.a */; };
 		B87879B9C23D89C17368ADA5 /* libPods-KuaiDianForSeller.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 250F2444DBCCD0AF25E451D4 /* libPods-KuaiDianForSeller.a */; };
 /* End PBXBuildFile section */
@@ -233,6 +283,8 @@
 		5B31BAEC1D54DC77004B3E45 /* navi_back_array@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navi_back_array@3x.png"; path = "Resource/CommonImages/navi_back_array@3x.png"; sourceTree = "<group>"; };
 		5B31BAED1D54DC77004B3E45 /* up_trangle_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "up_trangle_red@2x.png"; path = "Resource/CommonImages/up_trangle_red@2x.png"; sourceTree = "<group>"; };
 		5B31BAEE1D54DC77004B3E45 /* up_trangle_red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "up_trangle_red@3x.png"; path = "Resource/CommonImages/up_trangle_red@3x.png"; sourceTree = "<group>"; };
+		5B3896D21DB2530300E6F16A /* KDSetFoodLabelViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDSetFoodLabelViewModel.h; path = "管理/ViewModel/KDSetFoodLabelViewModel.h"; sourceTree = "<group>"; };
+		5B3896D31DB2530300E6F16A /* KDSetFoodLabelViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDSetFoodLabelViewModel.m; path = "管理/ViewModel/KDSetFoodLabelViewModel.m"; sourceTree = "<group>"; };
 		5B3F53E81D0AF4F3004DB523 /* KuaiDianForSeller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KuaiDianForSeller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B3F53EC1D0AF4F3004DB523 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5B3F53EE1D0AF4F3004DB523 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -257,10 +309,18 @@
 		5B66B3CA1D5EF7050004ADF4 /* KDRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDRequest.m; path = Network/KDRequestAPI/KDRequest.m; sourceTree = "<group>"; };
 		5B66B3CB1D5EF7050004ADF4 /* KDRequestAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDRequestAPI.h; path = Network/KDRequestAPI/KDRequestAPI.h; sourceTree = "<group>"; };
 		5B66B3CC1D5EF7050004ADF4 /* KDRequestAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDRequestAPI.m; path = Network/KDRequestAPI/KDRequestAPI.m; sourceTree = "<group>"; };
+		5B6BA5631DB2989A00100AB3 /* KDEditFoodViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDEditFoodViewModel.h; path = "管理/ViewModel/KDEditFoodViewModel.h"; sourceTree = "<group>"; };
+		5B6BA5641DB2989A00100AB3 /* KDEditFoodViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDEditFoodViewModel.m; path = "管理/ViewModel/KDEditFoodViewModel.m"; sourceTree = "<group>"; };
 		5B6E73461D64915800BB8123 /* KDTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDTools.h; path = Utils/KDTools.h; sourceTree = "<group>"; };
 		5B6E73471D64915800BB8123 /* KDTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDTools.m; path = Utils/KDTools.m; sourceTree = "<group>"; };
 		5B78BD431D52331F007FAAD5 /* KDBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDBaseTableViewCell.h; path = BaseClass/KDBaseTableViewCell.h; sourceTree = "<group>"; };
 		5B78BD441D52331F007FAAD5 /* KDBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDBaseTableViewCell.m; path = BaseClass/KDBaseTableViewCell.m; sourceTree = "<group>"; };
+		5B80333C1D996E6600F418B5 /* KDDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDDatePicker.h; path = "管理/View/KDDatePicker.h"; sourceTree = "<group>"; };
+		5B80333D1D996E6600F418B5 /* KDDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDDatePicker.m; path = "管理/View/KDDatePicker.m"; sourceTree = "<group>"; };
+		5B8449B11DABCA0600B3FD90 /* KDFoodManageViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDFoodManageViewModel.h; path = "管理/ViewModel/KDFoodManageViewModel.h"; sourceTree = "<group>"; };
+		5B8449B21DABCA0600B3FD90 /* KDFoodManageViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDFoodManageViewModel.m; path = "管理/ViewModel/KDFoodManageViewModel.m"; sourceTree = "<group>"; };
+		5B8449B41DABCD0A00B3FD90 /* KDFoodCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDFoodCategoryModel.h; path = "管理/Model/KDFoodCategoryModel.h"; sourceTree = "<group>"; };
+		5B8449B51DABCD0A00B3FD90 /* KDFoodCategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDFoodCategoryModel.m; path = "管理/Model/KDFoodCategoryModel.m"; sourceTree = "<group>"; };
 		5B846AFB1D6353C800D536D9 /* KDForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDForgotPasswordViewController.h; path = "登录/ViewController/KDForgotPasswordViewController.h"; sourceTree = "<group>"; };
 		5B846AFC1D6353C800D536D9 /* KDForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDForgotPasswordViewController.m; path = "登录/ViewController/KDForgotPasswordViewController.m"; sourceTree = "<group>"; };
 		5B846AFD1D6353C800D536D9 /* KDForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KDForgotPasswordViewController.xib; path = "登录/ViewController/KDForgotPasswordViewController.xib"; sourceTree = "<group>"; };
@@ -288,6 +348,9 @@
 		5B84D8B91D805D00000F90E2 /* activity8@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "activity8@3x.png"; path = "管理/Resource/activity8@3x.png"; sourceTree = "<group>"; };
 		5B84D8C21D805D32000F90E2 /* KDSaleActivityViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDSaleActivityViewModel.h; path = "管理/ViewModel/KDSaleActivityViewModel.h"; sourceTree = "<group>"; };
 		5B84D8C31D805D32000F90E2 /* KDSaleActivityViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDSaleActivityViewModel.m; path = "管理/ViewModel/KDSaleActivityViewModel.m"; sourceTree = "<group>"; };
+		5B8506831DC23E750059680B /* KDBusinessStatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDBusinessStatisticsViewController.h; path = "管理/ViewController/KDBusinessStatisticsViewController.h"; sourceTree = "<group>"; };
+		5B8506841DC23E750059680B /* KDBusinessStatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDBusinessStatisticsViewController.m; path = "管理/ViewController/KDBusinessStatisticsViewController.m"; sourceTree = "<group>"; };
+		5B8506851DC23E750059680B /* KDBusinessStatisticsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KDBusinessStatisticsViewController.xib; path = "管理/ViewController/KDBusinessStatisticsViewController.xib"; sourceTree = "<group>"; };
 		5B8514861D4F84DF00718FD2 /* b27_icon_star_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "b27_icon_star_gray@2x.png"; path = "3rdLibs/CWStarRateView/b27_icon_star_gray@2x.png"; sourceTree = "<group>"; };
 		5B8514871D4F84DF00718FD2 /* b27_icon_star_yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "b27_icon_star_yellow@2x.png"; path = "3rdLibs/CWStarRateView/b27_icon_star_yellow@2x.png"; sourceTree = "<group>"; };
 		5B8514881D4F84DF00718FD2 /* CWStarRateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CWStarRateView.h; path = 3rdLibs/CWStarRateView/CWStarRateView.h; sourceTree = "<group>"; };
@@ -383,6 +446,8 @@
 		5B93E3761D689E8E0042E116 /* KDMyAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KDMyAccountViewController.xib; path = "设置/ViewController/KDMyAccountViewController.xib"; sourceTree = "<group>"; };
 		5B93E3791D68A30F0042E116 /* KDAccountViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDAccountViewModel.h; path = "设置/ViewModel/KDAccountViewModel.h"; sourceTree = "<group>"; };
 		5B93E37A1D68A30F0042E116 /* KDAccountViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDAccountViewModel.m; path = "设置/ViewModel/KDAccountViewModel.m"; sourceTree = "<group>"; };
+		5B95B24E1DB272EA00C55EA5 /* image_placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "image_placeholder@2x.png"; path = "管理/Resource/image_placeholder@2x.png"; sourceTree = "<group>"; };
+		5B95B24F1DB272EA00C55EA5 /* image_placeholder@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "image_placeholder@3x.png"; path = "管理/Resource/image_placeholder@3x.png"; sourceTree = "<group>"; };
 		5B9746FE1D50D0BB000EEF8E /* KDMainPageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDMainPageModel.h; path = "主页/Model/KDMainPageModel.h"; sourceTree = "<group>"; };
 		5B9746FF1D50D0BB000EEF8E /* KDMainPageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDMainPageModel.m; path = "主页/Model/KDMainPageModel.m"; sourceTree = "<group>"; };
 		5B9DCF681D47A6C600DD409A /* KDMainPageViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDMainPageViewModel.h; path = "主页/ViewModel/KDMainPageViewModel.h"; sourceTree = "<group>"; };
@@ -398,6 +463,35 @@
 		5BA25E7B1D6B42F800885343 /* KDChangePasswordViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDChangePasswordViewModel.m; path = "登录/ViewModel/KDChangePasswordViewModel.m"; sourceTree = "<group>"; };
 		5BA25E7D1D6B467F00885343 /* KDChangePWDViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDChangePWDViewModel.h; path = "设置/ViewModel/KDChangePWDViewModel.h"; sourceTree = "<group>"; };
 		5BA25E7E1D6B467F00885343 /* KDChangePWDViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDChangePWDViewModel.m; path = "设置/ViewModel/KDChangePWDViewModel.m"; sourceTree = "<group>"; };
+		5BA5C1901D884680008E9274 /* KDLeftLinkTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDLeftLinkTableCell.h; path = "管理/View/KDLeftLinkTableCell.h"; sourceTree = "<group>"; };
+		5BA5C1911D884680008E9274 /* KDLeftLinkTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDLeftLinkTableCell.m; path = "管理/View/KDLeftLinkTableCell.m"; sourceTree = "<group>"; };
+		5BA5C1931D884B53008E9274 /* KDLinkTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDLinkTableViewModel.h; path = "管理/ViewModel/KDLinkTableViewModel.h"; sourceTree = "<group>"; };
+		5BA5C1941D884B53008E9274 /* KDLinkTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDLinkTableViewModel.m; path = "管理/ViewModel/KDLinkTableViewModel.m"; sourceTree = "<group>"; };
+		5BA5C1991D8C4DC1008E9274 /* KDRightLinkTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDRightLinkTableCell.h; path = "管理/View/KDRightLinkTableCell.h"; sourceTree = "<group>"; };
+		5BA5C19A1D8C4DC1008E9274 /* KDRightLinkTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDRightLinkTableCell.m; path = "管理/View/KDRightLinkTableCell.m"; sourceTree = "<group>"; };
+		5BA5C19B1D8C4DC1008E9274 /* KDRightLinkTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KDRightLinkTableCell.xib; path = "管理/View/KDRightLinkTableCell.xib"; sourceTree = "<group>"; };
+		5BA5C19F1D8C55F0008E9274 /* UIButton+NSIndexPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+NSIndexPath.h"; path = "Utils/Categories/UIButton+NSIndexPath.h"; sourceTree = "<group>"; };
+		5BA5C1A01D8C55F0008E9274 /* UIButton+NSIndexPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+NSIndexPath.m"; path = "Utils/Categories/UIButton+NSIndexPath.m"; sourceTree = "<group>"; };
+		5BA5C1AA1D8D3C45008E9274 /* KDTasteLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDTasteLabelView.h; path = "管理/View/KDTasteLabelView.h"; sourceTree = "<group>"; };
+		5BA5C1AB1D8D3C45008E9274 /* KDTasteLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDTasteLabelView.m; path = "管理/View/KDTasteLabelView.m"; sourceTree = "<group>"; };
+		5BA5C1AD1D8D424F008E9274 /* taste1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "taste1@2x.png"; path = "管理/Resource/taste1@2x.png"; sourceTree = "<group>"; };
+		5BA5C1AE1D8D424F008E9274 /* taste1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "taste1@3x.png"; path = "管理/Resource/taste1@3x.png"; sourceTree = "<group>"; };
+		5BA5C1AF1D8D424F008E9274 /* taste2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "taste2@2x.png"; path = "管理/Resource/taste2@2x.png"; sourceTree = "<group>"; };
+		5BA5C1B01D8D424F008E9274 /* taste2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "taste2@3x.png"; path = "管理/Resource/taste2@3x.png"; sourceTree = "<group>"; };
+		5BA5C1B11D8D424F008E9274 /* taste4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "taste4@2x.png"; path = "管理/Resource/taste4@2x.png"; sourceTree = "<group>"; };
+		5BA5C1B21D8D424F008E9274 /* taste4@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "taste4@3x.png"; path = "管理/Resource/taste4@3x.png"; sourceTree = "<group>"; };
+		5BA5C1B31D8D424F008E9274 /* taste8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "taste8@2x.png"; path = "管理/Resource/taste8@2x.png"; sourceTree = "<group>"; };
+		5BA5C1B41D8D424F008E9274 /* taste8@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "taste8@3x.png"; path = "管理/Resource/taste8@3x.png"; sourceTree = "<group>"; };
+		5BA5C1BD1D8D4BCE008E9274 /* KDFoodManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDFoodManageViewController.h; path = "管理/ViewController/KDFoodManageViewController.h"; sourceTree = "<group>"; };
+		5BA5C1BE1D8D4BCE008E9274 /* KDFoodManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDFoodManageViewController.m; path = "管理/ViewController/KDFoodManageViewController.m"; sourceTree = "<group>"; };
+		5BAAD4CB1DB66AB200D87EA3 /* KDAvatarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDAvatarViewController.h; path = "管理/ViewController/KDAvatarViewController.h"; sourceTree = "<group>"; };
+		5BAAD4CC1DB66AB200D87EA3 /* KDAvatarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDAvatarViewController.m; path = "管理/ViewController/KDAvatarViewController.m"; sourceTree = "<group>"; };
+		5BAAD4CD1DB66AB200D87EA3 /* KDAvatarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KDAvatarViewController.xib; path = "管理/ViewController/KDAvatarViewController.xib"; sourceTree = "<group>"; };
+		5BAAD4D31DB90FD700D87EA3 /* KDCheckViewItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDCheckViewItemCell.h; path = "管理/View/KDCheckViewItemCell.h"; sourceTree = "<group>"; };
+		5BAAD4D41DB90FD700D87EA3 /* KDCheckViewItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDCheckViewItemCell.m; path = "管理/View/KDCheckViewItemCell.m"; sourceTree = "<group>"; };
+		5BAAD4D51DB90FD700D87EA3 /* KDCheckViewItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KDCheckViewItemCell.xib; path = "管理/View/KDCheckViewItemCell.xib"; sourceTree = "<group>"; };
+		5BAAD4D81DB9182D00D87EA3 /* KDCheckViewItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDCheckViewItemModel.h; path = "管理/Model/KDCheckViewItemModel.h"; sourceTree = "<group>"; };
+		5BAAD4D91DB9182D00D87EA3 /* KDCheckViewItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDCheckViewItemModel.m; path = "管理/Model/KDCheckViewItemModel.m"; sourceTree = "<group>"; };
 		5BAB46BC1D82F2C800B2687C /* KDTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDTabBarController.h; path = BaseClass/KDTabBarController.h; sourceTree = "<group>"; };
 		5BAB46BD1D82F2C800B2687C /* KDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDTabBarController.m; path = BaseClass/KDTabBarController.m; sourceTree = "<group>"; };
 		5BAB46C01D82F6F200B2687C /* launchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "launchImage@2x.png"; path = "Resource/LaunchImages/launchImage@2x.png"; sourceTree = "<group>"; };
@@ -446,11 +540,23 @@
 		5BB032071D7C0E4700813085 /* KDHandleOrderDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDHandleOrderDetailView.h; path = "已处理/View/KDHandleOrderDetailView.h"; sourceTree = "<group>"; };
 		5BB032081D7C0E4700813085 /* KDHandleOrderDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDHandleOrderDetailView.m; path = "已处理/View/KDHandleOrderDetailView.m"; sourceTree = "<group>"; };
 		5BB0320A1D7C0E5A00813085 /* KDHandleOrderDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KDHandleOrderDetailView.xib; sourceTree = "<group>"; };
+		5BB2A50B1DB20EA8009C32CD /* KDCheckViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDCheckViewCell.h; path = "管理/View/KDCheckViewCell.h"; sourceTree = "<group>"; };
+		5BB2A50C1DB20EA8009C32CD /* KDCheckViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDCheckViewCell.m; path = "管理/View/KDCheckViewCell.m"; sourceTree = "<group>"; };
+		5BB2A50D1DB20EA8009C32CD /* KDCheckViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KDCheckViewCell.xib; path = "管理/View/KDCheckViewCell.xib"; sourceTree = "<group>"; };
+		5BB2A5101DB210E2009C32CD /* selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = selected.png; path = "管理/Resource/selected.png"; sourceTree = "<group>"; };
+		5BB2A5111DB210E2009C32CD /* selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "selected@2x.png"; path = "管理/Resource/selected@2x.png"; sourceTree = "<group>"; };
+		5BB2A5141DB213D4009C32CD /* KDFoodLabelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDFoodLabelModel.h; path = "管理/Model/KDFoodLabelModel.h"; sourceTree = "<group>"; };
+		5BB2A5151DB213D4009C32CD /* KDFoodLabelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDFoodLabelModel.m; path = "管理/Model/KDFoodLabelModel.m"; sourceTree = "<group>"; };
+		5BB2A5171DB21D41009C32CD /* KDSetFoodLabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDSetFoodLabelViewController.h; path = "管理/ViewController/KDSetFoodLabelViewController.h"; sourceTree = "<group>"; };
+		5BB2A5181DB21D41009C32CD /* KDSetFoodLabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDSetFoodLabelViewController.m; path = "管理/ViewController/KDSetFoodLabelViewController.m"; sourceTree = "<group>"; };
+		5BB2A5191DB21D41009C32CD /* KDSetFoodLabelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KDSetFoodLabelViewController.xib; path = "管理/ViewController/KDSetFoodLabelViewController.xib"; sourceTree = "<group>"; };
 		5BC2F2671D5630920020E9BE /* gray_right_array@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gray_right_array@2x.png"; path = "Resource/CommonImages/订单/gray_right_array@2x.png"; sourceTree = "<group>"; };
 		5BC2F2681D5630920020E9BE /* gray_right_array@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gray_right_array@3x.png"; path = "Resource/CommonImages/订单/gray_right_array@3x.png"; sourceTree = "<group>"; };
-		5BCA7BEC1D6DE4C20090EA0F /* KDEditFoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDEditFoodViewController.h; path = "管理/ViewController/KDEditFoodViewController.h"; sourceTree = "<group>"; };
-		5BCA7BED1D6DE4C20090EA0F /* KDEditFoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDEditFoodViewController.m; path = "管理/ViewController/KDEditFoodViewController.m"; sourceTree = "<group>"; };
-		5BCA7BEE1D6DE4C20090EA0F /* KDEditFoodViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KDEditFoodViewController.xib; path = "管理/ViewController/KDEditFoodViewController.xib"; sourceTree = "<group>"; };
+		5BC8E5F21DBCB38B007A4DE0 /* KDCheckView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDCheckView.h; path = "管理/View/KDCheckView.h"; sourceTree = "<group>"; };
+		5BC8E5F31DBCB38B007A4DE0 /* KDCheckView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDCheckView.m; path = "管理/View/KDCheckView.m"; sourceTree = "<group>"; };
+		5BCA7BEC1D6DE4C20090EA0F /* KDEditFoodItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDEditFoodItemViewController.h; path = "管理/ViewController/KDEditFoodItemViewController.h"; sourceTree = "<group>"; };
+		5BCA7BED1D6DE4C20090EA0F /* KDEditFoodItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDEditFoodItemViewController.m; path = "管理/ViewController/KDEditFoodItemViewController.m"; sourceTree = "<group>"; };
+		5BCA7BEE1D6DE4C20090EA0F /* KDEditFoodItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KDEditFoodItemViewController.xib; path = "管理/ViewController/KDEditFoodItemViewController.xib"; sourceTree = "<group>"; };
 		5BCAA93C1D4DF851006665D0 /* UITableView+FDIndexPathHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableView+FDIndexPathHeightCache.h"; path = "3rdLibs/UITableView-FDTemplateLayoutCell/UITableView+FDIndexPathHeightCache.h"; sourceTree = "<group>"; };
 		5BCAA93D1D4DF851006665D0 /* UITableView+FDIndexPathHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableView+FDIndexPathHeightCache.m"; path = "3rdLibs/UITableView-FDTemplateLayoutCell/UITableView+FDIndexPathHeightCache.m"; sourceTree = "<group>"; };
 		5BCAA93E1D4DF851006665D0 /* UITableView+FDKeyedHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableView+FDKeyedHeightCache.h"; path = "3rdLibs/UITableView-FDTemplateLayoutCell/UITableView+FDKeyedHeightCache.h"; sourceTree = "<group>"; };
@@ -478,6 +584,27 @@
 		5BD91D241D0C0578006F64BE /* KDNetworkReachableManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDNetworkReachableManager.m; path = Network/KDNetworkReachableManager.m; sourceTree = "<group>"; };
 		5BD91D281D0C5128006F64BE /* KDAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDAppearance.h; path = Utils/KDAppearance.h; sourceTree = "<group>"; };
 		5BD91D291D0C5128006F64BE /* KDAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDAppearance.m; path = Utils/KDAppearance.m; sourceTree = "<group>"; };
+		5BE2B3B01D8533AB00D848CA /* KDShopInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDShopInfoViewController.h; path = "管理/ViewController/KDShopInfoViewController.h"; sourceTree = "<group>"; };
+		5BE2B3B11D8533AB00D848CA /* KDShopInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDShopInfoViewController.m; path = "管理/ViewController/KDShopInfoViewController.m"; sourceTree = "<group>"; };
+		5BE2B3B21D8533AB00D848CA /* KDShopInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KDShopInfoViewController.xib; path = "管理/ViewController/KDShopInfoViewController.xib"; sourceTree = "<group>"; };
+		5BE2B3B51D85358200D848CA /* KDShopInfoViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDShopInfoViewModel.h; path = "管理/ViewModel/KDShopInfoViewModel.h"; sourceTree = "<group>"; };
+		5BE2B3B61D85358200D848CA /* KDShopInfoViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDShopInfoViewModel.m; path = "管理/ViewModel/KDShopInfoViewModel.m"; sourceTree = "<group>"; };
+		5BE2B3B81D8551B900D848CA /* KDCommonTextEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDCommonTextEditViewController.h; path = "管理/ViewController/KDCommonTextEditViewController.h"; sourceTree = "<group>"; };
+		5BE2B3B91D8551B900D848CA /* KDCommonTextEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDCommonTextEditViewController.m; path = "管理/ViewController/KDCommonTextEditViewController.m"; sourceTree = "<group>"; };
+		5BE2B3BA1D8551B900D848CA /* KDCommonTextEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KDCommonTextEditViewController.xib; path = "管理/ViewController/KDCommonTextEditViewController.xib"; sourceTree = "<group>"; };
+		5BE3C0AB1D97BB5800BCFB2A /* KDCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDCellDelegate.h; path = BaseClass/KDBaseModel/KDCellDelegate.h; sourceTree = "<group>"; };
+		5BE3C0AC1D97C16B00BCFB2A /* UIButton+BackgroundColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+BackgroundColor.h"; path = "Utils/Categories/UIButton+BackgroundColor.h"; sourceTree = "<group>"; };
+		5BE3C0AD1D97C16B00BCFB2A /* UIButton+BackgroundColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+BackgroundColor.m"; path = "Utils/Categories/UIButton+BackgroundColor.m"; sourceTree = "<group>"; };
+		5BE3C0AF1D97F69D00BCFB2A /* KDSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDSearchViewController.h; path = "已处理/ViewController/KDSearchViewController.h"; sourceTree = "<group>"; };
+		5BE3C0B01D97F69D00BCFB2A /* KDSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDSearchViewController.m; path = "已处理/ViewController/KDSearchViewController.m"; sourceTree = "<group>"; };
+		5BE3C0B11D97F69D00BCFB2A /* KDSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KDSearchViewController.xib; path = "已处理/ViewController/KDSearchViewController.xib"; sourceTree = "<group>"; };
+		5BE3C0B41D9805D200BCFB2A /* search_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search_icon.png; path = "已处理/Resource/search_icon.png"; sourceTree = "<group>"; };
+		5BE3C0B51D9805D200BCFB2A /* search_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "search_icon@2x.png"; path = "已处理/Resource/search_icon@2x.png"; sourceTree = "<group>"; };
+		5BE3C0B81D9806AC00BCFB2A /* KDSearchViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDSearchViewModel.h; path = "已处理/ViewModel/KDSearchViewModel.h"; sourceTree = "<group>"; };
+		5BE3C0B91D9806AC00BCFB2A /* KDSearchViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDSearchViewModel.m; path = "已处理/ViewModel/KDSearchViewModel.m"; sourceTree = "<group>"; };
+		5BE3C0BB1D981C9100BCFB2A /* KDErrorPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDErrorPageView.h; path = BaseClass/KDErrorPageView.h; sourceTree = "<group>"; };
+		5BE3C0BC1D981C9100BCFB2A /* KDErrorPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDErrorPageView.m; path = BaseClass/KDErrorPageView.m; sourceTree = "<group>"; };
+		5BE3C0BE1D981CB800BCFB2A /* KDErrorPageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KDErrorPageView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -576,12 +703,12 @@
 		5B3F53EA1D0AF4F3004DB523 /* KuaiDianForSeller */ = {
 			isa = PBXGroup;
 			children = (
+				5B856FDE1D5B74E400D63DB5 /* 登录 */,
+				5B8C04641D69ABB6004DA05E /* 未处理 */,
 				5BACC56F1D77245E004B7D0A /* 已处理 */,
 				5BCA7BE61D6DE44D0090EA0F /* 管理 */,
-				5B8C04641D69ABB6004DA05E /* 未处理 */,
 				5B93E35E1D65F74F0042E116 /* 设置 */,
 				5B100A961D5CB50700260048 /* UserManager */,
-				5B856FDE1D5B74E400D63DB5 /* 登录 */,
 				5B31BADF1D54C9AE004B3E45 /* CommonView */,
 				5B91B0161D44F2410064562D /* CommonModels */,
 				5B91AFF21D44DCC50064562D /* 3rdLibs */,
@@ -977,6 +1104,17 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		5BA5C19E1D8C55B5008E9274 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5BA5C19F1D8C55F0008E9274 /* UIButton+NSIndexPath.h */,
+				5BA5C1A01D8C55F0008E9274 /* UIButton+NSIndexPath.m */,
+				5BE3C0AC1D97C16B00BCFB2A /* UIButton+BackgroundColor.h */,
+				5BE3C0AD1D97C16B00BCFB2A /* UIButton+BackgroundColor.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		5BAB46BF1D82F6DE00B2687C /* LaunchImages */ = {
 			isa = PBXGroup;
 			children = (
@@ -990,6 +1128,18 @@
 		5BACC5461D75C470004B7D0A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				5B95B24E1DB272EA00C55EA5 /* image_placeholder@2x.png */,
+				5B95B24F1DB272EA00C55EA5 /* image_placeholder@3x.png */,
+				5BB2A5101DB210E2009C32CD /* selected.png */,
+				5BB2A5111DB210E2009C32CD /* selected@2x.png */,
+				5BA5C1AD1D8D424F008E9274 /* taste1@2x.png */,
+				5BA5C1AE1D8D424F008E9274 /* taste1@3x.png */,
+				5BA5C1AF1D8D424F008E9274 /* taste2@2x.png */,
+				5BA5C1B01D8D424F008E9274 /* taste2@3x.png */,
+				5BA5C1B11D8D424F008E9274 /* taste4@2x.png */,
+				5BA5C1B21D8D424F008E9274 /* taste4@3x.png */,
+				5BA5C1B31D8D424F008E9274 /* taste8@2x.png */,
+				5BA5C1B41D8D424F008E9274 /* taste8@3x.png */,
 				5B84D8B21D805D00000F90E2 /* activity1@2x.png */,
 				5B84D8B31D805D00000F90E2 /* activity1@3x.png */,
 				5B84D8B41D805D00000F90E2 /* activity2@2x.png */,
@@ -1015,6 +1165,8 @@
 			children = (
 				5BB032031D78708C00813085 /* KDHandleListViewModel.h */,
 				5BB032041D78708C00813085 /* KDHandleListViewModel.m */,
+				5BE3C0B81D9806AC00BCFB2A /* KDSearchViewModel.h */,
+				5BE3C0B91D9806AC00BCFB2A /* KDSearchViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -1037,6 +1189,9 @@
 				5BACC5741D772505004B7D0A /* KDHandleListViewController.h */,
 				5BACC5751D772505004B7D0A /* KDHandleListViewController.m */,
 				5BACC5761D772505004B7D0A /* KDHandleListViewController.xib */,
+				5BE3C0AF1D97F69D00BCFB2A /* KDSearchViewController.h */,
+				5BE3C0B01D97F69D00BCFB2A /* KDSearchViewController.m */,
+				5BE3C0B11D97F69D00BCFB2A /* KDSearchViewController.xib */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1064,6 +1219,8 @@
 		5BACC5731D772495004B7D0A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				5BE3C0B41D9805D200BCFB2A /* search_icon.png */,
+				5BE3C0B51D9805D200BCFB2A /* search_icon@2x.png */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -1098,6 +1255,16 @@
 				5B1B0C781D7DB2B6004F5B39 /* KDFoodEvalueViewModel.m */,
 				5B84D8C21D805D32000F90E2 /* KDSaleActivityViewModel.h */,
 				5B84D8C31D805D32000F90E2 /* KDSaleActivityViewModel.m */,
+				5BE2B3B51D85358200D848CA /* KDShopInfoViewModel.h */,
+				5BE2B3B61D85358200D848CA /* KDShopInfoViewModel.m */,
+				5BA5C1931D884B53008E9274 /* KDLinkTableViewModel.h */,
+				5BA5C1941D884B53008E9274 /* KDLinkTableViewModel.m */,
+				5B8449B11DABCA0600B3FD90 /* KDFoodManageViewModel.h */,
+				5B8449B21DABCA0600B3FD90 /* KDFoodManageViewModel.m */,
+				5B3896D21DB2530300E6F16A /* KDSetFoodLabelViewModel.h */,
+				5B3896D31DB2530300E6F16A /* KDSetFoodLabelViewModel.m */,
+				5B6BA5631DB2989A00100AB3 /* KDEditFoodViewModel.h */,
+				5B6BA5641DB2989A00100AB3 /* KDEditFoodViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -1113,6 +1280,12 @@
 				5B1B0C701D7C6A54004F5B39 /* KDCustomerReplyModel.m */,
 				5BADDD481D7F13190012A105 /* KDEvalueFilterItemModel.h */,
 				5BADDD491D7F13190012A105 /* KDEvalueFilterItemModel.m */,
+				5B8449B41DABCD0A00B3FD90 /* KDFoodCategoryModel.h */,
+				5B8449B51DABCD0A00B3FD90 /* KDFoodCategoryModel.m */,
+				5BB2A5141DB213D4009C32CD /* KDFoodLabelModel.h */,
+				5BB2A5151DB213D4009C32CD /* KDFoodLabelModel.m */,
+				5BAAD4D81DB9182D00D87EA3 /* KDCheckViewItemModel.h */,
+				5BAAD4D91DB9182D00D87EA3 /* KDCheckViewItemModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1120,9 +1293,12 @@
 		5BCA7BE91D6DE4650090EA0F /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				5BCA7BEC1D6DE4C20090EA0F /* KDEditFoodViewController.h */,
-				5BCA7BED1D6DE4C20090EA0F /* KDEditFoodViewController.m */,
-				5BCA7BEE1D6DE4C20090EA0F /* KDEditFoodViewController.xib */,
+				5BCA7BEC1D6DE4C20090EA0F /* KDEditFoodItemViewController.h */,
+				5BCA7BED1D6DE4C20090EA0F /* KDEditFoodItemViewController.m */,
+				5BCA7BEE1D6DE4C20090EA0F /* KDEditFoodItemViewController.xib */,
+				5BB2A5171DB21D41009C32CD /* KDSetFoodLabelViewController.h */,
+				5BB2A5181DB21D41009C32CD /* KDSetFoodLabelViewController.m */,
+				5BB2A5191DB21D41009C32CD /* KDSetFoodLabelViewController.xib */,
 				5BACC5391D7470EE004B7D0A /* KDManageViewController.h */,
 				5BACC53A1D7470EE004B7D0A /* KDManageViewController.m */,
 				5BACC53B1D7470EE004B7D0A /* KDManageViewController.xib */,
@@ -1132,6 +1308,20 @@
 				5B84D8981D8055A5000F90E2 /* KDSaleActivityViewController.h */,
 				5B84D8991D8055A5000F90E2 /* KDSaleActivityViewController.m */,
 				5B84D89A1D8055A5000F90E2 /* KDSaleActivityViewController.xib */,
+				5BE2B3B01D8533AB00D848CA /* KDShopInfoViewController.h */,
+				5BE2B3B11D8533AB00D848CA /* KDShopInfoViewController.m */,
+				5BE2B3B21D8533AB00D848CA /* KDShopInfoViewController.xib */,
+				5BE2B3B81D8551B900D848CA /* KDCommonTextEditViewController.h */,
+				5BE2B3B91D8551B900D848CA /* KDCommonTextEditViewController.m */,
+				5BE2B3BA1D8551B900D848CA /* KDCommonTextEditViewController.xib */,
+				5BA5C1BD1D8D4BCE008E9274 /* KDFoodManageViewController.h */,
+				5BA5C1BE1D8D4BCE008E9274 /* KDFoodManageViewController.m */,
+				5BAAD4CB1DB66AB200D87EA3 /* KDAvatarViewController.h */,
+				5BAAD4CC1DB66AB200D87EA3 /* KDAvatarViewController.m */,
+				5BAAD4CD1DB66AB200D87EA3 /* KDAvatarViewController.xib */,
+				5B8506831DC23E750059680B /* KDBusinessStatisticsViewController.h */,
+				5B8506841DC23E750059680B /* KDBusinessStatisticsViewController.m */,
+				5B8506851DC23E750059680B /* KDBusinessStatisticsViewController.xib */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1150,6 +1340,9 @@
 				5BACC53E1D747A6C004B7D0A /* KDManageCollectionCell.h */,
 				5BACC53F1D747A6C004B7D0A /* KDManageCollectionCell.m */,
 				5BACC5401D747A6C004B7D0A /* KDManageCollectionCell.xib */,
+				5BB2A50B1DB20EA8009C32CD /* KDCheckViewCell.h */,
+				5BB2A50C1DB20EA8009C32CD /* KDCheckViewCell.m */,
+				5BB2A50D1DB20EA8009C32CD /* KDCheckViewCell.xib */,
 				5B1B0C601D7C62A2004F5B39 /* KDSellerReplyView.h */,
 				5B1B0C611D7C62A2004F5B39 /* KDSellerReplyView.m */,
 				5B1B0C651D7C634C004F5B39 /* KDEvalueTableCell.h */,
@@ -1161,6 +1354,20 @@
 				5B84D89D1D8056EB000F90E2 /* KDSaleActivityTableCell.h */,
 				5B84D89E1D8056EB000F90E2 /* KDSaleActivityTableCell.m */,
 				5B84D89F1D8056EB000F90E2 /* KDSaleActivityTableCell.xib */,
+				5BA5C1901D884680008E9274 /* KDLeftLinkTableCell.h */,
+				5BA5C1911D884680008E9274 /* KDLeftLinkTableCell.m */,
+				5BA5C1991D8C4DC1008E9274 /* KDRightLinkTableCell.h */,
+				5BA5C19A1D8C4DC1008E9274 /* KDRightLinkTableCell.m */,
+				5BA5C19B1D8C4DC1008E9274 /* KDRightLinkTableCell.xib */,
+				5BA5C1AA1D8D3C45008E9274 /* KDTasteLabelView.h */,
+				5BA5C1AB1D8D3C45008E9274 /* KDTasteLabelView.m */,
+				5B80333C1D996E6600F418B5 /* KDDatePicker.h */,
+				5B80333D1D996E6600F418B5 /* KDDatePicker.m */,
+				5BAAD4D31DB90FD700D87EA3 /* KDCheckViewItemCell.h */,
+				5BAAD4D41DB90FD700D87EA3 /* KDCheckViewItemCell.m */,
+				5BAAD4D51DB90FD700D87EA3 /* KDCheckViewItemCell.xib */,
+				5BC8E5F21DBCB38B007A4DE0 /* KDCheckView.h */,
+				5BC8E5F31DBCB38B007A4DE0 /* KDCheckView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1200,6 +1407,9 @@
 				5B78BD441D52331F007FAAD5 /* KDBaseTableViewCell.m */,
 				5BAB46BC1D82F2C800B2687C /* KDTabBarController.h */,
 				5BAB46BD1D82F2C800B2687C /* KDTabBarController.m */,
+				5BE3C0BB1D981C9100BCFB2A /* KDErrorPageView.h */,
+				5BE3C0BC1D981C9100BCFB2A /* KDErrorPageView.m */,
+				5BE3C0BE1D981CB800BCFB2A /* KDErrorPageView.xib */,
 			);
 			name = BaseClass;
 			sourceTree = "<group>";
@@ -1220,6 +1430,7 @@
 				5BD91D201D0BFD6B006F64BE /* KDBaseModel.m */,
 				5B8C04811D69E05F004DA05E /* KDBaseViewModel.h */,
 				5B8C04821D69E05F004DA05E /* KDBaseViewModel.m */,
+				5BE3C0AB1D97BB5800BCFB2A /* KDCellDelegate.h */,
 			);
 			name = KDBaseModels;
 			sourceTree = "<group>";
@@ -1239,6 +1450,7 @@
 		5BD91D271D0C5105006F64BE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5BA5C19E1D8C55B5008E9274 /* Categories */,
 				5BD91D281D0C5128006F64BE /* KDAppearance.h */,
 				5BD91D291D0C5128006F64BE /* KDAppearance.m */,
 				5B66AC9F1D1551510021FD5F /* KDCacheManager.h */,
@@ -1328,14 +1540,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B31BAEA1D54DA4F004B3E45 /* up_trangle@3x.png in Resources */,
+				5BB2A50F1DB20EA8009C32CD /* KDCheckViewCell.xib in Resources */,
+				5BA5C1B61D8D424F008E9274 /* taste1@3x.png in Resources */,
 				5B8C045B1D69A1F5004DA05E /* tabbar_handled_selected@3x.png in Resources */,
 				5BACC56D1D7721F8004B7D0A /* sale_activity_icon.png in Resources */,
 				5B1B0C691D7C634C004F5B39 /* KDEvalueTableCell.xib in Resources */,
 				5B846B0F1D635BD500D536D9 /* eye@2x.png in Resources */,
+				5BA5C1B91D8D424F008E9274 /* taste4@2x.png in Resources */,
 				5B84D89C1D8055A5000F90E2 /* KDSaleActivityViewController.xib in Resources */,
 				5B85148A1D4F84DF00718FD2 /* b27_icon_star_gray@2x.png in Resources */,
 				5B91AFE61D44C8C10064562D /* order_selected@2x.png in Resources */,
+				5BA5C1B71D8D424F008E9274 /* taste2@2x.png in Resources */,
 				5BACC54B1D75C4A0004B7D0A /* msg@2x.png in Resources */,
+				5BA5C19D1D8C4DC1008E9274 /* KDRightLinkTableCell.xib in Resources */,
 				5BAB46C71D82F71000B2687C /* Images.xcassets in Resources */,
 				5B84D8BF1D805D00000F90E2 /* activity4@3x.png in Resources */,
 				5B8C04721D69AD6B004DA05E /* KDOrderTableViewCell.xib in Resources */,
@@ -1344,6 +1561,7 @@
 				5BACC56B1D7721F8004B7D0A /* food_evalue_icon.png in Resources */,
 				5B93E3661D65F7AA0042E116 /* KDSettingsViewController.xib in Resources */,
 				5BAB46CA1D830CAD00B2687C /* navi_bg@2x.png in Resources */,
+				5BE3C0B31D97F69D00BCFB2A /* KDSearchViewController.xib in Resources */,
 				5BACC5421D747A6C004B7D0A /* KDManageCollectionCell.xib in Resources */,
 				5B846B031D63596400D536D9 /* gray_sharp_right_array@2x.png in Resources */,
 				5BA25E791D6B407A00885343 /* KDChangePhoneNumberViewController.xib in Resources */,
@@ -1351,12 +1569,16 @@
 				5B84D8BD1D805D00000F90E2 /* activity2@3x.png in Resources */,
 				5B84D8BC1D805D00000F90E2 /* activity2@2x.png in Resources */,
 				5BACC53D1D7470EE004B7D0A /* KDManageViewController.xib in Resources */,
+				5B95B2501DB272EA00C55EA5 /* image_placeholder@2x.png in Resources */,
 				5BACC54C1D75C4A0004B7D0A /* msg@3x.png in Resources */,
+				5BAAD4CF1DB66AB200D87EA3 /* KDAvatarViewController.xib in Resources */,
 				5B8C045E1D69A1F5004DA05E /* tabbar_unhandled_normal@3x.png in Resources */,
 				5B8C04531D699E51004DA05E /* user.png in Resources */,
+				5BA5C1BA1D8D424F008E9274 /* taste4@3x.png in Resources */,
 				5B91B02E1D4504AB0064562D /* KDActionCollectionViewCell.xib in Resources */,
 				5B84D8BB1D805D00000F90E2 /* activity1@3x.png in Resources */,
-				5BCA7BF01D6DE4C20090EA0F /* KDEditFoodViewController.xib in Resources */,
+				5BCA7BF01D6DE4C20090EA0F /* KDEditFoodItemViewController.xib in Resources */,
+				5BB2A5131DB210E2009C32CD /* selected@2x.png in Resources */,
 				5B8C04621D69A5AB004DA05E /* tabbar_setting_normal@3x.png in Resources */,
 				5BC2F26A1D5630920020E9BE /* gray_right_array@3x.png in Resources */,
 				5B8C045C1D69A1F5004DA05E /* tabbar_managent_normal@3x.png in Resources */,
@@ -1369,15 +1591,20 @@
 				5B856FE81D5B757300D63DB5 /* KDLoginViewController.xib in Resources */,
 				5B8C04771D69BA27004DA05E /* KDOrderDetailTableViewCell.xib in Resources */,
 				5B31BAF01D54DC77004B3E45 /* navi_back_array@3x.png in Resources */,
+				5BA5C1BC1D8D424F008E9274 /* taste8@3x.png in Resources */,
 				5BCC32B91D6C84A5005EE10B /* KDMyMoneyViewController.xib in Resources */,
 				5B91AFE51D44C8C10064562D /* mine_selected@3x.png in Resources */,
 				5B8C045D1D69A1F5004DA05E /* tabbar_managent_selected@3x.png in Resources */,
 				5B84D8A11D8056EB000F90E2 /* KDSaleActivityTableCell.xib in Resources */,
+				5B95B2511DB272EA00C55EA5 /* image_placeholder@3x.png in Resources */,
+				5BA5C1B81D8D424F008E9274 /* taste2@3x.png in Resources */,
 				5BAB46C31D82F6F200B2687C /* launchImage@2x.png in Resources */,
+				5B8506871DC23E750059680B /* KDBusinessStatisticsViewController.xib in Resources */,
 				5B31BAF21D54DC77004B3E45 /* up_trangle_red@3x.png in Resources */,
 				5BACC54D1D75C4A0004B7D0A /* speaker@2x.png in Resources */,
 				5B846B0D1D635BD500D536D9 /* cell_phone@2x.png in Resources */,
 				5B31BAE91D54DA4F004B3E45 /* up_trangle@2x.png in Resources */,
+				5BAAD4D71DB90FD700D87EA3 /* KDCheckViewItemCell.xib in Resources */,
 				5BC2F2691D5630920020E9BE /* gray_right_array@2x.png in Resources */,
 				5B8C04511D699E51004DA05E /* help.png in Resources */,
 				5B91AFE41D44C8C10064562D /* mine_selected@2x.png in Resources */,
@@ -1386,15 +1613,23 @@
 				5BACC54E1D75C4A0004B7D0A /* speaker@3x.png in Resources */,
 				5B84D8BA1D805D00000F90E2 /* activity1@2x.png in Resources */,
 				5B846B0E1D635BD500D536D9 /* cell_phone@3x.png in Resources */,
+				5BE2B3B41D8533AB00D848CA /* KDShopInfoViewController.xib in Resources */,
+				5BA5C1BB1D8D424F008E9274 /* taste8@2x.png in Resources */,
 				5B31BADB1D54C7EA004B3E45 /* RouterFiles.plist in Resources */,
 				5B846B0C1D635BD500D536D9 /* book@3x.png in Resources */,
 				5B85148B1D4F84DF00718FD2 /* b27_icon_star_yellow@2x.png in Resources */,
+				5BE3C0B61D9805D200BCFB2A /* search_icon.png in Resources */,
+				5BE3C0B71D9805D200BCFB2A /* search_icon@2x.png in Resources */,
 				5B31BAF11D54DC77004B3E45 /* up_trangle_red@2x.png in Resources */,
 				5B8C04521D699E51004DA05E /* server.png in Resources */,
+				5BE2B3BC1D8551B900D848CA /* KDCommonTextEditViewController.xib in Resources */,
 				5B49F1EE1D5EF8BB00E2FD8D /* KDRequetPath.plist in Resources */,
+				5BB2A5121DB210E2009C32CD /* selected.png in Resources */,
 				5B91AFE01D44C8C10064562D /* fast_meal_selected@2x.png in Resources */,
+				5BE3C0BF1D981CB800BCFB2A /* KDErrorPageView.xib in Resources */,
 				5BADDD471D7F0F9D0012A105 /* KDEvalueFilterCollectionCell.xib in Resources */,
 				5B846B041D63596400D536D9 /* gray_sharp_right_array@3x.png in Resources */,
+				5BA5C1B51D8D424F008E9274 /* taste1@2x.png in Resources */,
 				5BACC56A1D7721F8004B7D0A /* edit_food_icon.png in Resources */,
 				5B84D8C01D805D00000F90E2 /* activity8@2x.png in Resources */,
 				5B846B0B1D635BD500D536D9 /* book@2x.png in Resources */,
@@ -1408,6 +1643,7 @@
 				5B100A911D5CB11700260048 /* lock_icon.png in Resources */,
 				5B8C04631D69A5AB004DA05E /* tabbar_setting_selected@3x.png in Resources */,
 				5B93E3781D689E8E0042E116 /* KDMyAccountViewController.xib in Resources */,
+				5BB2A51B1DB21D41009C32CD /* KDSetFoodLabelViewController.xib in Resources */,
 				5B8C045F1D69A1F5004DA05E /* tabbar_unhandled_selected@3x.png in Resources */,
 				5BAB46C51D82F6F200B2687C /* launchImage@x.png in Resources */,
 				5B8C045A1D69A1F5004DA05E /* tabbar_handled_normal@3x.png in Resources */,
@@ -1481,13 +1717,16 @@
 				5B6E73481D64915800BB8123 /* KDTools.m in Sources */,
 				5B66B3CD1D5EF7050004ADF4 /* KDNetworkManager.m in Sources */,
 				5BACC5411D747A6C004B7D0A /* KDManageCollectionCell.m in Sources */,
+				5BB2A51A1DB21D41009C32CD /* KDSetFoodLabelViewController.m in Sources */,
 				5B9DCF701D48F20800DD409A /* KDActivityView.m in Sources */,
 				5BADDD4A1D7F13190012A105 /* KDEvalueFilterItemModel.m in Sources */,
 				5B91B0221D44F6F40064562D /* KDShopModel.m in Sources */,
 				5B91B0081D44DCF40064562D /* TADotView.m in Sources */,
 				5BD91D2A1D0C5128006F64BE /* KDAppearance.m in Sources */,
 				5B31BAE21D54C9DE004B3E45 /* KDDropMenu.m in Sources */,
+				5BAAD4DA1DB9182D00D87EA3 /* KDCheckViewItemModel.m in Sources */,
 				5B91B00A1D44DCF40064562D /* SDCollectionViewCell.m in Sources */,
+				5BE2B3B71D85358200D848CA /* KDShopInfoViewModel.m in Sources */,
 				5B856FE71D5B757300D63DB5 /* KDLoginViewController.m in Sources */,
 				5BACC55A1D75CD1F004B7D0A /* KDLinkageTVModel.m in Sources */,
 				5BCEDBE51D1FBA1F00EBD946 /* KDDeviceInfo.m in Sources */,
@@ -1501,31 +1740,44 @@
 				5B1B0C711D7C6A54004F5B39 /* KDCustomerReplyModel.m in Sources */,
 				5B8C04761D69BA27004DA05E /* KDOrderDetailTableViewCell.m in Sources */,
 				5B8C046C1D69AC41004DA05E /* KDUnhandleOrderViewController.m in Sources */,
+				5BAAD4D61DB90FD700D87EA3 /* KDCheckViewItemCell.m in Sources */,
 				5B91B01C1D44F29D0064562D /* KDLocaionModel.m in Sources */,
 				5BACC53C1D7470EE004B7D0A /* KDManageViewController.m in Sources */,
 				5B8C047F1D69C16B004DA05E /* KDFoodItemModel.m in Sources */,
 				5B91B0071D44DCF40064562D /* TAAnimatedDotView.m in Sources */,
 				5B3F53F01D0AF4F3004DB523 /* AppDelegate.m in Sources */,
 				5B66B3CF1D5EF7050004ADF4 /* KDRequestAPI.m in Sources */,
+				5BB2A5161DB213D4009C32CD /* KDFoodLabelModel.m in Sources */,
 				5B857CF51D537861006DA08A /* KDCommodityTableViewCell.m in Sources */,
 				5B100A991D5CB52D00260048 /* KDUserManager.m in Sources */,
 				5BAB46BE1D82F2C800B2687C /* KDTabBarController.m in Sources */,
+				5BA5C1A11D8C55F0008E9274 /* UIButton+NSIndexPath.m in Sources */,
+				5BE3C0AE1D97C16B00BCFB2A /* UIButton+BackgroundColor.m in Sources */,
 				5B78BD451D52331F007FAAD5 /* KDBaseTableViewCell.m in Sources */,
 				5BD91D121D0BF366006F64BE /* KDBaseViewController.m in Sources */,
 				5B49F1F31D5F646E00E2FD8D /* KDLoginViewModel.m in Sources */,
+				5BA5C1951D884B53008E9274 /* KDLinkTableViewModel.m in Sources */,
+				5B8449B31DABCA0600B3FD90 /* KDFoodManageViewModel.m in Sources */,
+				5BA5C19C1D8C4DC1008E9274 /* KDRightLinkTableCell.m in Sources */,
 				5B857CF21D5377AA006DA08A /* KDCommodityModel.m in Sources */,
+				5BA5C1921D884680008E9274 /* KDLeftLinkTableCell.m in Sources */,
 				5BD91D191D0BF643006F64BE /* KDDefines.m in Sources */,
 				5BA25E7F1D6B467F00885343 /* KDChangePWDViewModel.m in Sources */,
 				5BACC5771D772505004B7D0A /* KDHandleListViewController.m in Sources */,
 				5B66ACA11D1551510021FD5F /* KDCacheManager.m in Sources */,
+				5BAAD4CE1DB66AB200D87EA3 /* KDAvatarViewController.m in Sources */,
 				5BCAA9451D4DF851006665D0 /* UITableView+FDKeyedHeightCache.m in Sources */,
+				5BA5C1BF1D8D4BCE008E9274 /* KDFoodManageViewController.m in Sources */,
 				5B93E37B1D68A30F0042E116 /* KDAccountViewModel.m in Sources */,
 				5BACC5571D75CCE0004B7D0A /* KDSegmentControl.m in Sources */,
+				5BE3C0BA1D9806AC00BCFB2A /* KDSearchViewModel.m in Sources */,
 				5B8C04861D69E1F0004DA05E /* KDUnhandleViewModel.m in Sources */,
+				5BA5C1AC1D8D3C45008E9274 /* KDTasteLabelView.m in Sources */,
 				5B91B0061D44DCF40064562D /* TAAbstractDotView.m in Sources */,
 				5B91B01B1D44F29D0064562D /* KDAdvertiseModel.m in Sources */,
 				5BD91D211D0BFD6B006F64BE /* KDBaseModel.m in Sources */,
 				5B93E3651D65F7AA0042E116 /* KDSettingsViewController.m in Sources */,
+				5B6BA5651DB2989A00100AB3 /* KDEditFoodViewModel.m in Sources */,
 				5B91B00C1D44DCF40064562D /* UIView+SDExtension.m in Sources */,
 				5BCAA9441D4DF851006665D0 /* UITableView+FDIndexPathHeightCache.m in Sources */,
 				5B8C04801D69C16B004DA05E /* KDOrderModel.m in Sources */,
@@ -1534,26 +1786,35 @@
 				5B91B0051D44DCF40064562D /* NSData+SDDataCache.m in Sources */,
 				5B91B01F1D44F5360064562D /* KDActionModel.m in Sources */,
 				5B8C04711D69AD6B004DA05E /* KDOrderTableViewCell.m in Sources */,
+				5B80333E1D996E6600F418B5 /* KDDatePicker.m in Sources */,
 				5BB032051D78708C00813085 /* KDHandleListViewModel.m in Sources */,
 				5B5E56761D731C05007A8F8E /* KDActivityIconView.m in Sources */,
 				5B91AFEF1D44D7F20064562D /* KDMainPageController.m in Sources */,
 				5B1B0C791D7DB2B6004F5B39 /* KDFoodEvalueViewModel.m in Sources */,
+				5B8506861DC23E750059680B /* KDBusinessStatisticsViewController.m in Sources */,
 				5B85148C1D4F84DF00718FD2 /* CWStarRateView.m in Sources */,
+				5B3896D41DB2530300E6F16A /* KDSetFoodLabelViewModel.m in Sources */,
 				5B1B0C681D7C634C004F5B39 /* KDEvalueTableCell.m in Sources */,
 				5B9DCF6D1D48F1E900DD409A /* KDShopCellTableViewCell.m in Sources */,
+				5BC8E5F41DBCB38B007A4DE0 /* KDCheckView.m in Sources */,
 				5B66AC9D1D152E060021FD5F /* KDEnvironmentManager.m in Sources */,
 				5B9747001D50D0BB000EEF8E /* KDMainPageModel.m in Sources */,
+				5BB2A50E1DB20EA8009C32CD /* KDCheckViewCell.m in Sources */,
+				5BE3C0BD1D981C9100BCFB2A /* KDErrorPageView.m in Sources */,
 				5BB032011D786C3B00813085 /* KDHandleListTableCell.m in Sources */,
 				5BA25E781D6B407A00885343 /* KDChangePhoneNumberViewController.m in Sources */,
 				5B3F53ED1D0AF4F3004DB523 /* main.m in Sources */,
+				5BE2B3B31D8533AB00D848CA /* KDShopInfoViewController.m in Sources */,
 				5B1B0C751D7DB1BB004F5B39 /* KDFoodEvalueViewController.m in Sources */,
 				5BADDD461D7F0F9D0012A105 /* KDEvalueFilterCollectionCell.m in Sources */,
+				5BE2B3BB1D8551B900D848CA /* KDCommonTextEditViewController.m in Sources */,
 				5BD91D251D0C0578006F64BE /* KDNetworkReachableManager.m in Sources */,
 				5B31BADE1D54C86A004B3E45 /* KDMallViewController.m in Sources */,
 				5B84D8C41D805D32000F90E2 /* KDSaleActivityViewModel.m in Sources */,
+				5B8449B61DABCD0A00B3FD90 /* KDFoodCategoryModel.m in Sources */,
 				5BACC5451D747F0E004B7D0A /* KDManageViewModel.m in Sources */,
 				5B84D89B1D8055A5000F90E2 /* KDSaleActivityViewController.m in Sources */,
-				5BCA7BEF1D6DE4C20090EA0F /* KDEditFoodViewController.m in Sources */,
+				5BCA7BEF1D6DE4C20090EA0F /* KDEditFoodItemViewController.m in Sources */,
 				5BA25E7C1D6B42F800885343 /* KDChangePasswordViewModel.m in Sources */,
 				5B857CF81D5381D0006DA08A /* NSString+Tools.m in Sources */,
 				5BACC55D1D75CF75004B7D0A /* KDScrollView.m in Sources */,
@@ -1561,6 +1822,7 @@
 				5B1B0C621D7C62A2004F5B39 /* KDSellerReplyView.m in Sources */,
 				5BCAA9471D4DF851006665D0 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				5B91B02D1D4504AB0064562D /* KDActionCollectionViewCell.m in Sources */,
+				5BE3C0B21D97F69D00BCFB2A /* KDSearchViewController.m in Sources */,
 				5BB032091D7C0E4700813085 /* KDHandleOrderDetailView.m in Sources */,
 				5BACC5551D75CCE0004B7D0A /* KDLinkageTableVIew.m in Sources */,
 				5B1B0C6E1D7C69C6004F5B39 /* KDBaseReplyModel.m in Sources */,

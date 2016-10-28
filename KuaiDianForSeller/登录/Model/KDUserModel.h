@@ -10,11 +10,31 @@
 
 @interface KDUserModel : KDBaseModel
 
+/*
+ createtime = 1470842686000;
+ lastip = "115.198.96.199";
+ money = 1;
+ password = f4abbeab1c23675cd1563e97d257c95c;
+ phone = 13502051792;
+ salt = 3a66efc0cc0d5daec42fd7d33f468016;
+ sellerid = 13;
+ sellername = test;
+ storeid = 1;
+ updatetime = 1474983384000;
+ valid = 1;
+ */
+
 //用户名
 @property(nonatomic,copy)NSString *name;
 
 //id
 @property(nonatomic,copy)NSString *identifier;
+
+//storeid
+@property(nonatomic,copy)NSString *shopID;
+
+//ip
+@property(nonatomic,copy)NSString *lastIP;
 
 //salt ????????
 @property(nonatomic,copy)NSString *salt;

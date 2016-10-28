@@ -117,7 +117,6 @@ static NSString *kCollectionViewCellIdentifier = @"MainPageCollectionViewCell";
             [ws.mainViewModel configureTableViewCell:cell indexPath:indexPath];
         }
     }];
-    DDLogInfo(@"height:%.0f",height);
     return height;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

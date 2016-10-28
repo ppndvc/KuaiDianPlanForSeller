@@ -37,6 +37,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
     self.view.backgroundColor = APP_BG_COLOR;
+    [self setNaviBarItemWithType:KDNavigationNoBackAction];
     
 //    self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight;
 //    self.view.autoresizesSubviews = YES;
@@ -80,7 +81,11 @@
 -(void)setNaviBarItemWithType:(KDNavigationBackType)type
 {
     _backType = type;
-    if (type != KDNavigationNoBackAction)
+    if (type == KDNavigationNoBackAction)
+    {
+        self.navigationItem.leftBarButtonItem = nil;
+    }
+    else
     {
         _leftBarButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, BACK_BUTTON_WIDTH, BACK_BUTTON_HEIGHT)];
         
@@ -138,6 +143,19 @@
         });
     }
 }
+-(void)showHUDWithStatus:(NSString *)status
+{
+    if ([NSThread isMainThread])
+    {
+        [SVProgressHUD showWithStatus:status];
+    }
+    else
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD showWithStatus:status];
+        });
+    }
+}
 -(void)hideHUD
 {
     if ([NSThread isMainThread])
@@ -156,21 +174,68 @@
 {
     if ([NSThread isMainThread])
     {
-        [SVProgressHUD showErrorWithStatus:info];
+        [SVProgressHUD showInfoWithStatus:info];
     }
     else
     {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [SVProgressHUD showErrorWithStatus:info];
+            [SVProgressHUD showInfoWithStatus:info];
         });
     }
 }
-
+-(void)showSuccessHUDWithStatus:(NSString *)status
+{
+    if ([NSThread isMainThread])
+    {
+        [SVProgressHUD showSuccessWithStatus:status];
+    }
+    else
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD showSuccessWithStatus:status];
+        });
+    }
+}
+-(void)showErrorHUDWithStatus:(NSString *)status
+{
+    if ([NSThread isMainThread])
+    {
+        [SVProgressHUD showErrorWithStatus:status];
+    }
+    else
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD showErrorWithStatus:status];
+        });
+    }
+}
 -(void)setVCParams:(NSDictionary *)params
 {
-    if (params && [params isKindOfClass:[NSDictionary class]])
+    if (VALIDATE_DICTIONARY(params))
     {
         _parameters = [[NSDictionary alloc] initWithDictionary:params];
+    }
+}
+
+-(void)setVCDisappearBlock:(KDRouterVCDisappearBlock)block
+{
+    if (block)
+    {
+        _vcDisappearBlock = block;
+    }
+}
+-(void)showErrorPageWithCompleteBlock:(KDNetworkErrorPageTapBlock)tapBlock
+{
+    _errorPage = nil;
+    
+    _errorPage = [KDErrorPageView errorPageWithFrame:self.view.bounds tapBlock:tapBlock];
+    [self.view addSubview:_errorPage];
+}
+-(void)hideErrorPage
+{
+    if (_errorPage)
+    {
+        [_errorPage hide];
     }
 }
 - (void)dealloc

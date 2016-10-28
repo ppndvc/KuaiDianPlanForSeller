@@ -10,6 +10,10 @@
 
 int const ddLogLevel = LOG_LEVEL_VERBOSE;
 
+NSString *const kNeedUserLoginNotification = @"kNeedUserLoginNotification";
+
+NSString *const kUserLogoutNotification = @"kUserLogoutNotification";
+
 NSString *const kSystemCacheName = @"kSystemCacheName";
 
 NSString *const kUserCacheName = @"kUserCacheName";
@@ -23,3 +27,7 @@ NSString *const kCommonCacheInMemoryName = @"kCommonCacheInMemoryName";
 NSString *const kOrderTableViewCell = @"kOrderTableViewCell";
 
 NSString *const kOrderDetailTableViewCell = @"kOrderDetailTableViewCell";
+
+NSString *const kHandleListTableCell = @"kHandleListTableCell";
+
+NSString *const kCheckViewCell = @"kCheckViewCell";

@@ -15,7 +15,7 @@
 #import "KDUserManager.h"
 #import "KDSettingsViewController.h"
 #import "KDUnhandleOrderViewController.h"
-#import "KDEditFoodViewController.h"
+#import "KDEditFoodItemViewController.h"
 #import "KDManageViewController.h"
 #import "KDHandleListViewController.h"
 #import "KDTabBarController.h"
@@ -35,6 +35,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+//    [[KDUserManager sharedInstance] logout];
     //设置主题颜色
     [KDAppearance setupAppearance];
     
@@ -47,6 +48,8 @@
     [self.window makeKeyAndVisible];
     
     [self initTabBarController];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showLoginVCByNotification) name:kNeedUserLoginNotification object:nil];
     
     // Override point for customization after application launch.
     return YES;
@@ -77,18 +80,7 @@
 {
     return self.tabBarController;
 }
--(UINavigationController *)loginVC
-{
-    if (!_loginVC)
-    {
-        WS(ws);
-        KDLoginViewController *vc = [[KDLoginViewController alloc] init];
-        _loginVC = [[UINavigationController alloc] initWithRootViewController:vc];
-        [_loginVC.navigationBar setBarTintColor:NAVIBAR_BG_COLOR];
-    }
-    
-    return _loginVC;
-}
+
 - (void)initTabBarController
 {
     if (!_tabBarController)
@@ -140,10 +132,19 @@
         [_tabBarController setSelectedViewController:orderPageNavi];
         [self.window setRootViewController:_tabBarController];
         
-//        if (![KDUserManager isUserLogin])
+        if (![KDUserManager isUserLogin])
         {
-            [self.window.rootViewController presentViewController:self.loginVC animated:NO completion:nil];
+//            [self showLoginVCWithAnimated:NO];
         }
     }
+}
+
+-(void)showLoginVCByNotification
+{
+    [self showLoginVCWithAnimated:YES];
+}
+-(void)showLoginVCWithAnimated:(BOOL)animated
+{
+    [[KDRouterManger sharedManager] presentVCWithKey:@"LoginVC" parentVC:self.window.rootViewController hasNavigator:YES animate:animated];
 }
 @end

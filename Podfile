@@ -6,10 +6,12 @@ pod 'YYWebImage'
 pod 'CocoaLumberjack'
 pod 'MJPopupViewController'
 pod 'SVProgressHUD'
-pod 'Routable','~> 0.1.1'
 pod 'FDFullscreenPopGesture','1.1'
 pod 'IFTTTLaunchImage'
 pod 'Reachability'
 pod 'MGSwipeTableCell'
 pod "JMActionSheetDescription"
+pod 'MJRefresh'
+pod 'JCAlertView'
+pod 'KTCenterFlowLayout'
 end

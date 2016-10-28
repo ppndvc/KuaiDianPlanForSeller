@@ -255,6 +255,21 @@
         }
     }
     
+    NSString *sellerID = [[[KDUserManager sharedInstance] getUserInfo] identifier];
+    NSString *shopID = [[[KDUserManager sharedInstance] getUserInfo] shopID];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithDictionary:kdRequest.parameters];
+    
+    if (VALIDATE_STRING(sellerID))
+    {
+        //如果本地有id，就加上
+        [params setObject:sellerID forKey:REQUEST_KEY_SELLER_ID];
+    }
+    
+    if (VALIDATE_STRING(shopID))
+    {
+        [params setObject:shopID forKey:REQUEST_KEY_SHOP_ID];
+    }
+    
     NSParameterAssert(requestURL);
     
     //生成NSURLRequest
@@ -263,14 +278,14 @@
         case KDDefaultRequest:
         case KDDownloadRequest:
         {
-            request = [_requestSerializer requestWithMethod:[self _formatMethodString:kdRequest.requestMethod] URLString:requestURL parameters:kdRequest.parameters error:nil];
+            request = [_requestSerializer requestWithMethod:[self _formatMethodString:kdRequest.requestMethod] URLString:requestURL parameters:params error:nil];
         }
             break;
         case KDUploadRequest:
         {
             if (kdRequest.constructBodyBlock)
             {
-                request = [_requestSerializer multipartFormRequestWithMethod:[self _formatMethodString:kdRequest.requestMethod] URLString:requestURL parameters:kdRequest.parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+                request = [_requestSerializer multipartFormRequestWithMethod:[self _formatMethodString:kdRequest.requestMethod] URLString:requestURL parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
                     
                     kdRequest.constructBodyBlock(formData);
                     
@@ -280,7 +295,7 @@
             {
                 if (kdRequest.attachment)
                 {
-                    request = [_requestSerializer multipartFormRequestWithMethod:[self _formatMethodString:kdRequest.requestMethod] URLString:requestURL parameters:kdRequest.parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+                    request = [_requestSerializer multipartFormRequestWithMethod:[self _formatMethodString:kdRequest.requestMethod] URLString:requestURL parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
                        
                         [formData appendPartWithFileData:kdRequest.attachment name:@"file" fileName:@"file" mimeType:@"application/file"];
                    

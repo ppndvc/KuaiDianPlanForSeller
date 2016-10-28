@@ -107,4 +107,68 @@
     return nil;
 }
 
+-(void)startRequestUserInfoWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock
+{
+    if (beginBlock)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            beginBlock();
+        });
+    }
+    
+    [KDRequestAPI sendGetUserInfoRequestWithCompleteBlock:^(id responseObject, NSError *error) {
+        if (error)
+        {
+            DDLogInfo(@"获取用户信息请求失败：%@",error.localizedDescription);
+
+            if (completeBlock)
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completeBlock(NO,nil,error);
+                });
+            }
+        }
+        else
+        {
+            NSDictionary *dict = [responseObject objectForKey:RESPONSE_PAYLOAD];
+            
+            if (VALIDATE_DICTIONARY(dict))
+            {
+                KDUserModel *model = [KDUserModel yy_modelWithDictionary:dict];
+                
+                if (VALIDATE_MODEL(model, @"KDUserModel"))
+                {
+                    [[KDUserManager sharedInstance] updateUserInfo:model];
+                    
+                    if (completeBlock)
+                    {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            completeBlock(YES,nil,nil);
+                        });
+                    }
+                }
+                else
+                {
+                    if (completeBlock)
+                    {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            completeBlock(NO,nil,nil);
+                        });
+                    }
+                    
+                }
+            }
+            else
+            {
+                if (completeBlock)
+                {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        completeBlock(NO,nil,nil);
+                    });
+                }
+                
+            }
+        }
+    }];
+}
 @end

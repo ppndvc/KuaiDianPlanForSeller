@@ -46,14 +46,45 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
-    [self setupSubViews];
+    [self setupUI];
 }
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    if ([KDUserManager isUserLogin])
+    {
+        [self startRequestShopInfo];
+    }
+}
+-(void)startRequestShopInfo
+{
+    WS(ws);
+    KDUserModel *model = [_viewModel getUserInfoModel];
+    
+    [_viewModel startRequestUserInfoWithBeginBlock:^{
+        if (!model)
+        {
+            [ws showHUD];
+        }
+    } completeBlock:^(BOOL isSuccess, id params, NSError *error) {
+        
+        if (isSuccess)
+        {
+            [ws updateHeaderView];
+            [ws hideHUD];
+        }
+        else
+        {
+            if (!model)
+            {
+                [ws showErrorHUDWithStatus:[error localizedDescription]];
+            }
+        }
+    }];
+    
     [self updateHeaderView];
 }
--(void)setupSubViews
+-(void)setupUI
 {
     [_tableView setTableHeaderView:self.tableViewHeaderView];
 }
@@ -139,6 +170,12 @@
     _payView = [[KDPayBrandView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/4.0, _nameLabel.frame.origin.y + _nameLabel.frame.size.height + VERTICAL_PADDING, SCREEN_WIDTH/2.0, PAYVIEW_HEIGHT)];
     [headerView addSubview:_payView];
     return headerView;
+}
+-(void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    _payView.frame = CGRectMake(SCREEN_WIDTH/4.0, _nameLabel.frame.origin.y + _nameLabel.frame.size.height + VERTICAL_PADDING, SCREEN_WIDTH/2.0, PAYVIEW_HEIGHT);
 }
 -(void)updateHeaderView
 {

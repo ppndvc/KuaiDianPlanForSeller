@@ -8,6 +8,7 @@
 
 #import "KDHandleListTableCell.h"
 #import "KDOrderModel.h"
+#import "UIButton+BackgroundColor.h"
 
 @interface KDHandleListTableCell()
 
@@ -20,7 +21,7 @@
 - (void)awakeFromNib
 {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    // Initialization code
+    [_actionButton setBackgroundColor:SEPERATOR_COLOR forState:UIControlStateDisabled];
 }
 
 //配置cell
@@ -32,7 +33,7 @@
         self.nameLabel.text = model.orderDescriptionString;
         self.codeLabel.text = model.orderID;
         
-        if (model.orderStatus < KDOrderStatusOfSuccessButNoEvaluated)
+        if (model.orderStatus < KDOrderStatusOfSuccess)
         {
             self.actionButton.enabled = YES;
         }
@@ -45,5 +46,9 @@
 
 - (IBAction)onTapActionButton:(id)sender
 {
+    if (self.cellDelegate && [self.cellDelegate respondsToSelector:@selector(onTapTableCell:model:)])
+    {
+        [self.cellDelegate onTapTableCell:self model:_model];
+    }
 }
 @end

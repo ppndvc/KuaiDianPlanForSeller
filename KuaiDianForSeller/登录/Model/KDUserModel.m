@@ -63,6 +63,8 @@
              @"money" : @"money",
              @"password" : @"password",
              @"telephone" : @"phone",
+             @"shopID" : @"storeid",
+             @"lastIP" : @"lastip",
              @"salt" : @"salt",
              @"identifier" : @"sellerid",
              @"updateTime" : @"updatetime",

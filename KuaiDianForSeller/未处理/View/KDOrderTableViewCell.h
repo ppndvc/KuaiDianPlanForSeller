@@ -6,10 +6,11 @@
 //  Copyright © 2016年 zy. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "KDBaseTableViewCell.h"
 #import "KDOrderModel.h"
 
-@interface KDOrderTableViewCell : UITableViewCell
+
+@interface KDOrderTableViewCell : KDBaseTableViewCell
 
 //次序
 @property (weak, nonatomic) IBOutlet UILabel *countLabel;

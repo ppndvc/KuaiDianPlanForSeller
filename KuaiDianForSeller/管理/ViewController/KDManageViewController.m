@@ -76,7 +76,7 @@ static NSString *kManageCollectionCellIdentifier = @"kManageCollectionCell";
     {
         case 0:
         {
-            [[KDRouterManger sharedManager] pushVCWithKey:@"KDEditFoodVC" parentVC:self];
+            [[KDRouterManger sharedManager] pushVCWithKey:@"KDFoodManageVC" parentVC:self];
         }
             break;
         case 1:
@@ -91,7 +91,7 @@ static NSString *kManageCollectionCellIdentifier = @"kManageCollectionCell";
             break;
         case 3:
         {
-            
+            [[KDRouterManger sharedManager] pushVCWithKey:@"KDShopInfoVC" parentVC:self];
         }
             break;
         default:

@@ -86,7 +86,6 @@ static NSString *kEvauleCollectionViewCellIdentifier = @"kEvauleCollectionViewCe
             [ws.viewModel configureTableViewCell:cell indexPath:indexPath];
         }
     }];
-    DDLogInfo(@"height:%.0f",height);
     return height;
 }
 -(UICollectionView *)headerView

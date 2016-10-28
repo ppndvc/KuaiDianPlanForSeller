@@ -14,6 +14,8 @@
 #define LOGIN_NAME @"sellername"
 #define LOGIN_PWD @"password"
 
+#define IF_REMEMBER_LOGIN @"1"
+
 #define BUTTON_WIDTH 80
 
 @interface KDLoginViewController ()
@@ -31,6 +33,8 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = LOGIN_TITLE;
+    [self setNaviBarItemWithType:KDNavigationNoBackAction];
+    
     _viewModel = [[KDLoginViewModel alloc] init];
     [self setupUI];
     
@@ -38,11 +42,11 @@
 -(void)setupUI
 {
     UIButton *rightBTN = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, BUTTON_WIDTH, TEXT_FONT_BIG_SIZE)];
-    rightBTN.titleLabel.font = [UIFont systemFontOfSize:TEXT_FONT_MEDIUM_SIZE];
+    rightBTN.titleLabel.font = [UIFont systemFontOfSize:TEXT_FONT_BIG_SIZE];
     [rightBTN setTitle:FORGOT_PASSWORD forState:UIControlStateNormal];
     [rightBTN addTarget:self action:@selector(onTapRightBTN) forControlEvents:UIControlEventTouchUpInside];
     rightBTN.backgroundColor = [UIColor clearColor];
-
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightBTN];
 }
 
 //设置结束回调
@@ -70,85 +74,36 @@
 
     }];
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
--(void)dealloc
-{
-    DDLogInfo(@"- KDLoginViewController dealloc");
-}
+
 - (IBAction)onTapLoginButton:(id)sender
 {
     NSString *name = @"test";// _userNameTextField.text;
     NSString *pwd = @"888888";//_passwordTextField.text;
-    
-    
-//    [KDRequestAPI sendGetUserInfoRequestWithCompleteBlock:^(id responseObject, NSError *error) {
-//        if (error)
-//        {
-//            DDLogInfo(@"登陆请求失败：%@",error.localizedDescription);
-//        }
-//        else
-//        {
-////            [ws dismissVC];
-//        }
-//    }];
-    
-//    [self request];
-//
-    if (VALIDATE_STRING(name) && VALIDATE_STRING(pwd) && _viewModel)
+
+    if (VALIDATE_STRING(name) && VALIDATE_STRING(pwd))
     {
         WS(ws);
         
-        [_viewModel startLoginWithParams:@{LOGIN_NAME:name,LOGIN_PWD:pwd} beginBlock:^{
+        [_viewModel startLoginWithParams:@{LOGIN_NAME:name,LOGIN_PWD:pwd,REQUEST_KEY_REMEMBER_ME:IF_REMEMBER_LOGIN} beginBlock:^{
             [ws showHUD];
         } completeBlock:^(BOOL isSuccess, id params, NSError *error) {
-            [ws hideHUD];
-            ws.disappearBlock(nil,nil);
-//            if (isSuccess)
-//            {
-//                [ws hideHUD];
-////                [ws dismissVC];
-//                [ws request];
-//            }
-//            else
-//            {
-//                [ws showHUDWithInfo:[error localizedDescription]];
-//                
-//            }
+            if (isSuccess)
+            {
+                [ws hideHUD];
+                [ws dismissVC];
+            }
+            else
+            {
+                [ws showErrorHUDWithStatus:[error localizedDescription]];
+            }
         }];
     }
+    else
+    {
+        [self showHUDWithInfo:@"请输入正确的用户名或密码"];
+    }
 }
--(void)request
-{
-    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-    [dict setObject:@"0" forKey:@"states[0]"];
-    [dict setObject:@"13" forKey:@"sellerid"];
-    NSString *ft = [NSString getTimeString:1471104000 formater:YYYY_MM_DD_HH_MM_SS];
-    NSString *tt = [NSString getTimeString:1471190399 formater:YYYY_MM_DD_HH_MM_SS];
-    [dict setObject:ft forKey:@"fromtime"];
-    [dict setObject:tt forKey:@"totime"];
-    [dict setObject:@"0" forKey:@"pagination.page"];
-    [dict setObject:@"10" forKey:@"pagination.rows"];
-    
-    WS(ws);
-    [KDRequestAPI sendGetOrderRequestWithParam:dict completeBlock:^(id responseObject, NSError *error) {
-        if (error)
-        {
-            DDLogInfo(@"登陆请求失败：%@",error.localizedDescription);
-        }
-        else
-        {
-            NSArray *array = [NSArray yy_modelArrayWithClass:[KDOrderModel class] json:[responseObject objectForKey:RESPONSE_PAYLOAD]];
-            DDLogInfo(@"%@",array);
-            [[KDCacheManager commonCache] setObject:array forKey:ORDER_ARRAY_CACHE_KEY];
-//            [ws logout];
-            [ws dismissVC];
-        }
-    }];
-    
-}
+
 -(void)logout
 {
     [KDRequestAPI sendLogoutRequestWithCompleteBlock:^(id responseObject, NSError *error) {
@@ -169,4 +124,13 @@
     [[KDRouterManger sharedManager] pushVCWithKey:@"ForgotPasswordVC" parentVC:self];
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)dealloc
+{
+    DDLogInfo(@"- KDLoginViewController dealloc");
+}
 @end

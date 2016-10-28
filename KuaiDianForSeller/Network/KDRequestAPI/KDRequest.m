@@ -69,7 +69,7 @@
                                        NSLocalizedDescriptionKey:message,
                                        NSLocalizedFailureReasonErrorKey: errotReason,
                                        };
-            finalError = [NSError errorWithDomain:KDErrorDomain code:kCFURLErrorCancelled userInfo:userInfo];
+            finalError = [NSError errorWithDomain:KDErrorDomain code:stateCode userInfo:userInfo];
         }
         //其他
         else
@@ -87,7 +87,7 @@
         {
             object = [[NSMutableDictionary alloc] initWithDictionary:responseData];
         }
-        else
+        else if ([responseData isKindOfClass:[NSData class]])
         {
             //iOS6 下，如果[NSJSONSerialization JSONObjectWithData： 传入 nil或者null 会崩溃
             if (responseData && ![responseData isEqual:[NSNull null]])
@@ -132,7 +132,22 @@
                     
                     finalError = nil;
                 }
-                else //if ([status isEqualToString:ERROR_STATUS])
+                else if ([status isEqualToString:LOGOUT_STATUS])
+                {
+                    DDLogInfo(@"未登录状态，需要登陆");
+                    
+                    NSString *message = @"请重新登录";
+                    NSString *errotReason = @"请重新登录";
+                    NSDictionary *userInfo = @{
+                                               NSLocalizedDescriptionKey:message,
+                                               NSLocalizedFailureReasonErrorKey: errotReason,
+                                               };
+                    finalError = [NSError errorWithDomain:KDErrorDomain code:[status integerValue] userInfo:userInfo];
+                    finalResponseDict = nil;
+                    [[KDUserManager sharedInstance] logout];
+                    [[NSNotificationCenter defaultCenter]postNotificationName:kNeedUserLoginNotification object:nil];
+                }
+                else
                 {
                     NSString *message = [NSString stringWithFormat:@"%@(%@)",[object objectForKey:RESPONSE_MESSAGE],status];
                     NSString *errotReason = @"服务端返回错误";
@@ -140,7 +155,7 @@
                                                NSLocalizedDescriptionKey:message,
                                                NSLocalizedFailureReasonErrorKey: errotReason,
                                                };
-                    finalError = [NSError errorWithDomain:KDErrorDomain code:kCFURLErrorCancelled userInfo:userInfo];
+                    finalError = [NSError errorWithDomain:KDErrorDomain code:[status integerValue] userInfo:userInfo];
                     finalResponseDict = nil;
                 }
             }
@@ -152,7 +167,7 @@
                                            NSLocalizedDescriptionKey:message,
                                            NSLocalizedFailureReasonErrorKey: errotReason,
                                            };
-                finalError = [NSError errorWithDomain:KDErrorDomain code:kCFURLErrorCancelled userInfo:userInfo];
+                finalError = [NSError errorWithDomain:KDErrorDomain code:kCFURLErrorUnknown userInfo:userInfo];
                 finalResponseDict = nil;
             }
         }
@@ -164,7 +179,7 @@
                                        NSLocalizedDescriptionKey:message,
                                        NSLocalizedFailureReasonErrorKey: errotReason,
                                        };
-            finalError = [NSError errorWithDomain:KDErrorDomain code:kCFURLErrorCancelled userInfo:userInfo];
+            finalError = [NSError errorWithDomain:KDErrorDomain code:kCFURLErrorUnknown userInfo:userInfo];
             finalResponseDict = nil;
         }
     }

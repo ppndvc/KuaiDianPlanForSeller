@@ -11,6 +11,8 @@
 #define PADDING 5
 #define BASE_TAG 100
 
+#define ACTIVITY_PREFIX @"activity"
+
 @interface KDActivityIconView ()
 
 @property(nonatomic,strong)NSMutableArray *iconArray;
@@ -52,20 +54,30 @@
 
 -(void)updateActivities:(KDActivityType)type
 {
-    KDActivityType baseType = KDActivityTypeOfNew;
     NSInteger index = 0;
     
-    for (; index < _iconCount; index++)
+    if (type != KDActivityTypeOfNone)
     {
-        if (type & baseType)
+        KDActivityType baseType = KDActivityTypeOfNew;
+
+        for (; index < _iconCount; index++)
         {
-            UIImageView *imageView = [self viewWithTag:BASE_TAG + index];
-            imageView.image = [UIImage imageNamed:@""];
+            NSInteger showCount = 0;
+            
+            for (; index < _iconCount; index++)
+            {
+                if (type & baseType)
+                {
+                    UIImageView *imageView = [self viewWithTag:BASE_TAG + showCount];
+                    imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@%d",ACTIVITY_PREFIX,(int)baseType]];
+                    showCount ++;
+                }
+                
+                baseType = baseType << 1;
+            }
         }
-        
-        baseType = baseType << 1;
     }
-    
+
     //没有的赋值为nil
     for (; index < _iconCount; index++)
     {

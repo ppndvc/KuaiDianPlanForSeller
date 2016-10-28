@@ -10,5 +10,10 @@
 
 @interface KDTools : NSObject
 
+//根据颜色生成图片
++ (UIImage *)imageWithColor:(UIColor *)color;
+
+//压缩图片尺寸
++ (UIImage *)compressWithSourceImage:(UIImage *)sourceImage targetWidth:(CGFloat)defineWidth;
 
 @end

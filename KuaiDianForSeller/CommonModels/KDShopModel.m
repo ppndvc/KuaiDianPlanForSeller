@@ -15,4 +15,21 @@
 - (NSUInteger)hash { return [self yy_modelHash]; }
 - (BOOL)isEqual:(id)object { return [self yy_modelIsEqual:object]; }
 
++ (NSDictionary *)modelCustomPropertyMapper
+{
+    return @{@"name" : @"name",
+             @"shopID" : @"id",
+             @"belongSchool" : @"school",
+             @"belongRestaurant" : @"restaurant",
+             @"imageURL" : @"logourl",
+             @"openTime" : @"runtime",
+             @"telephone" : @"ordernumber",
+             @"address" : @"addressdetial",
+             @"notice" : @"notice",
+             @"shopStatus" : @"state",
+             @"closeTime" : @"stoptime",
+             @"salesMoney" : @"todaymoney",
+             @"payStyle" : @"online"};
+}
+
 @end

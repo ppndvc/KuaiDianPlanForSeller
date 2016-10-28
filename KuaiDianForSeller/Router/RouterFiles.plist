@@ -44,10 +44,10 @@
 		<key>Description</key>
 		<string>我的余额页面</string>
 	</dict>
-	<key>KDEditFoodVC</key>
+	<key>KDEditFoodItemVC</key>
 	<dict>
 		<key>ClassName</key>
-		<string>KDEditFoodViewController</string>
+		<string>KDEditFoodItemViewController</string>
 		<key>Description</key>
 		<string>编辑菜品页面</string>
 	</dict>
@@ -65,35 +65,140 @@
 		<key>Description</key>
 		<string>营销活动页面</string>
 	</dict>
-	<key>LoginVC - 9</key>
+	<key>KDShopInfoVC</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDShopInfoViewController</string>
+		<key>Description</key>
+		<string>登陆页面</string>
+	</dict>
+	<key>KDCommonTextEditVC</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDCommonTextEditViewController</string>
+		<key>Description</key>
+		<string>通用文本编辑页面</string>
+	</dict>
+	<key>KDFoodManageVC</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDFoodManageViewController</string>
+		<key>Description</key>
+		<string>菜品编辑页面</string>
+	</dict>
+	<key>KDSearchVC</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDSearchViewController</string>
+		<key>Description</key>
+		<string>搜索页面</string>
+	</dict>
+	<key>KDSetFoodLabelVC</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDSetFoodLabelViewController</string>
+		<key>Description</key>
+		<string>设置食品标签页面</string>
+	</dict>
+	<key>KDAvatarVC</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDAvatarViewController</string>
+		<key>Description</key>
+		<string>设置头像页面</string>
+	</dict>
+	<key>KDBusinessStatisticsVC</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDBusinessStatisticsViewController</string>
+		<key>Description</key>
+		<string>营业额页面</string>
+	</dict>
+	<key>LoginVC - 13 - 4</key>
 	<dict>
 		<key>ClassName</key>
 		<string>KDLoginViewController</string>
 		<key>Description</key>
 		<string>登陆页面</string>
 	</dict>
-	<key>LoginVC - 10</key>
+	<key>LoginVC - 13 - 5</key>
 	<dict>
 		<key>ClassName</key>
 		<string>KDLoginViewController</string>
 		<key>Description</key>
 		<string>登陆页面</string>
 	</dict>
-	<key>LoginVC - 11</key>
+	<key>LoginVC - 13 - 6</key>
 	<dict>
 		<key>ClassName</key>
 		<string>KDLoginViewController</string>
 		<key>Description</key>
 		<string>登陆页面</string>
 	</dict>
-	<key>LoginVC - 12</key>
+	<key>LoginVC - 13 - 7</key>
 	<dict>
 		<key>ClassName</key>
 		<string>KDLoginViewController</string>
 		<key>Description</key>
 		<string>登陆页面</string>
 	</dict>
-	<key>LoginVC - 13</key>
+	<key>LoginVC - 13 - 8</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDLoginViewController</string>
+		<key>Description</key>
+		<string>登陆页面</string>
+	</dict>
+	<key>LoginVC - 13 - 9</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDLoginViewController</string>
+		<key>Description</key>
+		<string>登陆页面</string>
+	</dict>
+	<key>LoginVC - 13 - 10</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDLoginViewController</string>
+		<key>Description</key>
+		<string>登陆页面</string>
+	</dict>
+	<key>LoginVC - 13 - 11</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDLoginViewController</string>
+		<key>Description</key>
+		<string>登陆页面</string>
+	</dict>
+	<key>LoginVC - 13 - 12</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDLoginViewController</string>
+		<key>Description</key>
+		<string>登陆页面</string>
+	</dict>
+	<key>LoginVC - 13 - 13</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDLoginViewController</string>
+		<key>Description</key>
+		<string>登陆页面</string>
+	</dict>
+	<key>LoginVC - 13 - 14</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDLoginViewController</string>
+		<key>Description</key>
+		<string>登陆页面</string>
+	</dict>
+	<key>LoginVC - 13 - 15</key>
+	<dict>
+		<key>ClassName</key>
+		<string>KDLoginViewController</string>
+		<key>Description</key>
+		<string>登陆页面</string>
+	</dict>
+	<key>LoginVC - 13 - 16</key>
 	<dict>
 		<key>ClassName</key>
 		<string>KDLoginViewController</string>

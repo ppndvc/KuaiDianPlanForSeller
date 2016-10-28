@@ -24,11 +24,13 @@ PODS:
     - CocoaLumberjack/Default
   - FDFullscreenPopGesture (1.1)
   - IFTTTLaunchImage (0.4.4)
+  - JCAlertView (1.1.5)
   - JMActionSheetDescription (0.4.9)
+  - KTCenterFlowLayout (1.2)
   - MGSwipeTableCell (1.5.5)
   - MJPopupViewController (0.4)
+  - MJRefresh (3.1.1)
   - Reachability (3.2)
-  - Routable (0.1.1)
   - SVProgressHUD (2.0.3)
   - YYCache (1.0.3)
   - YYImage (1.0.2):
@@ -44,11 +46,13 @@ DEPENDENCIES:
   - CocoaLumberjack
   - FDFullscreenPopGesture (= 1.1)
   - IFTTTLaunchImage
+  - JCAlertView
   - JMActionSheetDescription
+  - KTCenterFlowLayout
   - MGSwipeTableCell
   - MJPopupViewController
+  - MJRefresh
   - Reachability
-  - Routable (~> 0.1.1)
   - SVProgressHUD
   - YYModel
   - YYWebImage
@@ -58,17 +62,19 @@ SPEC CHECKSUMS:
   CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   IFTTTLaunchImage: ab84d453e2c51b3c2aa83daad99cf45f27688c96
+  JCAlertView: c65a7b298b8b497b3db783d82f719b88f4914869
   JMActionSheetDescription: 99ba8ee6b88c98ecb95d2c18efb3e9e61c002656
+  KTCenterFlowLayout: 4dcbc3449df83a101ef5e8cf48d82faa208a3b93
   MGSwipeTableCell: bafeb5f351124544c9364ecbdf24c7b06a37d340
   MJPopupViewController: e9ad553a3145eb8126ba2748e872ae7fb25cc605
+  MJRefresh: 70a47c5543b567cdaf70ead5a6e99ce820652eb9
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  Routable: 42731c7757b9b7ad32dd84d988b3d5428b966dfd
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   YYCache: 282f35b5b0990833d0b7a06d864a87141a021da2
   YYImage: 2cc79ed49b9549b71c6715cefe7b0f5ab3d33abf
   YYModel: 63142c2f07c5c8c9d1c261689cf3827ea6ab2886
   YYWebImage: 8da75a611fd0d2e0f58a273f9ca0bc731614cb0d
 
-PODFILE CHECKSUM: 3c79983ebf2c306fdcb208f98d913e0bae94f95c
+PODFILE CHECKSUM: afc133cbfb3681e1bd1a62354e79ebb6edcf06fc
 
 COCOAPODS: 1.0.1

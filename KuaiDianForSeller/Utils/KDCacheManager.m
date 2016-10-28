@@ -45,11 +45,11 @@
     {
         if([[KDEnvironmentManager sharedInstance] getEnvironmentType] == KDEnvironmentTypeOfTest)
         {
-            _systemCacheInDisk = [YYCache cacheWithName:kSystemCacheNameForTest];
+            _systemCacheInDisk = [YYCache cacheWithName:[NSString stringWithFormat:@"%@_%@",_userID,kSystemCacheNameForTest]];
         }
         else
         {
-            _systemCacheInDisk = [YYCache cacheWithName:kSystemCacheName];
+            _systemCacheInDisk = [YYCache cacheWithName:[NSString stringWithFormat:@"%@_%@",_userID,kSystemCacheName]];
         }
     }
     
@@ -61,12 +61,12 @@
     {
         if([[KDEnvironmentManager sharedInstance] getEnvironmentType] == KDEnvironmentTypeOfTest)
         {
-            NSString *cacheName = [NSString stringWithFormat:@"%@_%@",_userID,kUserCacheNameForTest];
+            NSString *cacheName = kUserCacheNameForTest;//[NSString stringWithFormat:@"%@_%@",_userID,kUserCacheNameForTest];
             _userCacheInDisk = [YYCache cacheWithName:cacheName];
         }
         else
         {
-            NSString *cacheName = [NSString stringWithFormat:@"%@_%@",_userID,kUserCacheName];
+            NSString *cacheName = kUserCacheName;//[NSString stringWithFormat:@"%@_%@",_userID,kUserCacheName];
             _userCacheInDisk = [YYCache cacheWithName:cacheName];
         }
     }

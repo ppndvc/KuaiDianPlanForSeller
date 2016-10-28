@@ -30,11 +30,11 @@
 
 
 //以模态视图的方式加载视图
--(void)presentVCWithKey:(NSString *__null_unspecified)vcKey parentVC:(UIViewController *__null_unspecified)parentVC;
+-(void)presentVCWithKey:(NSString *__null_unspecified)vcKey parentVC:(UIViewController *__null_unspecified)parentVC hasNavigator:(BOOL)hasNavigator animate:(BOOL)animate;
 
 //以模态视图的方式加载视图，有dismiss回调
--(void)presentVCWithKey:(NSString *__null_unspecified)vcKey parentVC:(UIViewController *__null_unspecified)parentVC params:(id __null_unspecified)params vcDisappearBlock:(KDRouterVCDisappearBlock __null_unspecified)vcDisappearBlock;
+-(void)presentVCWithKey:(NSString *__null_unspecified)vcKey parentVC:(UIViewController *__null_unspecified)parentVC params:(id __null_unspecified)params hasNavigator:(BOOL)hasNavigator vcDisappearBlock:(KDRouterVCDisappearBlock __null_unspecified)vcDisappearBlock;
 
 //以模态视图的方式加载视图，有dismiss回调
--(void)presentVCWithKey:(NSString *__null_unspecified)vcKey parentVC:(UIViewController *__null_unspecified)parentVC params:(id __null_unspecified)params animate:(BOOL)animate vcAppearBlock:(KDRouterVCAppearBlock __null_unspecified)vcAppearBlock vcDisappearBlock:(KDRouterVCDisappearBlock __null_unspecified)vcDisappearBlock;
+-(void)presentVCWithKey:(NSString *__null_unspecified)vcKey parentVC:(UIViewController *__null_unspecified)parentVC params:(id __null_unspecified)params hasNavigator:(BOOL)hasNavigator animate:(BOOL)animate vcAppearBlock:(KDRouterVCAppearBlock __null_unspecified)vcAppearBlock vcDisappearBlock:(KDRouterVCDisappearBlock __null_unspecified)vcDisappearBlock;
 @end

@@ -21,4 +21,5 @@
 @property (strong, nonatomic) KDSellerReplyView *replyView;
 @property (weak, nonatomic) IBOutlet UIView *bottomSeperatorView;
 @property (weak, nonatomic) IBOutlet UIButton *replyButton;
+
 @end

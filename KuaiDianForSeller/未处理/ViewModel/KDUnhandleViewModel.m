@@ -11,60 +11,27 @@
 #import "KDFoodItemModel.h"
 #import "KDOrderTableViewCell.h"
 
+#define UNFINISHED_ORDER_STATE @"0"
+#define COMFIRM_ORDER_STATE @"1"
+#define INIT_POSITION 1
+
 @interface KDUnhandleViewModel()
 
 //数据源
-@property(nonatomic,strong)NSArray *dataSource;
+@property(nonatomic,strong)NSMutableArray *dataSource;
+
+@property(nonatomic,assign)NSInteger lastPosition;
 
 @end
+
 @implementation KDUnhandleViewModel
 -(instancetype)init
 {
     self = [super init];
     if (self)
     {
-        KDOrderModel *model = [KDOrderModel new];
-        model.orderID = @"66";
-        model.orderDescriptionString = @"多放点葱和咸菜。";
-        model.totalPrice = 28.00;
-        model.createTime = 1471786323;
-        model.startTime = 1471786923;
-        model.overTime = 1471789323;
-        model.phoneNumber = @"13888888888";
-        model.pickUpCode = @"123456";
-        model.isPayed = YES;
-        
-        KDFoodItemModel *fm = [KDFoodItemModel new];
-        fm.name = @"蛋炒饭";
-        fm.price = 12.0;
-        fm.quantity = 1;
-        
-        KDFoodItemModel *fmm = [KDFoodItemModel new];
-        fmm.name = @"水煮肥牛";
-        fmm.price = 18.0;
-        fmm.quantity = 1;
-        
-        KDFoodItemModel *ff = [KDFoodItemModel new];
-        ff.name = @"黄焖鸡米饭";
-        ff.price = 18.0;
-        ff.quantity = 1;
-        
-        model.orderDetail = @[fm,fmm,ff];
-        
-        KDOrderModel *tttt = [KDOrderModel new];
-        tttt.orderID = @"66";
-        tttt.orderDescriptionString = @"多放点葱和咸菜sdfad。";
-        tttt.totalPrice = 28.00;
-        tttt.createTime = 1471786323;
-        tttt.startTime = 1471786923;
-        tttt.overTime = 1471789323;
-        tttt.phoneNumber = @"13634765616";
-        tttt.pickUpCode = @"123456";
-        tttt.isPayed = YES;
-        
-        tttt.orderDetail = @[fm,fmm];
-        
-        _dataSource = @[@[model,tttt]];
+        _dataSource = [[NSMutableArray alloc] init];
+        _lastPosition = INIT_POSITION;
     }
     return self;
 }
@@ -83,13 +50,9 @@
 {
     NSInteger rows = 0;
     
-    if (_dataSource && _dataSource.count > section)
+    if (_dataSource && _dataSource.count > 0)
     {
-        NSArray *rowArray = _dataSource[section];
-        if (rowArray && rowArray.count > 0)
-        {
-            rows = rowArray.count;
-        }
+        rows = _dataSource.count;
     }
     return rows;
 }
@@ -98,14 +61,10 @@
 {
     if (cell && [cell isKindOfClass:[KDOrderTableViewCell class]] && indexPath)
     {
-        if (_dataSource && _dataSource.count > indexPath.section)
+        if (_dataSource && _dataSource.count > indexPath.row)
         {
-            NSArray *rowArray = _dataSource[indexPath.section];
-            if (rowArray && rowArray.count > indexPath.row)
-            {
-                KDOrderModel *model = (KDOrderModel *)rowArray[indexPath.row];
-                [((KDOrderTableViewCell *)cell) configureCellWithModel:model];
-            }
+            KDOrderModel *model = (KDOrderModel *)_dataSource[indexPath.row];
+            [((KDOrderTableViewCell *)cell) configureCellWithModel:model];
         }
     }
 }
@@ -114,16 +73,150 @@
 {
     if (indexPath)
     {
-        if (_dataSource && _dataSource.count > indexPath.section)
+        if (_dataSource && _dataSource.count > indexPath.row)
         {
-            NSArray *rowArray = _dataSource[indexPath.section];
-            if (rowArray && rowArray.count > indexPath.row)
-            {
-                return rowArray[indexPath.row];
-            }
+            return _dataSource[indexPath.row];
         }
     }
     
     return nil;
+}
+
+#pragma mark - 网络请求
+
+-(void)refreshTableDataWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock
+{
+    [_dataSource removeAllObjects];
+    _lastPosition = INIT_POSITION;
+    [self startLoadTableDataWithBeginBlock:beginBlock completeBlock:completeBlock];
+}
+
+-(void)startLoadTableDataWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock
+{
+    //如果本地没有数据，就去请求，否则不作处理
+    if (!_dataSource || _dataSource.count <= 0)
+    {
+        [self startLoadTableDataWithPage:_lastPosition rowsPerPage:ROWS_PER_PAGE beginBlock:beginBlock completeBlock:completeBlock];
+    }
+}
+
+-(void)loadmoreTableDataWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock
+{
+    [self startLoadTableDataWithPage:_lastPosition rowsPerPage:ROWS_PER_PAGE beginBlock:beginBlock completeBlock:completeBlock];
+}
+
+-(void)startLoadTableDataWithPage:(NSInteger)page rowsPerPage:(NSInteger)rows beginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock
+{
+    
+    if (beginBlock)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            beginBlock();
+        });
+    }
+    
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    [dict setObject:[NSNumber numberWithInteger:page] forKey:REQUEST_KEY_PAGING_PAGE];
+    [dict setObject:[NSNumber numberWithInteger:rows] forKey:REQUEST_KEY_PAGING_ROWS];
+    [dict setObject:UNFINISHED_ORDER_STATE forKey:REQUEST_KEY_ORDER_STATES(UNFINISHED_ORDER_STATE)];
+    
+    WS(ws);
+    [KDRequestAPI sendGetOrderRequestWithParam:dict completeBlock:^(id responseObject, NSError *error) {
+        if (error)
+        {
+            DDLogInfo(@"获取订单请求失败：%@",error.localizedDescription);
+            
+            if (completeBlock)
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completeBlock(NO,nil,error);
+                });
+            }
+        }
+        else
+        {
+            NSArray *array = [NSArray yy_modelArrayWithClass:[KDOrderModel class] json:[responseObject objectForKey:RESPONSE_PAYLOAD]];
+
+            if (array && [array isKindOfClass:[NSArray class]] && array.count > 0)
+            {
+                [ws.dataSource addObjectsFromArray:array];
+                ws.lastPosition += array.count;
+                
+                if (completeBlock)
+                {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        completeBlock(YES,nil,nil);
+                    });
+                }
+
+            }
+            else
+            {
+                if (completeBlock)
+                {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        completeBlock(YES,nil,nil);
+                    });
+                }
+            }
+            
+        }
+    }];
+}
+
+-(void)confirmOrder:(KDOrderModel *)orderModel beginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock
+{
+    if (orderModel && [orderModel isKindOfClass:[KDOrderModel class]] && VALIDATE_STRING(orderModel.orderID))
+    {
+        if (beginBlock)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                beginBlock();
+            });
+        }
+        
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+        [dict setObject:orderModel.orderID forKey:REQUEST_KEY_ORDER_ID];
+        [dict setObject:COMFIRM_ORDER_STATE forKey:REQUEST_KEY_STATE];
+        
+        [KDRequestAPI sendModifyOrderStatusRequestWithParam:dict completeBlock:^(id responseObject, NSError *error) {
+            if (error)
+            {
+                DDLogInfo(@"修改订单状态失败：%@",error.localizedDescription);
+                
+                if (completeBlock)
+                {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        completeBlock(NO,nil,error);
+                    });
+                }
+            }
+            else
+            {
+                if (completeBlock)
+                {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        completeBlock(YES,nil,nil);
+                    });
+                }
+            }
+        }];
+    }
+    else
+    {
+        if (completeBlock)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completeBlock(NO,nil,nil);
+            });
+        }
+    }
+}
+
+
+-(void)onUserLogout
+{
+    [_dataSource removeAllObjects];
+    _lastPosition = 0;
 }
 @end

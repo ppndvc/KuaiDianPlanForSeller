@@ -7,8 +7,13 @@
 //
 
 #import "MGSwipeTableCell.h"
+#import "KDCellDelegate.h"
+#import "UIButton+BackgroundColor.h"
 
-@interface KDBaseTableViewCell : MGSwipeTableCell
+@interface KDBaseTableViewCell : MGSwipeTableCell <KDCellDelegate>
+
+//代理
+@property(nonatomic,weak)id<KDCellDelegate> cellDelegate;
 
 //配置model
 -(void)configureCellWithModel:(id)model;

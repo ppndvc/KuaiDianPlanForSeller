@@ -149,19 +149,18 @@ static KDRouterManger *sharedInstance;
 }
 
 //以模态视图的方式加载视图
--(void)presentVCWithKey:(NSString *)vcKey parentVC:(UIViewController *)parentVC
+-(void)presentVCWithKey:(NSString *)vcKey parentVC:(UIViewController *)parentVC hasNavigator:(BOOL)hasNavigator animate:(BOOL)animate
 {
-    [self presentVCWithKey:vcKey parentVC:parentVC params:nil  animate:YES vcAppearBlock:nil vcDisappearBlock:nil];
+    [self presentVCWithKey:vcKey parentVC:parentVC params:nil hasNavigator:hasNavigator  animate:animate vcAppearBlock:nil vcDisappearBlock:nil];
 }
 
 //以模态视图的方式加载视图，有dismiss回调
--(void)presentVCWithKey:(NSString *)vcKey parentVC:(UIViewController *)parentVC params:(id)params vcDisappearBlock:(KDRouterVCDisappearBlock)vcDisappearBlock
+-(void)presentVCWithKey:(NSString *)vcKey parentVC:(UIViewController *)parentVC params:(id)params hasNavigator:(BOOL)hasNavigator vcDisappearBlock:(KDRouterVCDisappearBlock)vcDisappearBlock
 {
-    [self presentVCWithKey:vcKey parentVC:parentVC params:params animate:YES vcAppearBlock:nil vcDisappearBlock:vcDisappearBlock];
+    [self presentVCWithKey:vcKey parentVC:parentVC params:params hasNavigator:hasNavigator animate:YES vcAppearBlock:nil vcDisappearBlock:vcDisappearBlock];
 }
-
 //以模态视图的方式加载视图，有dismiss回调
--(void)presentVCWithKey:(NSString *)vcKey parentVC:(UIViewController *)parentVC params:(id)params animate:(BOOL)animate vcAppearBlock:(KDRouterVCAppearBlock)vcAppearBlock vcDisappearBlock:(KDRouterVCDisappearBlock)vcDisappearBlock
+-(void)presentVCWithKey:(NSString *)vcKey parentVC:(UIViewController *)parentVC params:(id)params hasNavigator:(BOOL)hasNavigator animate:(BOOL)animate vcAppearBlock:(KDRouterVCAppearBlock)vcAppearBlock vcDisappearBlock:(KDRouterVCDisappearBlock)vcDisappearBlock
 {
     if (parentVC && [parentVC isKindOfClass:[UIViewController class]])
     {
@@ -184,16 +183,46 @@ static KDRouterManger *sharedInstance;
                 PerformSelectorWithIgnoreWarning([vc performSelector:setBlockMethod withObject:vcDisappearBlock]);
             }
             
-            
-            if (![[NSThread currentThread] isMainThread])
+            if (hasNavigator)
             {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [parentVC presentViewController:vc animated:animate completion:vcAppearBlock];
-                });
+               vc = [[UINavigationController alloc] initWithRootViewController:vc];
+            }
+            
+            UIViewController *presentedVC = [parentVC presentedViewController];
+            if (presentedVC)
+            {
+                if ([presentedVC isEqual:vc] || VALIDATE_MODEL(presentedVC, @"KDLoginViewController"))
+                {
+                    return;
+                }
+                else
+                {
+                    [presentedVC dismissViewControllerAnimated:NO completion:^{
+                        if (![[NSThread currentThread] isMainThread])
+                        {
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                [parentVC presentViewController:vc animated:animate completion:vcAppearBlock];
+                            });
+                        }
+                        else
+                        {
+                            [parentVC presentViewController:vc animated:animate completion:vcAppearBlock];
+                        }
+                    }];
+                }
             }
             else
             {
-                [parentVC presentViewController:vc animated:animate completion:vcAppearBlock];
+                if (![[NSThread currentThread] isMainThread])
+                {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [parentVC presentViewController:vc animated:animate completion:vcAppearBlock];
+                    });
+                }
+                else
+                {
+                    [parentVC presentViewController:vc animated:animate completion:vcAppearBlock];
+                }
             }
         }
     }
@@ -254,7 +283,7 @@ static KDRouterManger *sharedInstance;
                     }
                     else if([methodStr isEqualToString:PRESENT])
                     {
-                        [self presentVCWithKey:[params objectForKey:VIEW_CONTROLLER] parentVC:currentVC params:[params objectForKey:PARAMS] animate:YES vcAppearBlock:nil vcDisappearBlock:nil];
+                        [self presentVCWithKey:[params objectForKey:VIEW_CONTROLLER] parentVC:currentVC params:[params objectForKey:PARAMS] hasNavigator:YES animate:YES vcAppearBlock:nil vcDisappearBlock:nil];
                     }
                     else
                     {

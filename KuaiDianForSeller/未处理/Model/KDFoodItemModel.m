@@ -18,11 +18,31 @@
 + (NSDictionary *)modelCustomPropertyMapper
 {
     return @{@"name" : @"name",
-             @"foodID" : @"foodid",
-             @"identifier" : @"id",
+             @"foodID" : @"id",
+             @"category" : @"classifyid",
              @"imageURL" : @"logourl",
              @"orderID" : @"orderid",
              @"price" : @"price",
              @"quantity" : @"quantity"};
+}
+-(void)updateModel:(KDFoodItemModel *)model
+{
+    if (VALIDATE_MODEL(model, @"KDFoodItemModel"))
+    {
+        if (![model isEqual:self])
+        {
+            self.foodID = model.foodID;
+            self.category = model.category;
+            self.categoryDescription = model.descriptionString;
+            self.imageURL = model.imageURL;
+            self.descriptionString = model.descriptionString;
+            self.name = model.name;
+            self.orderID = model.orderID;
+            self.price = model.price;
+            self.quantity = model.quantity;
+            self.tasteType = model.tasteType;
+            self.status = model.status;
+        }
+    }
 }
 @end

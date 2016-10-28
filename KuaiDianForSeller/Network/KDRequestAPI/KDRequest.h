@@ -9,8 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "AFURLRequestSerialization.h"
 
+
+#pragma mark - 请求时间设置
+
 #define TIMEOUT_INTERVAL 15
 #define LONG_TASK_TIMEOUT_INTERVAL 60
+#define ROWS_PER_PAGE 60
+
+#pragma mark - 请求返回信息
+
 #define KDErrorDomain @"KDErrorDomain"
 
 #define HTTP_REQUEST_ERROR @"请求出错"
@@ -21,9 +28,37 @@
 
 #define NORMAL_STATUS @"200"
 #define ERROR_STATUS @"0"
-//#define UnregisterStatus @"-1"
+#define LOGOUT_STATUS @"401"
+
+#pragma mark - 请求字段key
+
+#define REQUEST_KEY_SELLER_ID @"sellerid"
+#define REQUEST_KEY_ORDER_ID @"id"
+#define REQUEST_KEY_ORDER_STATES(a) ([NSString stringWithFormat:@"states[%@]",(a)])
+#define REQUEST_KEY_STATE @"state"
+#define REQUEST_KEY_PAGING_PAGE @"pagination.page"
+#define REQUEST_KEY_PAGING_ROWS @"pagination.rows"
+#define REQUEST_KEY_ORDER_START_DATE @"fromtime"
+#define REQUEST_KEY_ORDER_END_DATE @"totime"
+#define REQUEST_KEY_FOOD_NAME @"foodName"
+#define REQUEST_KEY_REMEMBER_ME @"rememberMe"
+#define REQUEST_KEY_SHOP_ID @"storeid"
+#define REQUEST_KEY_NAME @"name"
+#define REQUEST_KEY_PRICE @"price"
+#define REQUEST_KEY_LOGO_URL @"logourl"
+#define REQUEST_KEY_FOOD_SOLD_IN_MONTH @"soldinmonth"
+#define REQUEST_KEY_FOOD_LABEL @"lab"
+#define REQUEST_KEY_DESCRIPITION @"remark"
+#define REQUEST_KEY_CLASSIFY_ID @"classifyid"
+#define REQUEST_KEY_FILE_NAME @"file"
+//#define REQUEST_KEY_FOOD_CATEGORY_NAME @"lab"
+//#define REQUEST_KEY_FOOD_CATEGORY_NAME @"lab"
+//#define REQUEST_KEY_FOOD_CATEGORY_NAME @"lab"
+//#define REQUEST_KEY_FOOD_CATEGORY_NAME @"lab"
 
 
+
+#pragma mark - 请求路径key
 #define LOGIN_REQUEST_PATH @"login_request"
 #define GET_USERINFO_REQUEST_PATH @"get_userinfo"
 #define GET_ORDER_REQUEST_PATH @"get_order"
@@ -32,6 +67,15 @@
 #define GET_VERIFY_CODE_REQUEST_PATH @"get_phone_code"
 #define MODIFY_ORDER_STATUS_REQUEST_PATH @"modify_order_status"
 #define MODIFY_USER_INFO_REQUEST_PATH @"modify_user_info"
+#define GET_STORE_INFO_REQUEST_PATH @"get_store_info"
+#define GET_FOOD_CATEGORY_REQUEST_PATH @"get_food_class"
+#define GET_FOOD_LIST_REQUEST_PATH @"get_food_list"
+#define ADD_FOOD_CATE_REQUEST_PATH @"add_food_cate"
+#define MODIFY_FOOD_CATE_TITLE_REQUEST_PATH @"modify_food_cate_title"
+#define ADD_FOOD_ITEM_REQUEST_PATH @"add_food_item"
+#define UPDATE_FOOD_ITEM_REQUEST_PATH @"update_food_item"
+#define DELETE_FOOD_ITEM_REQUEST_PATH @"delete_food_item"
+#define UPLODA_FOOD_LOGO_REQUEST_PATH @"upload_food_logo"
 //#define _REQUEST_PATH @""
 //#define _REQUEST_PATH @""
 //#define _REQUEST_PATH @""
@@ -39,11 +83,6 @@
 //#define _REQUEST_PATH @""
 //#define _REQUEST_PATH @""
 //#define _REQUEST_PATH @""
-//#define _REQUEST_PATH @""
-//#define _REQUEST_PATH @""
-//#define _REQUEST_PATH @""
-//#define _REQUEST_PATH @""
-
 
 //请求方法
 typedef NS_ENUM(NSUInteger , KDRequestMethod)

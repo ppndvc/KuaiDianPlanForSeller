@@ -15,6 +15,7 @@
     [SVProgressHUD setBackgroundColor:HUD_BG_COLOR];
     [SVProgressHUD setForegroundColor:HUD_FG_COLOR];
     [SVProgressHUD setFont:[UIFont systemFontOfSize:HUD_FONT_SIZE]];
+    [SVProgressHUD setMinimumDismissTimeInterval:HUD_DISMISS_DURATION];
 
     //修改tabbar背景
     [[UITabBar appearance] setBarTintColor:TABBAR_BG_COLOR];

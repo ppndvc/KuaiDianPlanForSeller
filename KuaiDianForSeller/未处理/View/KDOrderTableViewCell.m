@@ -43,6 +43,8 @@
     [_tableView setRowHeight:ORDER_DETAIL_ROWHEIGHT];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    
+    [_actionButton setBackgroundColor:SEPERATOR_COLOR forState:UIControlStateDisabled];
 }
 
 -(void)prepareForReuse
@@ -93,6 +95,15 @@
         //操作按钮
         [_actionButton setTitle:BUTTON_TITLE_SURE forState:UIControlStateNormal];
         
+        if (_model.orderStatus == KDOrderStatusOfNotConfirmed)
+        {
+            _actionButton.enabled = YES;
+        }
+        else
+        {
+            _actionButton.enabled = NO;
+        }
+        
         //详情tableview
         CGPoint tableOrigin = _tableView.frame.origin;
         CGFloat tableHeight = (_model.orderDetail.count + 1) * ORDER_DETAIL_ROWHEIGHT;
@@ -113,6 +124,10 @@
 
 - (IBAction)onTapActionButton:(id)sender
 {
+    if (_model && self.cellDelegate && [self.cellDelegate respondsToSelector:@selector(onTapTableCell:model:)])
+    {
+        [self.cellDelegate onTapTableCell:self model:_model];
+    }
 }
 
 - (CGSize)sizeThatFits:(CGSize)size

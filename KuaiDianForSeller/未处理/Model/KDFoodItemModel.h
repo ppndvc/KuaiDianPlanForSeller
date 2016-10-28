@@ -12,10 +12,14 @@
 
 //菜品id
 @property(nonatomic,copy)NSString *foodID;
-//id
-@property(nonatomic,copy)NSString *identifier;
+//类别id
+@property(nonatomic,copy)NSString *category;
+//类别描述
+@property(nonatomic,copy)NSString *categoryDescription;
 //imageurl
 @property(nonatomic,copy)NSString *imageURL;
+//描述
+@property(nonatomic,copy)NSString *descriptionString;
 //名字
 @property(nonatomic,copy)NSString *name;
 //订单id
@@ -24,5 +28,9 @@
 @property(nonatomic,assign)CGFloat price;
 //数量
 @property(nonatomic,assign)NSInteger quantity;
+//口味
+@property(nonatomic,assign)KDTasteType tasteType;
+//食品状态
+@property(nonatomic,assign)NSInteger status;
 
 @end

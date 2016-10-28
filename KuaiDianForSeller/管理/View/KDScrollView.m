@@ -47,7 +47,7 @@
     [self addSubview:_segmentControl];
     
     _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, _segmentHeight, self.frame.size.width, self.frame.size.height - _segmentHeight)];
-    _scrollView.backgroundColor = [UIColor clearColor];
+    _scrollView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     _scrollView.scrollEnabled = YES;
     _scrollView.pagingEnabled = YES;
     _scrollView.delegate = self;

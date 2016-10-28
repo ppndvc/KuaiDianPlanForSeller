@@ -23,6 +23,9 @@
 //section对应的行数
 -(NSInteger)tableViewRowsForSection:(NSInteger)section;
 
+//获取所有数据
+-(NSArray *)getAllTableData;
+
 //配置对应行的cell
 -(void)configureTableViewCell:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath;
 
