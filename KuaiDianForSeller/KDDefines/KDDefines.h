@@ -474,6 +474,7 @@ extern NSString *const kCheckViewCell;
 #define RESTAURANT_INFO_TITLE @"餐厅信息"
 #define SET_FOOD_LABEL_TITLE @"设置食品标签"
 
+#define SALE_DETAIL_TITLE @"营业统计"
 #define FOOD_EDIT_TITLE @"编辑菜品"
 
 #define FOOD_NAME @"菜名"

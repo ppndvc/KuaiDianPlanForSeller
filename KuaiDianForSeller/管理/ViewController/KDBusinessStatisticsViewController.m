@@ -10,13 +10,15 @@
 
 @interface KDBusinessStatisticsViewController ()
 
-//@property(nonatomic,strong)
 @end
 
 @implementation KDBusinessStatisticsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setNaviBarItemWithType:KDNavigationBackToPreviousVC];
+    self.navigationItem.title = SALE_DETAIL_TITLE;
     // Do any additional setup after loading the view from its nib.
 }
 
