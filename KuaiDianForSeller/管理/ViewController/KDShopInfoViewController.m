@@ -9,9 +9,9 @@
 #import "KDShopInfoViewController.h"
 #import "KDShopInfoViewModel.h"
 #import "KDShopModel.h"
-#import "KDDatePicker.h"
 #import "KDCheckView.h"
 #import "KDCheckViewItemModel.h"
+#import "KDPickerView.h"
 
 
 #define NORMAL_ROW_HEIGHT 44
@@ -28,6 +28,8 @@ static NSString *kShopInfoTableViewCellIdentifier = @"kShopInfoTableViewCellIden
 //
 @property(nonatomic,strong)JCAlertView *openSaleView;
 
+@property(nonatomic,strong)UIImageView *headerImageView;
+
 @end
 
 @implementation KDShopInfoViewController
@@ -37,13 +39,26 @@ static NSString *kShopInfoTableViewCellIdentifier = @"kShopInfoTableViewCellIden
     [self setNaviBarItemWithType:KDNavigationBackToPreviousVC];
     self.navigationItem.title = RESTAURANT_INFO_TITLE;
     _viewModel = [[KDShopInfoViewModel alloc] init];
+
+    [self setupUI];
+    // Do any additional setup after loading the view from its nib.
+}
+
+-(void)setupUI
+{
     [_tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     _tableView.dataSource = self;
     _tableView.delegate = self;
     _tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    // Do any additional setup after loading the view from its nib.
+    
+    WS(ws);
+    [_viewModel setFinishDownloadLogoHandler:^(UIImage *img) {
+        if (img)
+        {
+            [ws.tableView reloadData];
+        }
+    }];
 }
-
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -107,17 +122,27 @@ static NSString *kShopInfoTableViewCellIdentifier = @"kShopInfoTableViewCellIden
     //第一个头像cell
     if (indexPath.row == 0)
     {
-        UIImageView *headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, NORMAL_ROW_HEIGHT*HEADER_IMAGE_WIDTH_RATE, NORMAL_ROW_HEIGHT*HEADER_IMAGE_WIDTH_RATE)];
-        cell.accessoryView = headerImageView;
+        cell.accessoryView = self.headerImageView;
     }
     else
     {
+        cell.accessoryView = nil;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
     [_viewModel configureTableViewCell:cell indexPath:indexPath];
     
     return cell;
+}
+-(UIImageView *)headerImageView
+{
+    if (!_headerImageView)
+    {
+        _headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, NORMAL_ROW_HEIGHT*HEADER_IMAGE_WIDTH_RATE, NORMAL_ROW_HEIGHT*HEADER_IMAGE_WIDTH_RATE)];
+        _headerImageView.layer.cornerRadius = (NORMAL_ROW_HEIGHT*HEADER_IMAGE_WIDTH_RATE)/2.0;
+        _headerImageView.layer.masksToBounds = YES;
+    }
+    return _headerImageView;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -126,11 +151,17 @@ static NSString *kShopInfoTableViewCellIdentifier = @"kShopInfoTableViewCellIden
     {
         case 0:
         {
-            [[KDRouterManger sharedManager] pushVCWithKey:@"KDAvatarVC" parentVC:self params:nil animate:YES vcDisappearBlock:^(NSString *vcKey, id params) {
+            NSDictionary *param = nil;
+            
+            if (VALIDATE_MODEL(_viewModel.getLogoImage, @"UIImage"))
+            {
+                param = @{VIEWCONTROLLER_IMAGE_KEY:_viewModel.getLogoImage};
+            }
+            
+            [[KDRouterManger sharedManager] pushVCWithKey:@"KDAvatarVC" parentVC:self params:param animate:YES vcDisappearBlock:^(NSString *vcKey, id params) {
                 if (params && [params isKindOfClass:[NSDictionary class]])
                 {
                     shopInfo.name = [params objectForKey:COMMON_INPUT_RESULT_STRING_KEY];
-                    
                 }
             }];
         }
@@ -149,16 +180,7 @@ static NSString *kShopInfoTableViewCellIdentifier = @"kShopInfoTableViewCellIden
             break;
         case 5:
         {
-            WS(ws);
-            [KDDatePicker showDatePickerWithType:KDDatePickerTypeOfDoubleTime completeBlock:^(id date1, id date2) {
-                if (date1 && date2)
-                {
-                    NSString *dateStr1 = [NSString getTimeStringWithDate:date1 formater:HH_MM_DATE_FORMATER];
-                    NSString *dateStr2 = [NSString getTimeStringWithDate:date2 formater:HH_MM_DATE_FORMATER];
-                    shopInfo.openTime = [NSString stringWithFormat:@"%@-%@",dateStr1,dateStr2];
-                    [ws.tableView reloadData];
-                }
-            } superView:[UIApplication sharedApplication].keyWindow.rootViewController.view];
+            [self showDatePickerWithModel:shopInfo];
         }
             break;
         case 6:
@@ -200,25 +222,79 @@ static NSString *kShopInfoTableViewCellIdentifier = @"kShopInfoTableViewCellIden
     }
 
 }
+-(void)showDatePickerWithModel:(KDShopModel *)shopInfo
+{
+    KDPickerView *datePicker = [[KDPickerView alloc] initWithType:KDDatePickerTypeOfDoubleTime];
+    
+    WS(ws);
+    JCAlertView *alertView = [[JCAlertView alloc] initWithCustomView:datePicker ButtonType:JCAlertViewButtonTypeCancel ButtonTitle:BUTTON_TITLE_CANCEL Click:^{
+        
+    } ButtonType:JCAlertViewButtonTypeDefault ButtonTitle:BUTTON_TITLE_SURE Click:^{
+        NSArray *resultArray = [datePicker getPickerData];
+        if (VALIDATE_ARRAY(resultArray))
+        {
+            NSDate *date1 = resultArray[0];
+            NSDate *date2 = resultArray[1];
+            if (VALIDATE_MODEL(date1, @"NSDate") && VALIDATE_MODEL(date2, @"NSDate"))
+            {
+                NSString *dateStr1 = [NSString getTimeStringWithDate:date1 formater:HH_MM_DATE_FORMATER];
+                NSString *dateStr2 = [NSString getTimeStringWithDate:date2 formater:HH_MM_DATE_FORMATER];
+                shopInfo.openTime = [NSString stringWithFormat:@"%@-%@",dateStr1,dateStr2];
+                [ws.tableView reloadData];
+            }
+        }
+        
+    } dismissWhenTouchedBackground:YES];
+    
+    [alertView show];
+}
+
 -(void)ShowPayView
 {
     if (!_payView)
     {
-        KDCheckViewItemModel *m1 = [[KDCheckViewItemModel alloc] init];
-        m1.name = @"sdfed";
-        m1.imageName = @"server";
+        KDCheckViewItemModel *opening = [[KDCheckViewItemModel alloc] init];
+        opening.name = SHOP_OPENING_STATUS_STRING;
+        opening.imageName = @"server";
         
-        KDCheckViewItemModel *m2 = [[KDCheckViewItemModel alloc] init];
-        m2.name = @"fssdf";
-        m2.isSelected = YES;
-        m2.imageName = @"server";
+        KDCheckViewItemModel *closed = [[KDCheckViewItemModel alloc] init];
+        closed.name = SHOP_CLOSED_STATUS_STRING;
+        closed.imageName = @"server";
         
-        KDCheckView *view = [[KDCheckView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 200, 80) dataSource:@[m1,m2] supportMultiSelect:NO];
+        KDShopModel *shopInfo = [[KDShopManager sharedInstance] getShopInfo];
         
+        if (VALIDATE_MODEL(shopInfo, @"KDShopModel"))
+        {
+            opening.isSelected = (shopInfo.shopStatus == KDShopOpeningStatus);
+            closed.isSelected = !opening.isSelected;
+        }
+        
+        KDCheckView *view = [[KDCheckView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 220, 80) dataSource:@[opening,closed] supportMultiSelect:NO];
+        
+        WS(ws);
         _payView = [[JCAlertView alloc] initWithCustomView:view ButtonType:JCAlertViewButtonTypeCancel ButtonTitle:BUTTON_TITLE_CANCEL Click:^{
             DDLogInfo(@"==============");
             
         } ButtonType:JCAlertViewButtonTypeDefault ButtonTitle:BUTTON_TITLE_SURE Click:^{
+            
+            KDCheckViewItemModel *selectedItem = [[view getSelectedItems] firstObject];
+            
+            if (VALIDATE_MODEL(selectedItem, @"KDCheckViewItemModel"))
+            {
+                KDShopStatus status = KDShopOpeningStatus;
+                
+                if ([selectedItem.name isEqualToString:SHOP_CLOSED_STATUS_STRING])
+                {
+                    status = KDShopClosedStatus;
+                }
+                else
+                {
+                    status = KDShopOpeningStatus;
+                }
+                
+                [ws.viewModel changeValue:[NSNumber numberWithInteger:status] forPropety:@"shopStatus"];
+                [ws.tableView reloadData];
+            }
             
         } dismissWhenTouchedBackground:YES];
     }
@@ -230,25 +306,48 @@ static NSString *kShopInfoTableViewCellIdentifier = @"kShopInfoTableViewCellIden
 {
     if (!_openSaleView)
     {
-        KDCheckViewItemModel *m1 = [[KDCheckViewItemModel alloc] init];
-        m1.name = @"sdfed";
-        m1.imageName = @"server";
+        KDCheckViewItemModel *offline = [[KDCheckViewItemModel alloc] init];
+        offline.name = SHOP_OFFLINE_PAY;
+        offline.imageName = @"server";
         
-        KDCheckViewItemModel *m2 = [[KDCheckViewItemModel alloc] init];
-        m2.name = @"fssdf";
-        m2.isSelected = YES;
-        m2.imageName = @"server";
+        KDCheckViewItemModel *online = [[KDCheckViewItemModel alloc] init];
+        online.name = SHOP_ONLINE_PAY;
+        online.imageName = @"server";
         
-        KDCheckViewItemModel *m3 = [[KDCheckViewItemModel alloc] init];
-        m3.name = @"sdae";
-        m3.imageName = @"server";
+        KDShopModel *shopInfo = [[KDShopManager sharedInstance] getShopInfo];
         
-        KDCheckView *view = [[KDCheckView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 200, 120) dataSource:@[m1,m2,m3] supportMultiSelect:NO];
+        if (VALIDATE_MODEL(shopInfo, @"KDShopModel"))
+        {
+            offline.isSelected = (shopInfo.payStyle == KDPayStyleOfOffline);
+            online.isSelected = !offline.isSelected;
+        }
         
+        KDCheckView *view = [[KDCheckView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 200, 80) dataSource:@[offline,online] supportMultiSelect:NO];
+        
+        WS(ws);
         _openSaleView = [[JCAlertView alloc] initWithCustomView:view ButtonType:JCAlertViewButtonTypeCancel ButtonTitle:BUTTON_TITLE_CANCEL Click:^{
             DDLogInfo(@"==============");
             
         } ButtonType:JCAlertViewButtonTypeDefault ButtonTitle:BUTTON_TITLE_SURE Click:^{
+            
+            KDCheckViewItemModel *selectedItem = [[view getSelectedItems] firstObject];
+
+            if (VALIDATE_MODEL(selectedItem, @"KDCheckViewItemModel"))
+            {
+                KDPayStyle payStyle = KDPayStyleOfOffline;
+                
+                if ([selectedItem.name isEqualToString:SHOP_OFFLINE_PAY])
+                {
+                    payStyle = KDPayStyleOfOffline;
+                }
+                else
+                {
+                    payStyle = KDPayStyleOfOnline;
+                }
+                
+                [ws.viewModel changeValue:[NSNumber numberWithInteger:payStyle] forPropety:@"payStyle"];
+                [ws.tableView reloadData];
+            }
             
         } dismissWhenTouchedBackground:YES];
     }
@@ -264,14 +363,6 @@ static NSString *kShopInfoTableViewCellIdentifier = @"kShopInfoTableViewCellIden
 {
     DDLogInfo(@"-KDShopInfoViewController dealloc");
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

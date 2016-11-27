@@ -10,10 +10,19 @@
 @class CWStarRateView;
 @class KDSellerReplyView;
 
+@protocol KDEvalueTableCellDelegate <NSObject>
+
+@optional
+//点击回复按钮
+-(void)onTapReplyButtonWithModel:(id)model;
+
+@end
+
 @interface KDEvalueTableCell : KDBaseTableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
+@property(nonatomic, weak)id<KDEvalueTableCellDelegate> evalueDelegate;
 
+@property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
 @property (weak, nonatomic) IBOutlet UIButton *nameButton;
 @property (weak, nonatomic) IBOutlet CWStarRateView *starViewPanel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
@@ -21,5 +30,6 @@
 @property (strong, nonatomic) KDSellerReplyView *replyView;
 @property (weak, nonatomic) IBOutlet UIView *bottomSeperatorView;
 @property (weak, nonatomic) IBOutlet UIButton *replyButton;
+- (IBAction)onTapReplyButton:(id)sender;
 
 @end

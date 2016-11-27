@@ -103,6 +103,11 @@
     _actionButton.frame = CGRectMake(VIEW_HORIZONTAL_PADDING_TO_SCREEN_BORDER, _linkTableView.frame.size.height + VIEW_VERTICAL_PADDING, SCREEN_WIDTH - 2*VIEW_HORIZONTAL_PADDING_TO_SCREEN_BORDER, BUTTON_HEIGHT);
     _actionButton.titleLabel.font = [UIFont systemFontOfSize:TEXT_FONT_MEDIUM_SIZE];
     [self.view addSubview:_actionButton];
+    
+    WS(ws);
+    [_viewModel setFinishDownloadLogoHandler:^(UIImage *img) {
+        [ws.linkTableView reloadRightTableViewData];
+    }];
 }
 -(void)onTapActionButton
 {

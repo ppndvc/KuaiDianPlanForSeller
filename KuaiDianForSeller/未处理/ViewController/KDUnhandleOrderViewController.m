@@ -69,8 +69,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-//    [self startLoadTableViewData];
-    [[KDRouterManger sharedManager] pushVCWithKey:@"KDBusinessStatisticsVC" parentVC:self];
+    [self startLoadTableViewData];
 }
 
 -(void)endRefreshWithNoMoreData:(BOOL)noMoreData

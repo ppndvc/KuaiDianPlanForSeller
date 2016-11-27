@@ -12,6 +12,9 @@
 #import "KDFoodEvalueViewModel.h"
 #import "KDEvalueFilterItemModel.h"
 #import "KDEvalueFilterCollectionCell.h"
+#import "KDCustomerReplyModel.h"
+#import <MJRefresh.h>
+
 
 #define COLLECTION_VIEW_HEIGHT 80
 
@@ -19,10 +22,13 @@
 #define COLLECTION_CELL_TOP_INSET 10
 #define COLLECTION_CELL_BOTTOM_INSET 10
 
+#define REPLY_TITLE @"回复评论"
+#define REPLY_PLACE_HOLDER @"请填写评论"
+
 static NSString *kEvalueTableCell = @"kEvalueTableCell";
 static NSString *kEvauleCollectionViewCellIdentifier = @"kEvauleCollectionViewCellIdentifier";
 
-@interface KDFoodEvalueViewController ()<UITableViewDataSource,UITableViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
+@interface KDFoodEvalueViewController ()<UITableViewDataSource,UITableViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,KDEvalueTableCellDelegate>
 
 //viewmodel
 @property(nonatomic,strong)KDFoodEvalueViewModel *viewModel;
@@ -41,12 +47,110 @@ static NSString *kEvauleCollectionViewCellIdentifier = @"kEvauleCollectionViewCe
     self.navigationItem.title = FOOD_EVALUE_TITLE;
     
     _viewModel = [[KDFoodEvalueViewModel alloc] init];
+
+    [self setupUI];
+    // Do any additional setup after loading the view from its nib.
+}
+-(void)setupUI
+{
     _tableView.dataSource = self;
     _tableView.delegate = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_tableView registerNib:[UINib nibWithNibName:@"KDEvalueTableCell" bundle:nil] forCellReuseIdentifier:kEvalueTableCell];
     [_tableView setTableHeaderView:self.headerView];
-    // Do any additional setup after loading the view from its nib.
+    
+    WS(ws);
+    _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [ws refreshTableViewData];
+    }];
+    
+    _tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [ws loadmoreTableViewData];
+    }];
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self startLoadTableViewData];
+}
+
+-(void)startLoadTableViewData
+{
+    if ([KDUserManager isUserLogin])
+    {
+        WS(ws);
+        [_viewModel startLoadTableDataWithBeginBlock:^{
+            [ws showHUD];
+        } completeBlock:^(BOOL isSuccess, id params, NSError *error) {
+            [ws hideHUD];
+            
+            if (isSuccess)
+            {
+                [ws hideErrorPage];
+                [ws.tableView reloadData];
+            }
+            else
+            {
+                [ws showErrorPageWithCompleteBlock:^{
+                    __strong __typeof(ws) strongSelf = ws;
+                    [strongSelf startLoadTableViewData];
+                }];
+            }
+        }];
+    }
+}
+-(void)refreshTableViewData
+{
+    WS(ws);
+    [_viewModel refreshTableDataWithBeginBlock:nil completeBlock:^(BOOL isSuccess, id params, NSError *error) {
+        if (isSuccess)
+        {
+            [ws.tableView reloadData];
+        }
+        else
+        {
+            [ws showErrorHUDWithStatus:[error localizedDescription]];
+        }
+        
+        [ws endRefreshWithNoMoreData:NO];
+        
+    }];
+}
+-(void)loadmoreTableViewData
+{
+    WS(ws);
+    [_viewModel loadmoreTableDataWithBeginBlock:nil completeBlock:^(BOOL isSuccess, id params, NSError *error) {
+        if (isSuccess)
+        {
+            [ws endRefreshWithNoMoreData:NO];
+            [ws.tableView reloadData];
+        }
+        else
+        {
+            if (error)
+            {
+                [ws showErrorHUDWithStatus:[error localizedDescription]];
+            }
+            else
+            {
+                [ws endRefreshWithNoMoreData:YES];
+            }
+        }
+    }];
+}
+-(void)endRefreshWithNoMoreData:(BOOL)noMoreData
+{
+    if (noMoreData)
+    {
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshingWithNoMoreData];
+    }
+    else
+    {
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
+    }
 }
 
 #pragma mark - tableview delegate methods
@@ -70,6 +174,9 @@ static NSString *kEvauleCollectionViewCellIdentifier = @"kEvauleCollectionViewCe
     {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"KDEvalueTableCell" owner:self options:nil] lastObject];
     }
+    
+    cell.evalueDelegate = self;
+    
     if (_viewModel)
     {
         [_viewModel configureTableViewCell:cell indexPath:indexPath];
@@ -145,9 +252,11 @@ static NSString *kEvauleCollectionViewCellIdentifier = @"kEvauleCollectionViewCe
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     KDEvalueFilterItemModel *model = [_viewModel collectionViewModelForIndexPath:indexPath setSelected:YES];
-    if (model)
+    if (VALIDATE_MODEL(model, @"KDEvalueFilterItemModel"))
     {
         [self.headerView reloadData];
+        [_viewModel filterReplyWithStarLevel:model.level];
+        [_tableView reloadData];
     }
 }
 
@@ -173,6 +282,58 @@ static NSString *kEvauleCollectionViewCellIdentifier = @"kEvauleCollectionViewCe
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
     return UIEdgeInsetsMake(COLLECTION_CELL_TOP_INSET, COLLECTION_CELL_INSET, COLLECTION_CELL_BOTTOM_INSET, COLLECTION_CELL_INSET);
+}
+
+#pragma mark - evalue delegate
+
+-(void)onTapReplyButtonWithModel:(KDCustomerReplyModel *)model
+{
+    if (VALIDATE_MODEL(model, @"KDCustomerReplyModel"))
+    {
+        WS(ws);
+        [[KDRouterManger sharedManager] pushVCWithKey:@"KDCommonTextEditVC" parentVC:self params:@{COMMON_INPUT_TITLE_KEY:REPLY_TITLE,COMMON_INPUT_STYLE_KEY:[NSNumber numberWithInteger:KDCommonInputStyleOfMultiRows]} animate:YES vcDisappearBlock:^(NSString *vcKey, id params) {
+            if (params && [params isKindOfClass:[NSDictionary class]])
+            {
+                NSString *replyContent = [params objectForKey:COMMON_INPUT_RESULT_STRING_KEY];
+                [ws replyWithContent:replyContent srcReplyModel:model];
+            }
+        }];
+    }
+}
+
+-(void)replyWithContent:(NSString *)content srcReplyModel:(KDCustomerReplyModel *)model
+{
+    if (VALIDATE_STRING(content) && VALIDATE_MODEL(model, @"KDCustomerReplyModel") && VALIDATE_STRING(model.identifier))
+    {
+        NSDictionary *param = @{REQUEST_KEY_EVALUATE_ID:model.identifier,REQUEST_KEY_CONTENT:content};
+        WS(ws);
+        [_viewModel sendReplyWithParams:param beginBlock:^{
+            [ws showHUD];
+        } completeBlock:^(BOOL isSuccess, id params, NSError *error) {
+            
+            if (isSuccess)
+            {
+                [ws hideHUD];
+                KDBaseReplyModel *sellerReply = [[KDBaseReplyModel alloc] init];
+                sellerReply.content = content;
+                sellerReply.date = [NSString getCurrentDateString];
+                model.sellerReply = sellerReply;
+                [ws.tableView reloadData];
+            }
+            else
+            {
+                if (error)
+                {
+                    [ws showErrorHUDWithStatus:error.localizedDescription];
+                }
+                else
+                {
+                    [ws showErrorHUDWithStatus:HTTP_REQUEST_ERROR];
+                }
+            }
+
+        }];
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

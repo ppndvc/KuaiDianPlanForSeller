@@ -43,4 +43,7 @@
 
 //获取左侧数据
 -(NSArray *)getLeftTableData;
+
+//重新加载数据
+-(void)reloadRightTableViewData;
 @end

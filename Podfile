@@ -14,4 +14,5 @@ pod "JMActionSheetDescription"
 pod 'MJRefresh'
 pod 'JCAlertView'
 pod 'KTCenterFlowLayout'
+pod 'PNChart'
 end

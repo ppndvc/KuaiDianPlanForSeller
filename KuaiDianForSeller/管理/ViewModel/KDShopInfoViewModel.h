@@ -24,17 +24,30 @@
 #define SHOP_PRE_OPENING_STATUS_STRING @"试营业"
 #define SHOP_NO_ACCEPT_NEW_ORDER_STATUS_STRING @"太忙不接收新订单"
 
-
 #define SHOP_OFFLINE_PAY @"线下支付(刷卡)"
 #define SHOP_ONLINE_PAY @"线上支付"
 
+
 @interface KDShopInfoViewModel : KDBaseViewModel
+
+//获取图片
+-(UIImage *)getLogoImage;
+
+//设置图片下载技术回调
+-(void)setFinishDownloadLogoHandler:(ImageDownloadCompletedHandler)handler;
 
 //获取餐厅信息model
 -(id)getShopInfoModel;
 
 //开始请求餐厅信息
 -(void)startRequestShopInfoWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock;
+
+//更改属性
+-(void)changeValue:(id)value forPropety:(NSString *)property;
+
+//是否被改变了
+-(BOOL)isShopInfoChanged;
+
 
 //更新
 -(void)updateTableViewAtIndex:(NSInteger)index content:(NSString *)content;

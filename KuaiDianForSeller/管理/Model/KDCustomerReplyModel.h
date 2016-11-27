@@ -17,7 +17,10 @@
 @property(nonatomic,copy)NSString *customerID;
 
 //平分
-@property(nonatomic,assign)CGFloat score;
+@property(nonatomic,assign)KDEvalueStarLevel score;
+
+//是否匿名
+@property(nonatomic,assign)BOOL isAnonymous;
 
 //商家回复
 @property(nonatomic,strong)KDBaseReplyModel *sellerReply;

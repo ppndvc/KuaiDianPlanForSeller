@@ -17,6 +17,12 @@
 //餐厅信息model
 @property(nonatomic,strong)KDShopModel *shopInfo;
 
+@property(nonatomic,copy)ImageDownloadCompletedHandler handler;
+
+@property(nonatomic,assign)BOOL isInfoChanged;
+
+@property(nonatomic,strong)NSArray *shopInfoPropertyArray;
+
 @end
 
 @implementation KDShopInfoViewModel
@@ -26,10 +32,16 @@
     if (self)
     {
         _dataSource = @[SHOP_IMAGE,SHOP_NAME,SHOP_BELONG_SCHOOL,SHOP_BELONG_RESTRAUNT,SHOP_ADDRESS,SHOP_OPEN_TIME,SHOP_NOTICE,SHOP_TELEPHONE,SHOP_OPEN_STATUS,SHOP_PAY_STYLE];
+        _isInfoChanged = NO;
     }
     
     return self;
 }
+-(void)setFinishDownloadLogoHandler:(ImageDownloadCompletedHandler)handler
+{
+    _handler = handler;
+}
+
 -(id)getShopInfoModel
 {
     return _shopInfo;
@@ -59,9 +71,8 @@
                 UIImageView *headerImageView = (UIImageView *)cell.accessoryView;
                 if (VALIDATE_MODEL(headerImageView, @"UIImageView"))
                 {
-                    headerImageView.image = [UIImage imageNamed:@"activity2"];
+                    headerImageView.image = (UIImage *)[[KDCacheManager systemCache] objectForKey:_shopInfo.imageURL];
                 }
-//                cell.detailTextLabel.text = _shopInfo.name;
             }
                 break;
             case 1:
@@ -89,7 +100,9 @@
                 break;
             case 5:
             {
-                cell.detailTextLabel.text = _shopInfo.openTime;
+                NSString *openTime = [NSString getTimeString:[_shopInfo.openTime doubleValue] formater:HH_MM_DATE_FORMATER];
+                NSString *closeTime = [NSString getTimeString:[_shopInfo.closeTime doubleValue] formater:HH_MM_DATE_FORMATER];
+                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@-%@",openTime,closeTime];
             }
                 break;
             case 6:
@@ -261,7 +274,7 @@
     
     WS(ws);
 //    NSString *shopID = [[[KDUserManager sharedInstance] getUserInfo] shopID];
-//    
+//
 //    if (VALIDATE_STRING(shopID) && !_shopInfo)
     
     if(!_shopInfo)
@@ -271,7 +284,7 @@
             {
                 DDLogInfo(@"获取餐厅信息请求失败：%@",error.localizedDescription);
                 
-                KDShopModel *model = (KDShopModel *)[[KDCacheManager userCache] objectForKey:UC_SHOP_INFO_KEY];
+                KDShopModel *model = [[KDShopManager sharedInstance] getShopInfo];
                 ws.shopInfo = model;
                 
                 if (completeBlock)
@@ -292,7 +305,9 @@
                     if (model && [model isKindOfClass:[KDShopModel class]])
                     {
                         ws.shopInfo = model;
-                        [[KDCacheManager userCache] setObject:model forKey:UC_SHOP_INFO_KEY];
+                        [[KDShopManager sharedInstance] updateShopInfo:model];
+                        [ws startDownloadShopLogoWithFilePath:model.imageURL];
+                        
                         if (completeBlock)
                         {
                             dispatch_async(dispatch_get_main_queue(), ^{
@@ -302,7 +317,7 @@
                     }
                     else
                     {
-                        KDShopModel *model = (KDShopModel *)[[KDCacheManager userCache] objectForKey:UC_SHOP_INFO_KEY];
+                        KDShopModel *model = [[KDShopManager sharedInstance] getShopInfo];
                         ws.shopInfo = model;
                         
                         if (completeBlock)
@@ -316,7 +331,7 @@
                 }
                 else
                 {
-                    KDShopModel *model = (KDShopModel *)[[KDCacheManager userCache] objectForKey:UC_SHOP_INFO_KEY];
+                    KDShopModel *model = [[KDShopManager sharedInstance] getShopInfo];
                     ws.shopInfo = model;
                     if (completeBlock)
                     {
@@ -338,5 +353,65 @@
             });
         }
     }
+}
+-(void)startDownloadShopLogoWithFilePath:(NSString *)srcFilePath
+{
+    if (VALIDATE_STRING(srcFilePath))
+    {
+        WS(ws);
+        if ([[KDCacheManager systemCache] objectForKey:srcFilePath])
+        {
+            if (ws.handler)
+            {
+                ws.handler((UIImage *)[[KDCacheManager systemCache] objectForKey:srcFilePath]);
+            }
+        }
+        else
+        {
+            [KDRequestAPI downloadShopLogoWithFilePath:srcFilePath completeBlock:^(NSDictionary *fileData, NSString *filePath, NSError *error) {
+                if (!error && VALIDATE_MODEL(fileData, @"NSDictionary"))
+                {
+                    NSData *imageData = [fileData objectForKey:RESPONSE_PAYLOAD];
+                    if (VALIDATE_MODEL(imageData, @"NSData"))
+                    {
+                        UIImage *image = [[UIImage alloc] initWithData:imageData];
+                        if (VALIDATE_MODEL(image, @"UIImage"))
+                        {
+                            [[KDCacheManager systemCache] setObject:image forKey:srcFilePath];
+                            if (ws.handler)
+                            {
+                                ws.handler(image);
+                            }
+                        }
+                    }
+                }
+            }];
+        }
+    }
+}
+-(void)changeValue:(id)value forPropety:(NSString *)property
+{
+    if (VALIDATE_STRING(property) && value)
+    {
+        if (!VALIDATE_ARRAY(_shopInfoPropertyArray))
+        {
+            _shopInfoPropertyArray = [KDTools getPropertiesOfClass:[KDShopModel class]];
+        }
+        
+        if ([_shopInfoPropertyArray containsObject:property])
+        {
+            _isInfoChanged = YES;
+            [_shopInfo setValue:value forKey:property];
+        }
+    }
+}
+-(BOOL)isShopInfoChanged
+{
+    return _isInfoChanged;
+}
+
+-(UIImage *)getLogoImage
+{
+    return (UIImage *)[[KDCacheManager systemCache] objectForKey:_shopInfo.imageURL];
 }
 @end

@@ -8,7 +8,7 @@
 
 #import "KDSettingViewModel.h"
 #import "KDActionModel.h"
-#import "KDUserManager.h"
+#import "KDBankModel.h"
 
 #define IMAGE_NAME @"image_name"
 #define ROW_NAME @"row_name"
@@ -19,6 +19,8 @@
 
 //数据源
 @property(nonatomic,strong)NSArray *dataSource;
+
+@property(nonatomic,copy)ImageDownloadCompletedHandler handler;
 
 @end
 
@@ -107,7 +109,11 @@
     return nil;
 }
 
--(void)startRequestUserInfoWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock
+-(void)setFinishDownloadLogoHandler:(ImageDownloadCompletedHandler)handler
+{
+    _handler = handler;
+}
+-(void)startRequestBankInfoWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock
 {
     if (beginBlock)
     {
@@ -116,15 +122,26 @@
         });
     }
     
-    [KDRequestAPI sendGetUserInfoRequestWithCompleteBlock:^(id responseObject, NSError *error) {
+    /*
+     accountname = "\U8363\U6d69";
+     bankname = 1;
+     card = 6227000060540475669;
+     id = 1;
+     identity = 130286200011091511;
+     phone = 13502051792;
+     sellerid = 13;
+     */
+    
+    [KDRequestAPI sendGetBankCardInfoWithParam:nil completeBlock:^(id responseObject, NSError *error) {
         if (error)
         {
-            DDLogInfo(@"获取用户信息请求失败：%@",error.localizedDescription);
+            DDLogInfo(@"获取银行卡信息请求失败：%@",error.localizedDescription);
 
             if (completeBlock)
             {
+                KDBankModel *model = [[KDUserManager sharedInstance] getUserBankInfo];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    completeBlock(NO,nil,error);
+                    completeBlock(NO,model,error);
                 });
             }
         }
@@ -134,16 +151,16 @@
             
             if (VALIDATE_DICTIONARY(dict))
             {
-                KDUserModel *model = [KDUserModel yy_modelWithDictionary:dict];
+                KDBankModel *model = [KDBankModel yy_modelWithDictionary:dict];
                 
-                if (VALIDATE_MODEL(model, @"KDUserModel"))
+                if (VALIDATE_MODEL(model, @"KDBankModel"))
                 {
-                    [[KDUserManager sharedInstance] updateUserInfo:model];
+                    [[KDUserManager sharedInstance] updateUserBankInfo:model];
                     
                     if (completeBlock)
                     {
                         dispatch_async(dispatch_get_main_queue(), ^{
-                            completeBlock(YES,nil,nil);
+                            completeBlock(YES,model,nil);
                         });
                     }
                 }
@@ -170,5 +187,115 @@
             }
         }
     }];
+}
+-(void)startRequestShopInfoWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock
+{
+    if (beginBlock)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            beginBlock();
+        });
+    }
+    
+    WS(ws);
+    
+    [KDRequestAPI sendGetShopInfoRequestWithParam:nil completeBlock:^(id responseObject, NSError *error) {
+        if (error)
+        {
+            DDLogInfo(@"获取餐厅信息请求失败：%@",error.localizedDescription);
+            
+            KDShopModel *model = [[KDShopManager sharedInstance] getShopInfo];
+            
+            if (completeBlock)
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completeBlock(NO,model,error);
+                });
+            }
+        }
+        else
+        {
+            NSDictionary *dict = [responseObject objectForKey:RESPONSE_PAYLOAD];
+            
+            if (VALIDATE_DICTIONARY(dict))
+            {
+                KDShopModel *model = [KDShopModel yy_modelWithDictionary:dict];
+                
+                if (model && [model isKindOfClass:[KDShopModel class]])
+                {
+                    [[KDShopManager sharedInstance] updateShopInfo:model];
+                    [ws startDownloadShopLogoWithFilePath:model.imageURL];
+                    
+                    if (completeBlock)
+                    {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            completeBlock(YES,nil,nil);
+                        });
+                    }
+                }
+                else
+                {
+                    KDShopModel *model = [[KDShopManager sharedInstance] getShopInfo];
+                    
+                    if (completeBlock)
+                    {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            completeBlock(NO,model,nil);
+                        });
+                    }
+                }
+            }
+            else
+            {
+                KDShopModel *model = [[KDShopManager sharedInstance] getShopInfo];
+                if (completeBlock)
+                {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        completeBlock(NO,model,nil);
+                    });
+                }
+            }
+        }
+    }];
+}
+
+-(void)startDownloadShopLogoWithFilePath:(NSString *)srcFilePath
+{
+    if (VALIDATE_STRING(srcFilePath))
+    {
+        WS(ws);
+        if ([[KDCacheManager systemCache] objectForKey:srcFilePath])
+        {
+            if (ws.handler)
+            {
+                ws.handler((UIImage *)[[KDCacheManager systemCache] objectForKey:srcFilePath]);
+            }
+        }
+        else
+        {
+            [KDRequestAPI downloadShopLogoWithFilePath:srcFilePath completeBlock:^(NSDictionary *fileData, NSString *filePath, NSError *error) {
+                if (!error && VALIDATE_MODEL(fileData, @"NSDictionary"))
+                {
+                    NSData *imageData = [fileData objectForKey:RESPONSE_PAYLOAD];
+                    if (VALIDATE_MODEL(imageData, @"NSData"))
+                    {
+                        UIImage *image = [[UIImage alloc] initWithData:imageData];
+                        if (VALIDATE_MODEL(image, @"UIImage"))
+                        {
+                            [[KDCacheManager systemCache] setObject:image forKey:srcFilePath];
+                            if (ws.handler)
+                            {
+                                ws.handler(image);
+                            }
+                        }
+                    }
+                }
+            }];
+        }
+    }
+}
+-(void)dealloc
+{
+    DDLogInfo(@"- KDSettingViewModel dealloc");
 }
 @end

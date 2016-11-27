@@ -10,6 +10,8 @@
 
 #define PADDING 8
 
+#define IMAGE_WIDTH 27
+#define IMAGE_HEIGHT 20
 @interface KDPayBrandView ()
 
 //图标
@@ -20,6 +22,9 @@
 
 //号码
 @property(nonatomic,strong)UILabel *numLabel;
+
+//类型
+@property(nonatomic,assign)KDPaymentType type;
 
 @end
 
@@ -37,8 +42,8 @@
 }
 -(void)setupUI
 {
-    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width/2.0 - PADDING,  self.frame.size.height/2.0)];
-    _imageView.contentMode = UIViewContentModeRight;
+    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width/2.0 - IMAGE_WIDTH, (self.frame.size.height/2.0 - IMAGE_HEIGHT)/2.0, IMAGE_WIDTH,  IMAGE_HEIGHT)];
+//    _imageView.contentMode = UIViewContentModeRight;
     [self addSubview:_imageView];
     
     _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(_imageView.frame.origin.x + _imageView.frame.size.width + PADDING, 0, self.frame.size.width - _imageView.frame.size.width - PADDING,  self.frame.size.height/2.0)];
@@ -52,6 +57,9 @@
     _numLabel.textAlignment = NSTextAlignmentCenter;
     _numLabel.textColor = [UIColor whiteColor];
     [self addSubview:_numLabel];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapView)];
+    [self addGestureRecognizer:tap];
 }
 -(void)setPayBrandViewType:(KDPaymentType)type number:(NSString *)number
 {
@@ -60,7 +68,7 @@
         case KDPaymentTypeOfBankPay:
         {
             _nameLabel.text = BANK_PAY_NAME;
-            _imageView.image = [UIImage imageNamed:@"book"];
+            _imageView.image = [UIImage imageNamed:@"bank_card"];
         }
             break;
         case KDPaymentTypeOfAliPay:
@@ -80,7 +88,15 @@
             break;
     }
     
-    NSString *vertualString = [NSString getVertualStringWithString:@"6222305123437859"];
-    _numLabel.text = [NSString getFormateCardNumberFromString:vertualString];
+    _numLabel.text = number;
+    _type = type;
+}
+
+-(void)onTapView
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(onTapPayBrandViewWithPaymentType:)])
+    {
+        [_delegate onTapPayBrandViewWithPaymentType:_type];
+    }
 }
 @end

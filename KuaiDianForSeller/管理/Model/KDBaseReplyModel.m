@@ -16,5 +16,12 @@
 - (BOOL)isEqual:(id)object { return [self yy_modelIsEqual:object]; }
 - (NSString *)description { return [self yy_modelDescription]; }
 
++ (NSDictionary *)modelCustomPropertyMapper
+{
+    return @{@"replyerName" : @"name",
+             @"date" : @"createtime",
+             @"content" : @"content",
+             @"identifier" : @"evaluateid"};
+}
 
 @end

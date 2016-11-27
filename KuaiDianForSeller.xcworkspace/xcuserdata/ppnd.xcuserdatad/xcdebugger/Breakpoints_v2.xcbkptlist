@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/Network/KDRequestAPI/KDRequest.m"
-            timestampString = "492788199.785729"
+            timestampString = "500738200.441126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "-handleResponse:responseData:error:"
             landmarkType = "5">
          </BreakpointContent>
@@ -57,38 +57,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KuaiDianForSeller/UserManager/KDUserManager.m"
-            timestampString = "494073823.068719"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "-updateUserInfo:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KuaiDianForSeller/&#x8bbe;&#x7f6e;/ViewController/KDMyAccountViewController.m"
-            timestampString = "493570313.402807"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/View/KDActivityIconView.m"
             timestampString = "495799585.248686"
             startingColumnNumber = "9223372036854775807"
@@ -106,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x5df2;&#x5904;&#x7406;/View/KDhandleOrderDetailView.m"
-            timestampString = "494676526.552978"
+            timestampString = "500134382.239358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "-showDetailViewWithModel:"
             landmarkType = "5">
          </BreakpointContent>
@@ -138,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x5df2;&#x5904;&#x7406;/View/KDhandleOrderDetailView.m"
-            timestampString = "494672258.422273"
+            timestampString = "500134382.239358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "+detailView"
             landmarkType = "5">
          </BreakpointContent>
@@ -154,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x5df2;&#x5904;&#x7406;/View/KDhandleOrderDetailView.m"
-            timestampString = "494674970.75698"
+            timestampString = "500134382.239358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "-awakeFromNib"
             landmarkType = "5">
          </BreakpointContent>
@@ -185,92 +153,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewController/KDCommonTextEditViewController.m"
-            timestampString = "497716292.280834"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "255"
-            endingLineNumber = "255"
-            landmarkName = "-canReture"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KuaiDianForSeller/Utils/NSString+Tools.m"
-            timestampString = "498324664.983786"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
-            landmarkName = "+validatePhoneNumber:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewController/KDCommonTextEditViewController.m"
-            timestampString = "497716292.280834"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
-            landmarkName = "-canReture"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KuaiDianForSeller/Utils/NSString+Tools.m"
-            timestampString = "498324664.983786"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "273"
-            endingLineNumber = "273"
-            landmarkName = "+validateIdentityCard:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KuaiDianForSeller/&#x8bbe;&#x7f6e;/ViewController/KDSettingsViewController.m"
-            timestampString = "498925187.537502"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
-            landmarkName = "-tableViewHeaderView"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/View/KDLinkageTableVIew.m"
-            timestampString = "498313136.828017"
+            timestampString = "500914966.521162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "277"
-            endingLineNumber = "277"
+            startingLineNumber = "283"
+            endingLineNumber = "283"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -281,60 +169,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KuaiDianForSeller/&#x767b;&#x5f55;/ViewModel/KDLoginViewModel.m"
-            timestampString = "495989639.428773"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "-startLoginWithParams:beginBlock:completeBlock:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KuaiDianForSeller/UserManager/KDUserManager.m"
-            timestampString = "495990179.197399"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "-updateUserInfo:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KuaiDianForSeller/UserManager/KDUserManager.m"
-            timestampString = "495990200.217628"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "-updateUserInfo:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x672a;&#x5904;&#x7406;/ViewController/KDUnhandleOrderViewController.m"
-            timestampString = "499353608.686498"
+            timestampString = "499424058.487206"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "-startLoadTableViewData"
             landmarkType = "5">
          </BreakpointContent>
@@ -426,7 +266,7 @@
                   moduleName = "KuaiDianForSeller"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E5%B7%B2%E5%A4%84%E7%90%86/ViewModel/KDHandleListViewModel.m"
-                  timestampString = "498909987.126712"
+                  timestampString = "501951978.149463"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "104"
@@ -441,7 +281,7 @@
                   moduleName = "KuaiDianForSeller"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E5%B7%B2%E5%A4%84%E7%90%86/ViewModel/KDHandleListViewModel.m"
-                  timestampString = "498909987.127057"
+                  timestampString = "501951978.149661"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "104"
@@ -490,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x672a;&#x5904;&#x7406;/ViewController/KDUnhandleOrderViewController.m"
-            timestampString = "499353608.686498"
+            timestampString = "499424058.487206"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
             landmarkName = "-onTapTableCell:model:"
             landmarkType = "5">
          </BreakpointContent>
@@ -506,7 +346,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/View/KDDatePicker.m"
-            timestampString = "498239432.011051"
+            timestampString = "499964144.446699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "268"
@@ -522,7 +362,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/View/KDDatePicker.m"
-            timestampString = "498239432.011051"
+            timestampString = "499964144.446699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "274"
@@ -553,60 +393,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewModel/KDShopInfoViewModel.m"
-            timestampString = "498909617.050519"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "270"
-            endingLineNumber = "270"
-            landmarkName = "-startRequestShopInfoWithBeginBlock:completeBlock:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KuaiDianForSeller/&#x767b;&#x5f55;/ViewModel/KDLoginViewModel.m"
-            timestampString = "496676684.562115"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "-startLoginWithParams:beginBlock:completeBlock:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewController/KDShopInfoViewController.m"
-            timestampString = "498923464.461296"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewModel/KDFoodManageViewModel.m"
-            timestampString = "498315378.840945"
+            timestampString = "500914966.521162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "-startRequestFoodListWithID:index:beginBlock:completeBlock:"
             landmarkType = "5">
          </BreakpointContent>
@@ -633,28 +425,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewModel/KDFoodManageViewModel.m"
-            timestampString = "498315378.840945"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "-startRequestFoodListWithID:index:beginBlock:completeBlock:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/View/KDLinkageTableVIew.m"
-            timestampString = "498313136.828017"
+            timestampString = "500914966.521162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "288"
-            endingLineNumber = "288"
+            startingLineNumber = "294"
+            endingLineNumber = "294"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -666,11 +442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewController/KDFoodManageViewController.m"
-            timestampString = "498238405.109893"
+            timestampString = "500914966.521162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "-sendAddFoodCategoryRequestWithName:"
             landmarkType = "5">
          </BreakpointContent>
@@ -682,11 +458,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewController/KDFoodManageViewController.m"
-            timestampString = "498238405.109893"
+            timestampString = "500914966.521162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "-sendAddFoodCategoryRequestWithName:"
             landmarkType = "5">
             <Locations>
@@ -698,11 +474,11 @@
                   moduleName = "KuaiDianForSeller"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E7%AE%A1%E7%90%86/ViewController/KDFoodManageViewController.m"
-                  timestampString = "498909987.132867"
+                  timestampString = "501951978.15788"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "177"
-                  endingLineNumber = "177"
+                  startingLineNumber = "182"
+                  endingLineNumber = "182"
                   offsetFromSymbolStart = "292">
                </Location>
                <Location
@@ -713,11 +489,11 @@
                   moduleName = "KuaiDianForSeller"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E7%AE%A1%E7%90%86/ViewController/KDFoodManageViewController.m"
-                  timestampString = "498909987.133089"
+                  timestampString = "501951978.158025"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "177"
-                  endingLineNumber = "177"
+                  startingLineNumber = "182"
+                  endingLineNumber = "182"
                   offsetFromSymbolStart = "67">
                </Location>
             </Locations>
@@ -762,11 +538,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/View/KDLinkageTableVIew.m"
-            timestampString = "498313136.828017"
+            timestampString = "500914966.521162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "223"
-            endingLineNumber = "223"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
             landmarkName = "-tableView:viewForHeaderInSection:"
             landmarkType = "5">
          </BreakpointContent>
@@ -778,11 +554,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/View/KDLinkageTableVIew.m"
-            timestampString = "498313136.828017"
+            timestampString = "500914966.521162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "335"
-            endingLineNumber = "335"
+            startingLineNumber = "341"
+            endingLineNumber = "341"
             landmarkName = "-onTapEditButton:"
             landmarkType = "5">
          </BreakpointContent>
@@ -794,11 +570,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/View/KDLinkageTableVIew.m"
-            timestampString = "498313136.828017"
+            timestampString = "500914966.521162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "325"
-            endingLineNumber = "325"
+            startingLineNumber = "331"
+            endingLineNumber = "331"
             landmarkName = "-headerViewWithTitle:indexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -810,11 +586,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/View/KDLinkageTableVIew.m"
-            timestampString = "498313136.828017"
+            timestampString = "500914966.521162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "343"
-            endingLineNumber = "343"
+            startingLineNumber = "349"
+            endingLineNumber = "349"
             landmarkName = "-onTapEditButton:"
             landmarkType = "5">
          </BreakpointContent>
@@ -826,11 +602,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/View/KDLinkageTableVIew.m"
-            timestampString = "498313136.828017"
+            timestampString = "500914966.521162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "355"
-            endingLineNumber = "355"
+            startingLineNumber = "361"
+            endingLineNumber = "361"
             landmarkName = "-onTapEditButton:"
             landmarkType = "5">
          </BreakpointContent>
@@ -842,11 +618,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/View/KDLinkageTableVIew.m"
-            timestampString = "498313136.828017"
+            timestampString = "500914966.521162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "369"
-            endingLineNumber = "369"
+            startingLineNumber = "375"
+            endingLineNumber = "375"
             landmarkName = "-onTapEditButton:"
             landmarkType = "5">
          </BreakpointContent>
@@ -906,11 +682,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewController/KDEditFoodItemViewController.m"
-            timestampString = "498492706.871362"
+            timestampString = "500119864.148012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
             landmarkName = "-onTapFoodDesc:"
             landmarkType = "5">
          </BreakpointContent>
@@ -922,11 +698,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewController/KDEditFoodItemViewController.m"
-            timestampString = "498317302.703983"
+            timestampString = "500119864.148012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -938,11 +714,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewController/KDFoodManageViewController.m"
-            timestampString = "498238397.051207"
+            timestampString = "500914966.521162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "-addFood"
             landmarkType = "5">
          </BreakpointContent>
@@ -954,11 +730,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewController/KDEditFoodItemViewController.m"
-            timestampString = "498492706.871362"
+            timestampString = "500119864.148012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
             landmarkName = "-onTapFoodName:"
             landmarkType = "5">
          </BreakpointContent>
@@ -970,7 +746,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/View/KDDatePicker.m"
-            timestampString = "498239432.011051"
+            timestampString = "499964144.446699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "324"
@@ -1018,7 +794,7 @@
                   moduleName = "KuaiDianForSeller"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E7%AE%A1%E7%90%86/ViewModel/KDEditFoodViewModel.m"
-                  timestampString = "498909987.139674"
+                  timestampString = "501951978.171573"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "70"
@@ -1033,7 +809,7 @@
                   moduleName = "KuaiDianForSeller"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E7%AE%A1%E7%90%86/ViewModel/KDEditFoodViewModel.m"
-                  timestampString = "498909987.139898"
+                  timestampString = "501951978.171727"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "70"
@@ -1066,11 +842,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewController/KDEditFoodItemViewController.m"
-            timestampString = "498492706.871362"
+            timestampString = "500119864.148012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "283"
-            endingLineNumber = "283"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
             landmarkName = "-onTapSure:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1082,11 +858,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/View/KDLinkageTableVIew.m"
-            timestampString = "498313134.05383"
+            timestampString = "500914966.521162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "390"
-            endingLineNumber = "390"
+            startingLineNumber = "396"
+            endingLineNumber = "396"
             landmarkName = "-onTapEditWithCell:model:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1098,11 +874,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewController/KDEditFoodItemViewController.m"
-            timestampString = "498492706.871362"
+            timestampString = "500119864.148012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "409"
-            endingLineNumber = "409"
+            startingLineNumber = "435"
+            endingLineNumber = "435"
             landmarkName = "-getFoodCategoryStringWithID:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1130,7 +906,7 @@
                   moduleName = "KuaiDianForSeller"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E7%AE%A1%E7%90%86/ViewModel/KDEditFoodViewModel.m"
-                  timestampString = "498909987.142089"
+                  timestampString = "501951978.175916"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "199"
@@ -1145,7 +921,7 @@
                   moduleName = "KuaiDianForSeller"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E7%AE%A1%E7%90%86/ViewModel/KDEditFoodViewModel.m"
-                  timestampString = "498909987.142457"
+                  timestampString = "501951978.176098"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "199"
@@ -1178,11 +954,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/View/KDLinkageTableVIew.m"
-            timestampString = "498319668.938505"
+            timestampString = "500914966.521162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "409"
-            endingLineNumber = "409"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
             landmarkName = "-onTapDeleteWithCell:model:"
             landmarkType = "5">
             <Locations>
@@ -1194,11 +970,11 @@
                   moduleName = "KuaiDianForSeller"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E7%AE%A1%E7%90%86/View/KDLinkageTableVIew.m"
-                  timestampString = "498909987.143561"
+                  timestampString = "501951978.177853"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "409"
-                  endingLineNumber = "409"
+                  startingLineNumber = "415"
+                  endingLineNumber = "415"
                   offsetFromSymbolStart = "195">
                </Location>
                <Location
@@ -1209,11 +985,11 @@
                   moduleName = "KuaiDianForSeller"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E7%AE%A1%E7%90%86/View/KDLinkageTableVIew.m"
-                  timestampString = "498909987.144029"
+                  timestampString = "501951978.178297"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "410"
-                  endingLineNumber = "410"
+                  startingLineNumber = "416"
+                  endingLineNumber = "416"
                   offsetFromSymbolStart = "16">
                </Location>
             </Locations>
@@ -1226,11 +1002,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/View/KDLinkageTableVIew.m"
-            timestampString = "498319668.938505"
+            timestampString = "500914966.521162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "412"
-            endingLineNumber = "412"
+            startingLineNumber = "418"
+            endingLineNumber = "418"
             landmarkName = "-onTapDeleteWithCell:model:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1258,7 +1034,7 @@
                   moduleName = "KuaiDianForSeller"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E7%AE%A1%E7%90%86/ViewModel/KDLinkTableViewModel.m"
-                  timestampString = "498909987.144965"
+                  timestampString = "501951978.179771"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "330"
@@ -1273,7 +1049,7 @@
                   moduleName = "KuaiDianForSeller"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E7%AE%A1%E7%90%86/ViewModel/KDLinkTableViewModel.m"
-                  timestampString = "498909987.145337"
+                  timestampString = "501951978.179926"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "330"
@@ -1370,11 +1146,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewController/KDEditFoodItemViewController.m"
-            timestampString = "498492706.871362"
+            timestampString = "500119864.148012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "365"
-            endingLineNumber = "365"
+            startingLineNumber = "391"
+            endingLineNumber = "391"
             landmarkName = "-processImage:"
             landmarkType = "5">
             <Locations>
@@ -1386,11 +1162,11 @@
                   moduleName = "KuaiDianForSeller"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E7%AE%A1%E7%90%86/ViewController/KDEditFoodItemViewController.m"
-                  timestampString = "498909987.148017"
+                  timestampString = "501951978.184617"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "365"
-                  endingLineNumber = "365"
+                  startingLineNumber = "391"
+                  endingLineNumber = "391"
                   offsetFromSymbolStart = "192">
                </Location>
                <Location
@@ -1401,11 +1177,11 @@
                   moduleName = "KuaiDianForSeller"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E7%AE%A1%E7%90%86/ViewController/KDEditFoodItemViewController.m"
-                  timestampString = "498909987.148247"
+                  timestampString = "501951978.184774"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "366"
-                  endingLineNumber = "366"
+                  startingLineNumber = "392"
+                  endingLineNumber = "392"
                   offsetFromSymbolStart = "16">
                </Location>
             </Locations>
@@ -1450,7 +1226,7 @@
                   moduleName = "KuaiDianForSeller"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E7%AE%A1%E7%90%86/ViewModel/KDEditFoodViewModel.m"
-                  timestampString = "498909987.149037"
+                  timestampString = "501951978.186254"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "245"
@@ -1465,7 +1241,7 @@
                   moduleName = "KuaiDianForSeller"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E7%AE%A1%E7%90%86/ViewModel/KDEditFoodViewModel.m"
-                  timestampString = "498909987.149277"
+                  timestampString = "501951978.186404"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "245"
@@ -1494,16 +1270,431 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x8bbe;&#x7f6e;/ViewController/KDChangePWDViewController.m"
+            timestampString = "500395138.074221"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "-setupUI"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewModel/KDShopInfoViewModel.m"
-            timestampString = "498909617.050519"
+            filePath = "KuaiDianForSeller/&#x8bbe;&#x7f6e;/ViewModel/KDChangePWDViewModel.m"
+            timestampString = "499531288.520034"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "-onTimer"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x8bbe;&#x7f6e;/ViewModel/KDChangePWDViewModel.m"
+            timestampString = "499531288.520034"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "-stopTimer"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x8bbe;&#x7f6e;/ViewController/KDChangePWDViewController.m"
+            timestampString = "500395138.074221"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "-setButton:enable:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x8bbe;&#x7f6e;/ViewController/KDChangePWDViewController.m"
+            timestampString = "500395138.074221"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "-setButton:title:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x8bbe;&#x7f6e;/View/KDBankCardView.m"
+            timestampString = "499789131.646278"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "-setupUI"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewController/KDBusinessStatisticsViewController.m"
+            timestampString = "500118746.313659"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "-handleStatisticInfo:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewController/KDBusinessStatisticsViewController.m"
+            timestampString = "500118746.313659"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "-handleStatisticInfo:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/PNChart/PNChart/PNLineChart.m"
+            timestampString = "499954846.414166"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "316"
+            endingLineNumber = "316"
+            landmarkName = "-strokeChart"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/PNChart/PNChart/PNLineChart.m"
+            timestampString = "499954846.414166"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "391"
+            endingLineNumber = "391"
+            landmarkName = "-calculateChartPath:andPointsPath:andPathKeyPoints:andPathStartEndPoints:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewController/KDBusinessStatisticsViewController.m"
+            timestampString = "500119864.148012"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "-onTapStartDateButton:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[KDBusinessStatisticsViewController onTapStartDateButton:]"
+                  moduleName = "KuaiDianForSeller"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E7%AE%A1%E7%90%86/ViewController/KDBusinessStatisticsViewController.m"
+                  timestampString = "501951978.195804"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "192"
+                  endingLineNumber = "192"
+                  offsetFromSymbolStart = "176">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__59-[KDBusinessStatisticsViewController onTapStartDateButton:]_block_invoke"
+                  moduleName = "KuaiDianForSeller"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E7%AE%A1%E7%90%86/ViewController/KDBusinessStatisticsViewController.m"
+                  timestampString = "501951978.195972"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "192"
+                  endingLineNumber = "192"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__59-[KDBusinessStatisticsViewController onTapStartDateButton:]_block_invoke_2"
+                  moduleName = "KuaiDianForSeller"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E7%AE%A1%E7%90%86/ViewController/KDBusinessStatisticsViewController.m"
+                  timestampString = "501951978.196108"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "192"
+                  endingLineNumber = "192"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/View/KDPickerView.m"
+            timestampString = "499965129.122162"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "-initWithType:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/View/KDPickerView.m"
+            timestampString = "499965129.122162"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "-initWithFrame:type:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewModel/KDBusinessStatisticsViewModel.m"
+            timestampString = "500131028.246015"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "-startRequestSaleStatisticInfoWithFromDate:toDate:beginBlock:completeBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x8bbe;&#x7f6e;/ViewController/KDAddBankCardViewController.m"
+            timestampString = "500481739.974616"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
+            landmarkName = "-setButton:enable:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x8bbe;&#x7f6e;/ViewModel/KDAddBankViewModel.m"
+            timestampString = "500712241.951308"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "-addBankCardWithParams:beginBlock:completeBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewModel/KDFoodEvalueViewModel.m"
+            timestampString = "500712279.530892"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "-init"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewModel/KDFoodEvalueViewModel.m"
+            timestampString = "500712448.17178"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "286"
+            endingLineNumber = "286"
+            landmarkName = "-filterReplyWithStarLevel:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewModel/KDFoodEvalueViewModel.m"
+            timestampString = "500712448.17178"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "299"
+            endingLineNumber = "299"
+            landmarkName = "-getFilterdDataArrayWithLevel:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewController/KDFoodEvalueViewController.m"
+            timestampString = "500722225.424607"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "310"
+            endingLineNumber = "310"
+            landmarkName = "-replyWithContent:srcReplyModel:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[KDFoodEvalueViewController replyWithContent:srcReplyModel:]"
+                  moduleName = "KuaiDianForSeller"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E7%AE%A1%E7%90%86/ViewController/KDFoodEvalueViewController.m"
+                  timestampString = "501951978.203017"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "310"
+                  endingLineNumber = "310"
+                  offsetFromSymbolStart = "923">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__61-[KDFoodEvalueViewController replyWithContent:srcReplyModel:]_block_invoke"
+                  moduleName = "KuaiDianForSeller"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E7%AE%A1%E7%90%86/ViewController/KDFoodEvalueViewController.m"
+                  timestampString = "501951978.203203"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "311"
+                  endingLineNumber = "311"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewController/KDFoodEvalueViewController.m"
+            timestampString = "500722667.455236"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "314"
+            endingLineNumber = "314"
+            landmarkName = "-replyWithContent:srcReplyModel:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewModel/KDFoodEvalueViewModel.m"
+            timestampString = "500722684.000895"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "274"
             endingLineNumber = "274"
-            landmarkName = "-startRequestShopInfoWithBeginBlock:completeBlock:"
+            landmarkName = "-sendReplyWithParams:beginBlock:completeBlock:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1513,13 +1704,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/View/KDCheckView.m"
-            timestampString = "498910143.784278"
+            filePath = "KuaiDianForSeller/&#x8bbe;&#x7f6e;/ViewController/KDBillViewController.m"
+            timestampString = "500727383.095255"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "-collectionView:numberOfItemsInSection:"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-startLoadTableViewData"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[KDBillViewController startLoadTableViewData]"
+                  moduleName = "KuaiDianForSeller"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E8%AE%BE%E7%BD%AE/ViewController/KDBillViewController.m"
+                  timestampString = "501951978.205503"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "85">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__46-[KDBillViewController startLoadTableViewData]_block_invoke"
+                  moduleName = "KuaiDianForSeller"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E8%AE%BE%E7%BD%AE/ViewController/KDBillViewController.m"
+                  timestampString = "501951978.205653"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x8bbe;&#x7f6e;/ViewController/KDBillViewController.m"
+            timestampString = "500727383.095255"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-startLoadTableViewData"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1529,13 +1768,285 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/View/KDCheckView.m"
-            timestampString = "498910143.784278"
+            filePath = "KuaiDianForSeller/&#x8bbe;&#x7f6e;/ViewModel/KDBillViewModel.m"
+            timestampString = "500727466.413372"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "-startLoadTableDataWithPage:rowsPerPage:beginBlock:completeBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/ShopManager/KDShopManager.m"
+            timestampString = "500742104.799873"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "-getShopLogo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x8bbe;&#x7f6e;/ViewController/KDSettingsViewController.m"
+            timestampString = "500913304.59238"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "-startRequestShopInfo"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[KDSettingsViewController startRequestShopInfo]"
+                  moduleName = "KuaiDianForSeller"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E8%AE%BE%E7%BD%AE/ViewController/KDSettingsViewController.m"
+                  timestampString = "501951978.21113"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "166">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__48-[KDSettingsViewController startRequestShopInfo]_block_invoke"
+                  moduleName = "KuaiDianForSeller"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E8%AE%BE%E7%BD%AE/ViewController/KDSettingsViewController.m"
+                  timestampString = "501951978.211292"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x8bbe;&#x7f6e;/ViewController/KDSettingsViewController.m"
+            timestampString = "500913307.361513"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-startRequestShopInfo"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__48-[KDSettingsViewController startRequestShopInfo]_block_invoke23"
+                  moduleName = "KuaiDianForSeller"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E8%AE%BE%E7%BD%AE/ViewController/KDSettingsViewController.m"
+                  timestampString = "501951978.212164"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "83">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__48-[KDSettingsViewController startRequestShopInfo]_block_invoke_2"
+                  moduleName = "KuaiDianForSeller"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E8%AE%BE%E7%BD%AE/ViewController/KDSettingsViewController.m"
+                  timestampString = "501951978.212324"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "78">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x8bbe;&#x7f6e;/ViewController/KDSettingsViewController.m"
+            timestampString = "500913308.881859"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "-startRequestShopInfo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/View/KDRightLinkTableCell.m"
+            timestampString = "500914982.029459"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "-configureCellWithModel:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewModel/KDFoodManageViewModel.m"
+            timestampString = "500914992.553216"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "-startDownloadFoodImageWithArray:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewModel/KDFoodManageViewModel.m"
+            timestampString = "500915014.234789"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "-startDownloadFoodImageWithArray:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[KDFoodManageViewModel startDownloadFoodImageWithArray:]"
+                  moduleName = "KuaiDianForSeller"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E7%AE%A1%E7%90%86/ViewModel/KDFoodManageViewModel.m"
+                  timestampString = "501951978.215848"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "206"
+                  endingLineNumber = "206"
+                  offsetFromSymbolStart = "725">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__57-[KDFoodManageViewModel startDownloadFoodImageWithArray:]_block_invoke"
+                  moduleName = "KuaiDianForSeller"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ppnd/Documents/Projects/KuaiDianForSeller/KuaiDianForSeller/KuaiDianForSeller/%E7%AE%A1%E7%90%86/ViewModel/KDFoodManageViewModel.m"
+                  timestampString = "501951978.216073"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "206"
+                  endingLineNumber = "206"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewModel/KDFoodManageViewModel.m"
+            timestampString = "500915086.661127"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "-startDownloadFoodImageWithArray:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewController/KDShopInfoViewController.m"
+            timestampString = "501948125.055651"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewModel/KDShopInfoViewModel.m"
+            timestampString = "501951976.955513"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
+            landmarkName = "-getLogoImage"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuaiDianForSeller/&#x7ba1;&#x7406;/ViewModel/KDShopInfoViewModel.m"
+            timestampString = "501951968.294812"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "394"
+            endingLineNumber = "394"
+            landmarkName = "-changeValue:forPropety:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

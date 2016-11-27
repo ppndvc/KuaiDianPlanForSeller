@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1808" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1808" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -8,22 +8,30 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="kCheckViewCell" id="gTV-IL-0wX" customClass="KDCheckViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="120" height="35"/>
+            <rect key="frame" x="0.0" y="0.0" width="163" height="35"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="120" height="35"/>
+                <rect key="frame" x="0.0" y="0.0" width="163" height="35"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="taste1.png" id="of6-hW-fn5">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="taste1.png" translatesAutoresizingMaskIntoConstraints="NO" id="of6-hW-fn5">
                         <rect key="frame" x="5.5" y="7.5" width="20" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="BDS-4b-n9f"/>
+                            <constraint firstAttribute="width" constant="20" id="M2F-A3-q0X"/>
+                        </constraints>
                     </imageView>
-                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selected.png" id="saD-Ck-4yP">
-                        <rect key="frame" x="94" y="10" width="15" height="16"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selected.png" translatesAutoresizingMaskIntoConstraints="NO" id="saD-Ck-4yP">
+                        <rect key="frame" x="143" y="10" width="15" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="Z5E-Ew-h22"/>
+                            <constraint firstAttribute="height" constant="16" id="aQf-Ho-tDK"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fDc-wQ-kKA">
-                        <rect key="frame" x="32" y="0.0" width="60" height="35"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDc-wQ-kKA">
+                        <rect key="frame" x="32" y="0.0" width="107" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="WAe-4z-T6P"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -31,13 +39,22 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <size key="customSize" width="131" height="50"/>
+            <constraints>
+                <constraint firstItem="fDc-wQ-kKA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="HEa-Hy-VqN"/>
+                <constraint firstItem="saD-Ck-4yP" firstAttribute="leading" secondItem="fDc-wQ-kKA" secondAttribute="trailing" constant="4" id="IgE-yW-DuN"/>
+                <constraint firstItem="of6-hW-fn5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5.5" id="UGP-m2-r8z"/>
+                <constraint firstItem="fDc-wQ-kKA" firstAttribute="leading" secondItem="of6-hW-fn5" secondAttribute="trailing" constant="6.5" id="bJw-rO-fGF"/>
+                <constraint firstItem="saD-Ck-4yP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="bMY-uE-gIa"/>
+                <constraint firstItem="of6-hW-fn5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="7.5" id="lHU-sL-2EA"/>
+                <constraint firstAttribute="trailing" secondItem="saD-Ck-4yP" secondAttribute="trailing" constant="5" id="xZt-Kg-s4r"/>
+            </constraints>
+            <size key="customSize" width="174" height="50"/>
             <connections>
                 <outlet property="labelImage" destination="of6-hW-fn5" id="SIC-s0-4Nn"/>
                 <outlet property="labelTitle" destination="fDc-wQ-kKA" id="S17-bh-bPw"/>
                 <outlet property="selectedImage" destination="saD-Ck-4yP" id="7xl-xS-Nxc"/>
             </connections>
-            <point key="canvasLocation" x="415.5" y="245.5"/>
+            <point key="canvasLocation" x="436.5" y="245.5"/>
         </collectionViewCell>
     </objects>
     <resources>

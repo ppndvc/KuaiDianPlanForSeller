@@ -9,6 +9,7 @@
 #import "KDManageViewController.h"
 #import "KDManageCollectionCell.h"
 #import "KDManageViewModel.h"
+#import "KDSaleStatisticInfoModel.h"
 
 #define COLLECTION_CELL_WIDTH 80
 #define COLLECTION_CELL_HEIGHT 80
@@ -42,6 +43,12 @@ static NSString *kManageCollectionCellIdentifier = @"kManageCollectionCell";
 
     [_collectionView setCollectionViewLayout:flowLayout];
     
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self startRequestStatisticInfo];
 }
 
 #pragma mark - collection view delegate methods
@@ -86,7 +93,8 @@ static NSString *kManageCollectionCellIdentifier = @"kManageCollectionCell";
             break;
         case 2:
         {
-            [[KDRouterManger sharedManager] pushVCWithKey:@"KDSaleActivityVC" parentVC:self];
+            [self showHUDWithInfo:UNFINISHED_FUNCTION];
+//            [[KDRouterManger sharedManager] pushVCWithKey:@"KDSaleActivityVC" parentVC:self];
         }
             break;
         case 3:
@@ -116,15 +124,55 @@ static NSString *kManageCollectionCellIdentifier = @"kManageCollectionCell";
     return UIEdgeInsetsZero;
 }
 
+-(void)startRequestStatisticInfo
+{
+    WS(ws);
+    [_viewModel startRequestSaleStatisticInfoWithFromDate:@"2016-09-29 00:00:00" toDate:@"2016-10-06 23:59:59" beginBlock:^{
+
+        [ws showHUD];
+        
+    } completeBlock:^(BOOL isSuccess, NSArray *params, NSError *error) {
+        if (isSuccess)
+        {
+            [ws hideHUD];
+            if (VALIDATE_ARRAY(params))
+            {
+                KDSaleStatisticInfoModel *model = [params firstObject];
+                _turnoverLabel.text = [NSString stringWithFormat:@"%.2f",model.money];
+                _saleMountLabel.text = [NSString stringWithFormat:@"%d",(int)model.orderCount];
+            }
+        }
+        else
+        {
+            if (error)
+            {
+                [ws showErrorHUDWithStatus:error.localizedDescription];
+            }
+            else
+            {
+                [ws showErrorHUDWithStatus:HTTP_REQUEST_ERROR];
+            }
+        }
+    }];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)onTapCheckDetail:(id)sender
+{
+    NSDictionary *param = nil;
+    if (_viewModel && _viewModel.getTodayStatisticInfo)
+    {
+        param = @{TODAY_SALE_STATISTIC_INFO:_viewModel.getTodayStatisticInfo};
+    }
+    
+    [[KDRouterManger sharedManager] pushVCWithKey:@"KDBusinessStatisticsVC" parentVC:self params:param];
+}
+
 -(void)dealloc
 {
     DDLogInfo(@"-KDManageViewController dealloc");
-}
-- (IBAction)onTapCheckDetail:(id)sender
-{
 }
 @end

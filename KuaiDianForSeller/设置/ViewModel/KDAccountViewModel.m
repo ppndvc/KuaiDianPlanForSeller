@@ -21,6 +21,8 @@
 //数据源
 @property(nonatomic,strong)NSArray *dataSource;
 
+@property(nonatomic,strong)KDUserModel *userInfo;
+
 @end
 
 @implementation KDAccountViewModel
@@ -39,6 +41,7 @@
         model3.actionString = @"push://KDChangePhoneNumberVC";
         KDActionModel *model4 = [KDActionModel new];
         model4.title = CHANGE_PASSWORD;
+        model4.actionString = @"push://KDChangePWDVC";
         
         KDActionModel *model5 = [KDActionModel new];
         model5.title = LOGOU_CURRENT_USER;
@@ -80,27 +83,52 @@
         if (_dataSource && _dataSource.count > indexPath.section)
         {
             NSArray *rowArray = _dataSource[indexPath.section];
+            
             if (rowArray && rowArray.count > indexPath.row)
             {
                 KDActionModel *model = (KDActionModel *)rowArray[indexPath.row];
-                
-                if (indexPath.section == 1 && indexPath.row == 1)
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
+                switch (indexPath.section)
                 {
-                    cell.textLabel.text = model.title;
-                }
-                else if (indexPath.section == 2)
-                {
-                    cell.accessoryType = UITableViewCellAccessoryNone;
-                    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, NORMAL_ROW_HEIGHT)];
-                    label.font = [UIFont systemFontOfSize:TEXT_FONT_MEDIUM_SIZE];
-                    label.textAlignment = NSTextAlignmentCenter;
-                    [cell.contentView addSubview:label];
-                    label.text = model.title;
-                }
-                else
-                {
-                    cell.textLabel.text = model.title;
-                    cell.detailTextLabel.text = @"sds";
+                    case 0:
+                    {
+                        cell.textLabel.text = model.title;
+
+                        if (indexPath.row == 0)
+                        {
+                            cell.detailTextLabel.text = [_userInfo name];
+                            cell.accessoryType = UITableViewCellAccessoryNone;
+                        }
+                        else if (indexPath.row == 1)
+                        {
+                            cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f",[_userInfo money]];
+                        }
+                        
+                    }
+                        break;
+                    case 1:
+                    {
+                        cell.textLabel.text = model.title;
+
+                        if (indexPath.row == 0)
+                        {
+                            cell.detailTextLabel.text = [_userInfo telephone];
+                        }
+                    }
+                        break;
+                    case 2:
+                    {
+                        cell.accessoryType = UITableViewCellAccessoryNone;
+                        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, NORMAL_ROW_HEIGHT)];
+                        label.font = [UIFont systemFontOfSize:TEXT_FONT_MEDIUM_SIZE];
+                        label.textAlignment = NSTextAlignmentCenter;
+                        [cell.contentView addSubview:label];
+                        label.text = model.title;
+                    }
+                        break;
+                    default:
+                        break;
                 }
             }
         }
@@ -124,4 +152,77 @@
     return nil;
 }
 
+-(void)startRequestUserInfoWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock
+{
+    if (!_userInfo)
+    {
+        if (beginBlock)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                beginBlock();
+            });
+        }
+    }
+
+    WS(ws);
+    
+    [KDRequestAPI sendGetUserInfoRequestWithCompleteBlock:^(id responseObject, NSError *error) {
+        if (error)
+        {
+            DDLogInfo(@"获取用户信息请求失败：%@",error.localizedDescription);
+            ws.userInfo = [[KDUserManager sharedInstance] getUserInfo];
+            
+            if (completeBlock)
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completeBlock(NO,ws.userInfo,error);
+                });
+            }
+        }
+        else
+        {
+            NSDictionary *dict = [responseObject objectForKey:RESPONSE_PAYLOAD];
+            
+            if (VALIDATE_DICTIONARY(dict))
+            {
+                KDUserModel *model = [KDUserModel yy_modelWithDictionary:dict];
+                ws.userInfo = model;
+
+                if (VALIDATE_MODEL(model, @"KDUserModel"))
+                {
+                    [[KDUserManager sharedInstance] updateUserInfo:model];
+                    
+                    if (completeBlock)
+                    {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            completeBlock(YES,model,nil);
+                        });
+                    }
+                }
+                else
+                {
+                    ws.userInfo = [[KDUserManager sharedInstance] getUserInfo];
+                    if (completeBlock)
+                    {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            completeBlock(NO,ws.userInfo,nil);
+                        });
+                    }
+                    
+                }
+            }
+            else
+            {
+                ws.userInfo = [[KDUserManager sharedInstance] getUserInfo];
+                if (completeBlock)
+                {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        completeBlock(NO,ws.userInfo,nil);
+                    });
+                }
+                
+            }
+        }
+    }];
+}
 @end

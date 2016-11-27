@@ -10,8 +10,15 @@
 
 @interface KDSettingViewModel : KDBaseViewModel
 
+
+//设置图片下载技术回调
+-(void)setFinishDownloadLogoHandler:(ImageDownloadCompletedHandler)handler;
+
 //请求个人信息
--(void)startRequestUserInfoWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock;
+-(void)startRequestBankInfoWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock;
+
+//请求商铺信息
+-(void)startRequestShopInfoWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock;
 
 @end
 

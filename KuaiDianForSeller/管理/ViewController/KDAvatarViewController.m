@@ -29,19 +29,10 @@
     [self setNaviBarItemWithType:KDNavigationBackToPreviousVC];
     self.navigationItem.title = AVATAR_TITLE;
     
-    if (VALIDATE_DICTIONARY(self.parameters))
+    if (self.parameters)
     {
-        NSString *titleString = [self.parameters objectForKey:@""];
-        if (VALIDATE_STRING(titleString))
-        {
-            self.navigationItem.title = titleString;
-        }
-        
-        _srcImage = (UIImage *)[self.parameters objectForKey:@""];
-        if (VALIDATE_MODEL(_srcImage, @"UIImage"))
-        {
-            _imageView.image = _srcImage;
-        }
+        _srcImage = [self.parameters objectForKey:VIEWCONTROLLER_IMAGE_KEY];
+        _imageView.image = _srcImage;
     }
 }
 - (IBAction)onTapActionButton:(id)sender

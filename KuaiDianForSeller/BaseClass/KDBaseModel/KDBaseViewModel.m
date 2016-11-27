@@ -65,6 +65,23 @@
 {
     //子类实现
 }
+
+-(void)refreshTableDataWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock
+{
+    //子类实现
+}
+
+-(void)startLoadTableDataWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock
+{
+    //子类实现
+}
+
+-(void)loadmoreTableDataWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock
+{
+    //子类实现
+}
+
+
 -(void)onUserLogout
 {
     //子类实现

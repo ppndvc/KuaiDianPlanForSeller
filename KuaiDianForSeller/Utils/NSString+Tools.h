@@ -37,18 +37,27 @@
 //把time转化成对应格式的字符串
 +(NSString *)getTimeStringWithDate:(NSDate *)date formater:(NSString *)formater;
 
+//比较时间字符串
++(NSComparisonResult)compareDateString:(NSString *)date1 withDate:(NSString *)date2 dateFormater:(NSString *)formater;
+
 //格式化银行卡号码（隔4位）
 +(NSString *)getFormateCardNumberFromString:(NSString *)srcString;
 
 //获得虚拟银行卡号 比如： *****5958
-+(NSString *)getVertualStringWithString:(NSString *)srcString;
++(NSString *)getVertualCardNumberStringWithString:(NSString *)srcString;
 
 //格式化电话号码
 +(NSString *)getPhoneNumberWithString:(NSString *)srcStr formater:(NSString *)formater;
+
+//去掉空格换行
++(NSString *)trimString:(NSString *)srcString;
+
 //电话号码验证
 + (BOOL)validatePhoneNumber:(NSString *)phoneNumber;
 //邮箱
 + (BOOL)validateEmail:(NSString *)email;
 //身份证号
 + (BOOL)validateIdentityCard: (NSString *)identityCard;
+//银行卡号
++ (BOOL)validateBankCard: (NSString *)bankCard;
 @end

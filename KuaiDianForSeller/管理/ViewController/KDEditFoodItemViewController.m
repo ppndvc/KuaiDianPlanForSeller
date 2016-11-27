@@ -13,6 +13,7 @@
 #import "KDDatePicker.h"
 #import "KDFoodCategoryModel.h"
 #import "KDEditFoodViewModel.h"
+#import "KDPickerView.h"
 
 #define HEADERVIEW_HEIGHT 120
 #define MAX_IMAGE_WIDTH 1024
@@ -127,7 +128,7 @@
         [_labelView updateTastes:_foodModel.tasteType];
         
         //从缓存读取
-        UIImage *image = (UIImage *)[[KDCacheManager userCache] objectForKey:_foodModel.imageURL];
+        UIImage *image = (UIImage *)[[KDCacheManager systemCache] objectForKey:_foodModel.imageURL];
         [self setImageViewImage:image contentMode:UIViewContentModeScaleAspectFill];
         
         _deleteFoodButton.enabled = YES;
@@ -256,22 +257,47 @@
     [self.view endEditing:YES];
     if (VALIDATE_ARRAY(_foodCateArray))
     {
+//        WS(ws);
+//        KDDatePicker *pickerView = [[KDDatePicker alloc] initWithType:KDPickerTypeOfNormalPickerView completeBlock:^(NSString *date1, KDFoodCategoryModel *model) {
+//            
+//            __strong __typeof(ws) strongSelf = ws;
+//
+//            if (VALIDATE_MODEL(model, @"KDFoodCategoryModel"))
+//            {
+//                [strongSelf.foodCategoryButton setTitle:date1 forState:UIControlStateNormal];
+//                strongSelf.foodModel.categoryDescription = model.name;
+//                strongSelf.foodModel.category = model.category;
+//            }
+//            
+//        } superView:[UIApplication sharedApplication].keyWindow.rootViewController.view];
+//        
+//        [pickerView setPickerViewDataSource:_foodCateArray selectedIndex:NON_SELECTED_INDEX];
+//        [pickerView showDatePickerWithAnimated:YES];
+        
+        KDPickerView *datePicker = [[KDPickerView alloc] initWithType:KDPickerTypeOfNormalPickerView];
+        
         WS(ws);
-        KDDatePicker *pickerView = [[KDDatePicker alloc] initWithType:KDPickerTypeOfNormalPickerView completeBlock:^(NSString *date1, KDFoodCategoryModel *model) {
+        JCAlertView *alertView = [[JCAlertView alloc] initWithCustomView:datePicker ButtonType:JCAlertViewButtonTypeCancel ButtonTitle:BUTTON_TITLE_CANCEL Click:^{
+            
+        } ButtonType:JCAlertViewButtonTypeDefault ButtonTitle:BUTTON_TITLE_SURE Click:^{
             
             __strong __typeof(ws) strongSelf = ws;
-
-            if (VALIDATE_MODEL(model, @"KDFoodCategoryModel"))
+            NSArray *resultArray = [datePicker getPickerData];
+            if (VALIDATE_ARRAY(resultArray))
             {
-                [strongSelf.foodCategoryButton setTitle:date1 forState:UIControlStateNormal];
-                strongSelf.foodModel.categoryDescription = model.name;
-                strongSelf.foodModel.category = model.category;
+                KDFoodCategoryModel *model = resultArray[0];
+                
+                if (VALIDATE_MODEL(model, @"KDFoodCategoryModel"))
+                {
+                    [strongSelf.foodCategoryButton setTitle:model.name forState:UIControlStateNormal];
+                    strongSelf.foodModel.categoryDescription = model.name;
+                    strongSelf.foodModel.category = model.category;
+                }
             }
             
-        } superView:[UIApplication sharedApplication].keyWindow.rootViewController.view];
+        } dismissWhenTouchedBackground:YES];
         
-        [pickerView setPickerViewDataSource:_foodCateArray selectedIndex:NON_SELECTED_INDEX];
-        [pickerView showDatePickerWithAnimated:YES];
+        [alertView show];
     }
 }
 

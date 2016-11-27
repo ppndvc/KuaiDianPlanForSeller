@@ -31,3 +31,5 @@ NSString *const kOrderDetailTableViewCell = @"kOrderDetailTableViewCell";
 NSString *const kHandleListTableCell = @"kHandleListTableCell";
 
 NSString *const kCheckViewCell = @"kCheckViewCell";
+
+NSString *const kBillTableCellIdentifier = @"kBillTableCellIdentifier";

@@ -40,6 +40,16 @@
 //获取对应航的model
 -(id)collectionViewModelForIndexPath:(NSIndexPath *)indexPath;
 
+
+//刷新加载
+-(void)refreshTableDataWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock;
+
+//开始加载数据
+-(void)startLoadTableDataWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock;
+
+//加载更多
+-(void)loadmoreTableDataWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock;
+
 //获取用户信息
 -(KDUserModel *)getUserInfoModel;
 

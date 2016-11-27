@@ -114,33 +114,33 @@
 		<key>Description</key>
 		<string>营业额页面</string>
 	</dict>
-	<key>LoginVC - 13 - 4</key>
+	<key>KDChangePWDVC</key>
 	<dict>
 		<key>ClassName</key>
-		<string>KDLoginViewController</string>
+		<string>KDChangePWDViewController</string>
 		<key>Description</key>
-		<string>登陆页面</string>
+		<string>修改密码页面</string>
 	</dict>
-	<key>LoginVC - 13 - 5</key>
+	<key>KDAddBankCardVC</key>
 	<dict>
 		<key>ClassName</key>
-		<string>KDLoginViewController</string>
+		<string>KDAddBankCardViewController</string>
 		<key>Description</key>
-		<string>登陆页面</string>
+		<string>添加银行卡页面</string>
 	</dict>
-	<key>LoginVC - 13 - 6</key>
+	<key>KDMyBankCardVC</key>
 	<dict>
 		<key>ClassName</key>
-		<string>KDLoginViewController</string>
+		<string>KDMyBankCardViewController</string>
 		<key>Description</key>
-		<string>登陆页面</string>
+		<string>我的银行卡页面</string>
 	</dict>
-	<key>LoginVC - 13 - 7</key>
+	<key>KDBillVC</key>
 	<dict>
 		<key>ClassName</key>
-		<string>KDLoginViewController</string>
+		<string>KDBillViewController</string>
 		<key>Description</key>
-		<string>登陆页面</string>
+		<string>账单详情页面</string>
 	</dict>
 	<key>LoginVC - 13 - 8</key>
 	<dict>

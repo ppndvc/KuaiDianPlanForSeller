@@ -8,6 +8,23 @@
 
 #import "KDChangePWDViewModel.h"
 
+#define TIME_INTERVAL 0.5
+#define MAX_DURATION 60
+
+@interface KDChangePWDViewModel ()
+
+@property(nonatomic,copy)KDViewModelTimerHandleBlock timerBlock;
+
+@property(nonatomic,copy)KDViewModelTimerFinishedHandleBlock timerFinishedBlock;
+
+@property(nonatomic,copy)NSString *code;
+
+@property(nonatomic,strong)NSTimer *timer;
+
+@property(nonatomic,assign)NSInteger originalStamp;
+
+@end
+
 @implementation KDChangePWDViewModel
 -(void)getCodeWithParams:(NSDictionary *)params beginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock
 {
@@ -30,6 +47,7 @@
             });
         }
         
+        WS(ws);
         [KDRequestAPI sendGetVerifyCodeRequestWithParam:params completeBlock:^(id responseObject, NSError *error) {
             
             if (error)
@@ -45,15 +63,18 @@
             {
                 if (responseObject)
                 {
-                    NSDictionary *dict = [responseObject objectForKey:RESPONSE_PAYLOAD];
-                    if (dict && [dict isKindOfClass:[NSDictionary class]])
+                    NSString *tmpCode = [NSString stringWithFormat:@"%@",[responseObject objectForKey:RESPONSE_PAYLOAD]];
+                    if (VALIDATE_STRING(tmpCode))
                     {
-                        if (completeBlock)
-                        {
-                            completeBlock(YES,dict,nil);
-                        }
-                        return ;
+                        ws.code = tmpCode;
+                        DDLogInfo(@"-code:%@",tmpCode);
                     }
+                    
+                    if (completeBlock)
+                    {
+                        completeBlock(YES,nil,nil);
+                    }
+                    return ;
                 }
                 
                 if (completeBlock)
@@ -99,4 +120,72 @@
     });
 }
 
+-(void)startTimer
+{
+    if (!_timer || !_timer.isValid)
+    {
+        if (_timerBlock)
+        {
+            _originalStamp = [[NSDate date] timeIntervalSince1970];
+
+            _timer = [NSTimer scheduledTimerWithTimeInterval:TIME_INTERVAL target:self selector:@selector(onTimer) userInfo:nil repeats:YES];
+            [_timer fire];
+        }
+    }
+}
+-(void)stopTimer
+{
+    if (_timer && _timer.isValid)
+    {
+        _originalStamp = 0;
+        [_timer invalidate];
+        _timer = nil;
+    }
+}
+-(void)onTimer
+{
+    NSInteger stamp = [[NSDate date] timeIntervalSince1970];
+    NSInteger stampOffset = stamp - _originalStamp;
+    
+    if (stampOffset < MAX_DURATION)
+    {
+        if (_timerBlock)
+        {
+            NSString *title = [NSString stringWithFormat:@"%d",(int)(MAX_DURATION - stampOffset)];
+            _timerBlock(title);
+        }
+    }
+    else
+    {
+        [self stopTimer];
+        
+        if (_timerFinishedBlock)
+        {
+            _timerFinishedBlock(nil);
+        }
+    }
+}
+-(void)setTimerHandleBlock:(KDViewModelTimerHandleBlock)block
+{
+    if (block)
+    {
+        _timerBlock = block;
+    }
+}
+-(void)setTimerFinishedHandleBlock:(KDViewModelTimerFinishedHandleBlock)block
+{
+    if (block)
+    {
+        _timerFinishedBlock = block;
+    }
+}
+-(BOOL)checkVerifyCode:(NSString *)code
+{
+    BOOL isValidate = NO;
+    if (VALIDATE_STRING(code) && VALIDATE_STRING(_code) && [code isEqualToString:_code])
+    {
+        isValidate = YES;
+    }
+    return isValidate;
+}
 @end

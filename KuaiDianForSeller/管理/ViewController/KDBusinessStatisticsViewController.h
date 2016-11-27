@@ -19,5 +19,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *cashPayLabel;
 @property (weak, nonatomic) IBOutlet UILabel *kudadianAllowanceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *restAllowanceLabel;
+- (IBAction)onTapStartDateButton:(id)sender;
+- (IBAction)onTapEndDateButton:(id)sender;
+- (IBAction)onTapTodayButton:(id)sender;
 
 @end

@@ -44,5 +44,20 @@
 +(void)sendDeleteFoodItemWithParam:(NSDictionary *)param completeBlock:(KDRequestCompletionBlock)completeBlock;
 //上传食品logo请求
 +(void)sendUploadFileWithParam:(NSDictionary *)param fileData:(NSData *)fileData fileName:(NSString *)fileName progressBlock:(KDRequestProgressBlock)progressBlock completeBlock:(KDRequestCompletionBlock)completeBlock;
-
+//获取销售统计信息
++(void)sendGetSaleStatisticInfoWithParam:(NSDictionary *)param completeBlock:(KDRequestCompletionBlock)completeBlock;
+//获取食品评价信息
++(void)sendGetFoodEvalueInfoWithParam:(NSDictionary *)param completeBlock:(KDRequestCompletionBlock)completeBlock;
+//获取银行卡信息
++(void)sendGetBankCardInfoWithParam:(NSDictionary *)param completeBlock:(KDRequestCompletionBlock)completeBlock;
+//添加银行卡
++(void)sendAddBankCardRequestWithParam:(NSDictionary *)param completeBlock:(KDRequestCompletionBlock)completeBlock;
+//添加回复请求
++(void)sendAddReplyRequestWithParam:(NSDictionary *)param completeBlock:(KDRequestCompletionBlock)completeBlock;
+//获取账单请求
++(void)sendGetBillDetailRequestWithParam:(NSDictionary *)param completeBlock:(KDRequestCompletionBlock)completeBlock;
+//下载视频logo
++(void)downloadFoodLogoWithFilePath:(NSString *)filePath completeBlock:(KDDownloadCompleteBlock)completeBlock;
+//下载店铺logo
++(void)downloadShopLogoWithFilePath:(NSString *)filePath completeBlock:(KDDownloadCompleteBlock)completeBlock;
 @end

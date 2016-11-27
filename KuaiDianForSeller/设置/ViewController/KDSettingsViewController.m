@@ -17,7 +17,9 @@
 #define PAYVIEW_HEIGHT 50
 #define VERTICAL_PADDING 10
 
-@interface KDSettingsViewController ()<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate>
+#define NO_BANK_CARD_TITLE @"点击添加"
+
+@interface KDSettingsViewController ()<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,KDPayBrandViewDelegate>
 
 //viewmodel
 @property(nonatomic,strong)KDSettingViewModel *viewModel;
@@ -59,34 +61,61 @@
 -(void)startRequestShopInfo
 {
     WS(ws);
-    KDUserModel *model = [_viewModel getUserInfoModel];
+    KDShopModel *shopModel = [[KDShopManager sharedInstance] getShopInfo];
     
-    [_viewModel startRequestUserInfoWithBeginBlock:^{
-        if (!model)
+    [_viewModel startRequestShopInfoWithBeginBlock:^{
+        if (!shopModel)
         {
             [ws showHUD];
         }
     } completeBlock:^(BOOL isSuccess, id params, NSError *error) {
         
-        if (isSuccess)
-        {
-            [ws updateHeaderView];
-            [ws hideHUD];
-        }
-        else
-        {
-            if (!model)
+        [ws startRequestBankInfoWithCompleteBlock:^(BOOL isSuccess, id params, NSError *error) {
+            
+            __strong __typeof(ws) ss = ws;
+            if (isSuccess)
             {
-                [ws showErrorHUDWithStatus:[error localizedDescription]];
+                [ss hideHUD];
             }
-        }
+            else
+            {
+                if (!params)
+                {
+                    [ss showErrorHUDWithStatus:[error localizedDescription]];
+                }
+                else
+                {
+                    [ss showErrorHUDWithStatus:HTTP_REQUEST_ERROR];
+                }
+            }
+            
+            [ss updateHeaderView];
+        }];
     }];
-    
-    [self updateHeaderView];
+}
+
+-(void)startRequestBankInfoWithCompleteBlock:(KDViewModelCompleteCallBackBlock)completeBlock
+{
+    KDUserModel *model = [_viewModel getUserInfoModel];
+
+    WS(ws);
+    [_viewModel startRequestBankInfoWithBeginBlock:^{
+        if (!model)
+        {
+            [ws showHUD];
+        }
+    } completeBlock:completeBlock];
 }
 -(void)setupUI
 {
     [_tableView setTableHeaderView:self.tableViewHeaderView];
+   
+    WS(ws);
+    [_viewModel setFinishDownloadLogoHandler:^(UIImage *img) {
+        [ws updateHeaderView];
+    }];
+    
+    [self updateHeaderView];
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -159,7 +188,9 @@
     
     _imageView = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - IMAGEVIEW_HEIGHT)/2, 0, IMAGEVIEW_HEIGHT, IMAGEVIEW_HEIGHT)];
     [headerView addSubview:_imageView];
-    _imageView.backgroundColor = [UIColor whiteColor];
+    _imageView.layer.cornerRadius = (IMAGEVIEW_HEIGHT)/2.0;
+    _imageView.layer.masksToBounds = YES;
+    _imageView.image = [[KDShopManager sharedInstance] getShopLogo];
     
     _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, _imageView.frame.origin.y + _imageView.frame.size.height + VERTICAL_PADDING, SCREEN_WIDTH, TEXT_FONT_BIG_SIZE)];
     _nameLabel.font = [UIFont systemFontOfSize:TEXT_FONT_BIG_SIZE];
@@ -169,6 +200,7 @@
     
     _payView = [[KDPayBrandView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/4.0, _nameLabel.frame.origin.y + _nameLabel.frame.size.height + VERTICAL_PADDING, SCREEN_WIDTH/2.0, PAYVIEW_HEIGHT)];
     [headerView addSubview:_payView];
+    _payView.delegate = self;
     return headerView;
 }
 -(void)viewDidLayoutSubviews
@@ -179,12 +211,23 @@
 }
 -(void)updateHeaderView
 {
-    KDUserModel *model = [_viewModel getUserInfoModel];
+    KDUserModel *model = [[KDUserManager sharedInstance] getUserInfo];
+    KDBankModel *bankModel = [[KDUserManager sharedInstance] getUserBankInfo];
+    
+    _imageView.image = [[KDShopManager sharedInstance] getShopLogo];
+    
     if (model && [model isKindOfClass:[KDUserModel class]])
     {
-//        _imageView.image = [UIImage imageNamed:model.ima];
         _nameLabel.text = model.name;
-        [_payView setPayBrandViewType:KDPaymentTypeOfBankPay number:model.cardNumber];
+    }
+    
+    if (VALIDATE_MODEL(bankModel, @"KDBankModel"))
+    {
+        [_payView setPayBrandViewType:KDPaymentTypeOfBankPay number:bankModel.formatedVertualCardNumber];
+    }
+    else
+    {
+        [_payView setPayBrandViewType:KDPaymentTypeOfBankPay number:NO_BANK_CARD_TITLE];
     }
 }
 
@@ -206,31 +249,30 @@
         NSLog(@"classic button pressed");
     };
     [items addObject:itemShare];
-  
-//    itemShare = [[JMActionSheetItem alloc] init];
-//    itemShare.title = @"联系客服dd";
-//    itemShare.action = ^(void){
-//        NSLog(@"classic button pressed");
-//    };
-//    [items addObject:itemShare];
     
     desc.items = items;
     [JMActionSheet showActionSheet:desc];
 }
+
+#pragma mark - paymentView delegate
+-(void)onTapPayBrandViewWithPaymentType:(KDPaymentType)type
+{
+    KDBankModel *bankModel = [[KDUserManager sharedInstance] getUserBankInfo];
+    if (VALIDATE_MODEL(bankModel, @"KDBankModel"))
+    {
+        [[KDRouterManger sharedManager] pushVCWithKey:@"KDMyBankCardVC" parentVC:self params:@{BANK_INFO_MODEL:bankModel}];
+    }
+    else
+    {
+        [[KDRouterManger sharedManager] pushVCWithKey:@"KDMyBankCardVC" parentVC:self];
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 -(void)dealloc
 {
     DDLogInfo(@"-KDSettingsViewController dealloc");

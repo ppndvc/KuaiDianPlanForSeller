@@ -107,7 +107,7 @@
         if (AFRequest)
         {
             //先取消此地址的所有请求
-            [self cancelRequestWithNSURLRequest:AFRequest];
+//            [self cancelRequestWithNSURLRequest:AFRequest];
             
             switch (request.requestType)
             {

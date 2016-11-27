@@ -10,7 +10,6 @@
 #import "KDOrderModel.h"
 #import "KDOrderDetailTableViewCell.h"
 
-
 #define VERTICAL_PADDING 14
 #define HONRIZONTAL_PADDING 14
 #define SHARP_STRING @"#"
@@ -127,6 +126,7 @@
         self.hidden = NO;
     }
 }
+
 -(void)clearView
 {
     _countLabel.attributedText = nil;

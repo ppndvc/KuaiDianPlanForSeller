@@ -41,9 +41,10 @@
 
 -(void)onTapRightBTN
 {
-    
+    [[KDRouterManger sharedManager] pushVCWithKey:@"KDBillVC" parentVC:self];
 }
 - (IBAction)onTapChargeButton:(id)sender
 {
+    
 }
 @end

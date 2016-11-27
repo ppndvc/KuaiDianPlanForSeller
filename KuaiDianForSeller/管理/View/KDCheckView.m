@@ -138,7 +138,7 @@
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(ITEM_WIDTH, ITEM_HEIGHT);
+    return CGSizeMake(self.frame.size.width, ITEM_HEIGHT);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
@@ -195,7 +195,8 @@
             }
         }];
     }
-    
+
     return selectedItems;
 }
+
 @end

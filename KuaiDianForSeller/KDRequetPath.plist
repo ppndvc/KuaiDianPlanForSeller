@@ -36,23 +36,45 @@
 	<string>kuaidian-sellerapp/seller/store/food/del</string>
 	<key>upload_food_logo</key>
 	<string>kuaidian-sellerapp/seller/store/food/info/logo/up</string>
-	<key>get_userinfo - 12 - 6</key>
-	<string>kuaidian-sellerapp/seller/info/13</string>
-	<key>get_userinfo - 12 - 7</key>
-	<string>kuaidian-sellerapp/seller/info/13</string>
-	<key>get_userinfo - 12 - 8</key>
-	<string>kuaidian-sellerapp/seller/info/13</string>
-	<key>get_userinfo - 12 - 9</key>
-	<string>kuaidian-sellerapp/seller/info/13</string>
-	<key>get_userinfo - 12 - 10</key>
-	<string>kuaidian-sellerapp/seller/info/13</string>
-	<key>get_userinfo - 12 - 11</key>
-	<string>kuaidian-sellerapp/seller/info/13</string>
-	<key>get_userinfo - 12 - 12</key>
-	<string>kuaidian-sellerapp/seller/info/13</string>
-	<key>get_userinfo - 12 - 13</key>
-	<string>kuaidian-sellerapp/seller/info/13</string>
+	<key>business_record</key>
+	<string>kuaidian-sellerapp/seller/business/record</string>
+	<key>food_evalue_search</key>
+	<string>kuaidian-sellerapp/seller/evalute/search</string>
+	<key>bank_card_info</key>
+	<string>kuaidian-sellerapp/seller/bank/card/</string>
+	<key>add_bank_card</key>
+	<string>kuaidian-sellerapp/seller/bank/card/add</string>
+	<key>add_reply</key>
+	<string>kuaidian-sellerapp/seller/reply/add</string>
+	<key>get_bill_detail</key>
+	<string>kuaidian-sellerapp/seller/consume/record</string>
+	<key>download_food_logo</key>
+	<string>kuaidian-sellerapp/seller/store/food/info/logo/down</string>
+	<key>download_shop_logo</key>
+	<string>kuaidian-sellerapp/seller/store/info/logo/down</string>
 	<key>get_userinfo - 12 - 14</key>
+	<string>kuaidian-sellerapp/seller/info/13</string>
+	<key>get_userinfo - 12 - 14 - 2</key>
+	<string>kuaidian-sellerapp/seller/info/13</string>
+	<key>get_userinfo - 12 - 14 - 3</key>
+	<string>kuaidian-sellerapp/seller/info/13</string>
+	<key>get_userinfo - 12 - 14 - 4</key>
+	<string>kuaidian-sellerapp/seller/info/13</string>
+	<key>get_userinfo - 12 - 14 - 5</key>
+	<string>kuaidian-sellerapp/seller/info/13</string>
+	<key>get_userinfo - 12 - 14 - 6</key>
+	<string>kuaidian-sellerapp/seller/info/13</string>
+	<key>get_userinfo - 12 - 14 - 7</key>
+	<string>kuaidian-sellerapp/seller/info/13</string>
+	<key>get_userinfo - 12 - 14 - 8</key>
+	<string>kuaidian-sellerapp/seller/info/13</string>
+	<key>get_userinfo - 12 - 14 - 9</key>
+	<string>kuaidian-sellerapp/seller/info/13</string>
+	<key>get_userinfo - 12 - 14 - 10</key>
+	<string>kuaidian-sellerapp/seller/info/13</string>
+	<key>get_userinfo - 12 - 14 - 11</key>
+	<string>kuaidian-sellerapp/seller/info/13</string>
+	<key>get_userinfo - 12 - 14 - 12</key>
 	<string>kuaidian-sellerapp/seller/info/13</string>
 </dict>
 </plist>

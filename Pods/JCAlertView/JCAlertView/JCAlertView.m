@@ -359,15 +359,15 @@ NSString *const JCAlertViewWillShowNotification = @"JCAlertViewWillShowNotificat
             contentFrame.size.height = customFrame.size.height + JCButtonHeight + 3*JCMargin;
         }
         
-        if (customFrame.size.width > (JCScreenWidth * 0.8 - 2*JCMargin))
+        if (customFrame.size.width > (JCScreenWidth * 0.9))
         {
-            customFrame.size.width = (JCScreenWidth * 0.8 - 2*JCMargin);
-            contentFrame.size.width = JCScreenWidth * 0.8;
+            customFrame.size.width = (JCScreenWidth * 0.9);
+            contentFrame.size.width = JCScreenWidth * 0.9;
         }
         else
         {
-            customFrame.origin.x = (JCScreenWidth * 0.8 - customFrame.size.width)/2.0;
-            contentFrame.size.width = JCScreenWidth * 0.8;
+            customFrame.origin.x = (JCScreenWidth * 0.9 - customFrame.size.width)/2.0;
+            contentFrame.size.width = JCScreenWidth * 0.9;
         }
         
         customFrame.origin.y = JCMargin;

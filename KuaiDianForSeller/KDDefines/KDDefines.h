@@ -55,6 +55,8 @@
 //linktableview 分开位置比例
 #define LINK_TABLEVIEW_SEPERATE_POSITION_RATE 0.23
 
+//每天秒数
+#define SECOND_PER_DAY (60*60*24)
 
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 #pragma mark - Colors
@@ -87,6 +89,8 @@
 #define PRICE_ORANG_COLOR ([UIColor colorWithRed:253/255.0 green:97/255.0 blue:33/255.0 alpha:1])
 //红色
 #define APPD_RED_COLOR ([UIColor colorWithRed:234/255.0 green:63/255.0 blue:53/255.0 alpha:1])
+//无色
+#define CLEAR_COLOR ([UIColor clearColor])
 
 #pragma mark - Font Size
 
@@ -292,9 +296,9 @@ typedef NS_ENUM(NSInteger, KDEvalueStarLevel)
 typedef NS_ENUM(NSInteger, KDShopStatus)
 {
     //正常营业状态
-    KDShopOpeningStatus = 0,
+    KDShopOpeningStatus = 1,
     //打烊状态
-    KDShopClosedStatus = 1,
+    KDShopClosedStatus = 0,
     //试营业状态
     KDShopPreOpeningStatus = 2,
     //不接受新订单
@@ -325,6 +329,43 @@ typedef NS_ENUM(NSInteger, KDCheckViewItemStyle)
     KDCheckViewItemStyleOfOnlyText = 1,
 };
 
+//支付类型
+typedef NS_ENUM(NSInteger, KDPaymentType)
+{
+    //银行卡支付
+    KDPaymentTypeOfBankPay = 1,
+    //支付宝支付
+    KDPaymentTypeOfAliPay = 2,
+    //微信支付
+    KDPaymentTypeOfWeiChatPay = 3,
+};
+
+//银行
+typedef NS_ENUM(NSInteger, KDBankBrandType)
+{
+    //农行
+    KDNongYeBank = 1,
+    //建行
+    KDJianSheBank = 2,
+};
+
+//账单类型
+typedef NS_ENUM(NSInteger, KDBillType)
+{
+    //初始状态
+    KDBillInitType = 0,
+    //充值
+    KDBillTypeOfCharge = 1,
+    //体现
+    KDBillTypeOfCash = 2,
+    //消费
+    KDBillTypeOfConsum = 3,
+    //退款
+    KDBillTypeOfRefund = 4,
+    //利润
+    KDBillTypeOfProfit = 5,
+};
+
 #pragma mark - Blocks
 
 //错误页面的点击回调
@@ -344,6 +385,15 @@ typedef void (^KDViewModelBeginCallBackBlock)(void);
 
 //viewmodel结束回调
 typedef void (^KDViewModelCompleteCallBackBlock)(BOOL isSuccess ,id params , NSError *error);
+
+//viewModel定时回调
+typedef void (^KDViewModelTimerHandleBlock)(id param);
+
+//viewModel定时结束回调
+typedef void (^KDViewModelTimerFinishedHandleBlock)(id param);
+
+//下载完图片的回调
+typedef void(^ImageDownloadCompletedHandler)(UIImage *img);
 
 #pragma mark - static strings
 
@@ -383,15 +433,16 @@ extern NSString *const kHandleListTableCell;
 //cell
 extern NSString *const kCheckViewCell;
 
+//账单cell
+extern NSString *const kBillTableCellIdentifier;
+
 
 
 #pragma mark - defined strings
 
 
-#define YYYY_MM_DD_HH_MM_SS @"yyyy-MM-dd HH:mm:ss"
-
 #define APP_NAME @"快点"
-
+#define UNFINISHED_FUNCTION @"暂未开放"
 #define TABBAR_UNHANDLE_TITLE @"未处理"
 
 #define TABBAR_HANDLE_TITLE @"已处理"
@@ -420,7 +471,7 @@ extern NSString *const kCheckViewCell;
 #define ALREADY_EVALUATE_BUTTON_TITLE @"已评价"
 
 #define LOGIN_TITLE @"登录"
-#define FORGOT_PASSWORD @"修改密码"
+#define FORGOT_PASSWORD @"找回密码"
 
 #define PLACEHOLDER_FOR_CELLPHONE_NUMBER @"请输入手机号码"
 #define PLACEHOLDER_FOR_CODE_NUMBER @"请输入验证码"
@@ -456,6 +507,8 @@ extern NSString *const kCheckViewCell;
 #define MY_ACCOUNT @"我的账户"
 #define CONNECT_US @"联系我们"
 #define FEEDBACK @"帮助与反馈"
+#define ADD_BANK_CARD_TITLE @"添加银行卡"
+#define MY_BANK_CARD @"我的银行卡"
 
 #define USER_NAME @"用户名"
 #define MY_MONEY @"我的余额"
@@ -463,6 +516,10 @@ extern NSString *const kCheckViewCell;
 #define BIND_PHONE_NUMBER @"绑定手机"
 #define CHANGE_PASSWORD @"修改密码"
 #define LOGOU_CURRENT_USER @"退出当前账号"
+#define MY_BILL_DETAIL @"账单明细"
+
+#define NONYE_BANK_TILTE @"中国农业银行"
+#define JIANSHE_BANK_TILTE @"中国建设银行"
 
 #pragma mark - 管理页面
 
@@ -500,7 +557,14 @@ extern NSString *const kCheckViewCell;
 #define SET_FOOD_LABEL_TASTE_KEY @"set_food_label_taste"
 #define FOOD_CATEGORY_ARRAY_KEY @"food_category_array"
 #define FOOD_ITEM_KEY @"food_item_model"
+#define TODAY_SALE_STATISTIC_INFO @"today_sale_statistic_info"
+#define BANK_INFO_MODEL @"bank_info_model"
 
+#define CHANGE_PWD_BUTTON_TITLE @"修改密码"
+#define RE_GET_CODE_BUTTON_TITLE @"重新获取"
+#define TIME_REMAIN(t) ([NSString stringWithFormat:@"(%@)重新获取",t])
+
+#define VIEWCONTROLLER_IMAGE_KEY @"image"
 
 #pragma mark - image name strings
 
@@ -520,8 +584,6 @@ extern NSString *const kCheckViewCell;
 
 #pragma mark - cache key
 
-#define UC_SHOP_INFO_KEY @"uc_shop_info_key"
-
 #define UC_FOOD_CATEGORY_KEY @"uc_food_category_key"
 
 #define UC_FOOD_LIST_KEY @"uc_food_list_key"
@@ -533,4 +595,5 @@ extern NSString *const kCheckViewCell;
 
 #define HH_MM_DATE_FORMATER @"HH:mm"
 #define YYYY_MM_DD_DATE_FORMATER @"yyyy-MM-dd"
+#define MM_DD_DATE_FORMATER @"MM-dd"
 #define YYYY_MM_DD_HH_MM_SS_DATE_FORMATER @"yyyy-MM-dd HH:mm:ss"

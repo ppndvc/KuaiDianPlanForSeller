@@ -8,18 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-//支付类型
-typedef NS_ENUM(NSInteger, KDPaymentType)
-{
-    //银行卡支付
-    KDPaymentTypeOfBankPay = 1,
-    //支付宝支付
-    KDPaymentTypeOfAliPay = 2,
-    //微信支付
-    KDPaymentTypeOfWeiChatPay = 3,
-};
+@protocol KDPayBrandViewDelegate <NSObject>
+
+@optional
+//点击代理函数
+-(void)onTapPayBrandViewWithPaymentType:(KDPaymentType)type;
+
+@end
 
 @interface KDPayBrandView : UIView
+
+//代理函数
+@property(nonatomic,weak)id<KDPayBrandViewDelegate> delegate;
 
 -(instancetype)init UNAVAILABLE_ATTRIBUTE;
 -(instancetype)new UNAVAILABLE_ATTRIBUTE;
@@ -27,4 +27,5 @@ typedef NS_ENUM(NSInteger, KDPaymentType)
 
 //设置支付类型面板的数据
 -(void)setPayBrandViewType:(KDPaymentType)type number:(NSString *)number;
+
 @end

@@ -10,5 +10,7 @@
 
 @interface KDAccountViewModel : KDBaseViewModel
 
+//请求个人信息
+-(void)startRequestUserInfoWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock;
 
 @end

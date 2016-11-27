@@ -10,6 +10,9 @@
 
 @interface KDBaseReplyModel : KDBaseModel
 
+//id
+@property(nonatomic,copy)NSString *identifier;
+
 //评论人姓名
 @property(nonatomic,copy)NSString *replyerName;
 

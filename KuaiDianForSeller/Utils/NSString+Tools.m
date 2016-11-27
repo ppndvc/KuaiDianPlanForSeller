@@ -124,7 +124,7 @@
 +(NSString *)getCurrentDateString
 {
     //获取当前时间
-    return [self getTimeString:[[NSDate date] timeIntervalSince1970] - 3600 formater:YYYY_MM_DD_HH_MM_SS_DATE_FORMATER];
+    return [self getTimeString:[[NSDate date] timeIntervalSince1970] formater:YYYY_MM_DD_HH_MM_SS_DATE_FORMATER];
 }
 +(NSString *)longMD5WithString:(NSString *)str
 {
@@ -199,7 +199,7 @@
     
     return nil;
 }
-+(NSString *)getVertualStringWithString:(NSString *)srcString
++(NSString *)getVertualCardNumberStringWithString:(NSString *)srcString
 {
     if (VALIDATE_STRING(srcString))
     {
@@ -217,6 +217,21 @@
     return nil;
 }
 
++(NSComparisonResult)compareDateString:(NSString *)date1 withDate:(NSString *)date2 dateFormater:(NSString *)formater
+{
+    if (VALIDATE_STRING(date1) && VALIDATE_STRING(date2) && VALIDATE_STRING(formater))
+    {
+        NSDateFormatter *dateFromatter = [[NSDateFormatter alloc] init];
+        [dateFromatter setDateFormat:formater];
+        
+        NSDate *dateF = [dateFromatter dateFromString:date1];
+        NSDate *dateS = [dateFromatter dateFromString:date2];
+        
+        return [dateF compare:dateS];
+    }
+    
+    return NSOrderedSame;
+}
 +(NSString *)getPhoneNumberWithString:(NSString *)srcStr formater:(NSString *)formater
 {
     if (VALIDATE_STRING(srcStr) && VALIDATE_STRING(formater))
@@ -284,5 +299,32 @@
     }
     
     return NO;
+}
++ (BOOL)validateBankCard: (NSString *)bankCard
+{
+    if (VALIDATE_STRING(bankCard))
+    {
+        NSString *tmpStr = [bankCard stringByTrimmingCharactersInSet:[NSCharacterSet decimalDigitCharacterSet]];
+        
+        if(tmpStr.length > 0)
+        {
+            return NO;
+        }
+        
+        return YES;
+    }
+    
+    return NO;
+}
++(NSString *)trimString:(NSString *)srcString
+{
+    if (VALIDATE_STRING(srcString))
+    {
+        srcString = [srcString stringByReplacingOccurrencesOfString:@" " withString:@""];
+        srcString = [srcString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        return srcString;
+    }
+    
+    return nil;
 }
 @end

@@ -14,6 +14,9 @@
 #define EYE_IMAGE @"eye"
 #define LOCK_IMAGE @"lock_icon"
 
+#define ERROR_PHONE_NUMBER_TITLE @"不正确的手机号码"
+#define ERROR_CODE_TITLE @"不正确的验证码"
+
 @interface KDChangePhoneNumberViewController ()
 
 //输入状态
@@ -85,17 +88,47 @@
     {
         case KDInputCellPhoneNumberState:
         {
-            [_viewModel getCodeWithParams:nil beginBlock:nil completeBlock:^(BOOL isSuccess, id params, NSError *error) {
-                [ws setInputState:KDInputCodeState];
-                
-            }];
+            NSString *number = [self getValidatePhoneNumber];
+            if (VALIDATE_STRING(number))
+            {
+                [_viewModel getCodeWithParams:@{REQUEST_KEY_VERIFY_CODE_TO:number} beginBlock:nil completeBlock:^(BOOL isSuccess, id params, NSError *error) {
+                    if (isSuccess)
+                    {
+                        [ws setInputState:KDInputCodeState];
+                    }
+                    else
+                    {
+                        if (error)
+                        {
+                            [ws showErrorHUDWithStatus:error.localizedDescription];
+                        }
+                        else
+                        {
+                            [ws showErrorHUDWithStatus:HTTP_REQUEST_ERROR];
+                        }
+                    }
+                }];
+            }
+            else
+            {
+                [self showErrorHUDWithStatus:ERROR_PHONE_NUMBER_TITLE];
+            }
+            
         }
             break;
         case KDInputCodeState:
         {
-            [_viewModel startVerifyCodeWithParams:nil beginBlock:nil completeBlock:^(BOOL isSuccess, id params, NSError *error) {
-                [ws setInputState:KDInputNewPasswordState];
-            }];
+            if (VALIDATE_STRING(_textField.text))
+            {
+                [_viewModel startVerifyCodeWithParams:nil beginBlock:nil completeBlock:^(BOOL isSuccess, id params, NSError *error) {
+                    [ws setInputState:KDInputNewPasswordState];
+                }];
+            }
+            else
+            {
+                [self showErrorHUDWithStatus:ERROR_CODE_TITLE];
+            }
+            
         }
             break;
         default:
@@ -103,6 +136,16 @@
     }
 }
 
+-(NSString *)getValidatePhoneNumber
+{
+    NSString *number = nil;
+    
+    if ([NSString validatePhoneNumber:_textField.text])
+    {
+        number = _textField.text;
+    }
+    return number;
+}
 -(void)dealloc
 {
     DDLogInfo(@"-KDForgotPasswordViewController dealloc");

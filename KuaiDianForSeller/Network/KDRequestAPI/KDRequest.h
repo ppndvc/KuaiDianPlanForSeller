@@ -51,12 +51,25 @@
 #define REQUEST_KEY_DESCRIPITION @"remark"
 #define REQUEST_KEY_CLASSIFY_ID @"classifyid"
 #define REQUEST_KEY_FILE_NAME @"file"
-//#define REQUEST_KEY_FOOD_CATEGORY_NAME @"lab"
-//#define REQUEST_KEY_FOOD_CATEGORY_NAME @"lab"
-//#define REQUEST_KEY_FOOD_CATEGORY_NAME @"lab"
-//#define REQUEST_KEY_FOOD_CATEGORY_NAME @"lab"
-
-
+#define REQUEST_KEY_VERIFY_CODE_TO @"to"
+#define REQUEST_KEY_BANK_NAME @"bankname"
+#define REQUEST_KEY_BANK_CARD_NUMBER @"card"
+#define REQUEST_KEY_BANK_ACCOUNT_NAME @"accountname"
+#define REQUEST_KEY_PHONE_NUMBER @"phone"
+#define REQUEST_KEY_IDENTITY_CARD_NUMBER @"identity"
+#define REQUEST_KEY_EVALUATE_ID @"evaluateid"
+#define REQUEST_KEY_CONTENT @"content"
+#define REQUEST_KEY_PARAMETER_SEPERATOR @"?"
+#define REQUEST_KEY_FILE_PATH @"filePath"
+#define REQUEST_KEY_EQUAL @"="
+//#define REQUEST_KEY_ @""
+//#define REQUEST_KEY_ @""
+//#define REQUEST_KEY_ @""
+//#define REQUEST_KEY_ @""
+//#define REQUEST_KEY_ @""
+//#define REQUEST_KEY_ @""
+//#define REQUEST_KEY_ @""
+//#define REQUEST_KEY_ @""
 
 #pragma mark - 请求路径key
 #define LOGIN_REQUEST_PATH @"login_request"
@@ -76,13 +89,23 @@
 #define UPDATE_FOOD_ITEM_REQUEST_PATH @"update_food_item"
 #define DELETE_FOOD_ITEM_REQUEST_PATH @"delete_food_item"
 #define UPLODA_FOOD_LOGO_REQUEST_PATH @"upload_food_logo"
+#define SALE_STATISTIC_REQUEST_PATH @"business_record"
+#define GET_FOOD_EVALUE_INFO_REQUEST_PATH @"food_evalue_search"
+#define GET_BANK_CARD_INFO_REQUEST_PATH @"bank_card_info"
+#define ADD_BANK_CARD_REQUEST_PATH @"add_bank_card"
+#define ADD_REPLY_REQUEST_PATH @"add_reply"
+#define GET_BILL_DETAIL_REQUEST_PATH @"get_bill_detail"
+#define DOWNLOAD_FOOD_LOGO_REQUEST_PATH @"download_food_logo"
+#define DOWNLOAD_SHOP_LOGO_REQUEST_PATH @"download_shop_logo"
+//#define _REQUEST_PATH @""
+//#define _REQUEST_PATH @""
+//#define _REQUEST_PATH @"
 //#define _REQUEST_PATH @""
 //#define _REQUEST_PATH @""
 //#define _REQUEST_PATH @""
 //#define _REQUEST_PATH @""
-//#define _REQUEST_PATH @""
-//#define _REQUEST_PATH @""
-//#define _REQUEST_PATH @""
+
+
 
 //请求方法
 typedef NS_ENUM(NSUInteger , KDRequestMethod)
@@ -182,6 +205,9 @@ typedef void (^KDConstructBodyBlock)(id <AFMultipartFormData> formData);
 
 //下载请求初始化
 +(instancetype)downloadRequestWithURL:(NSString *)URL parameters:(NSDictionary *)parameters method:(KDRequestMethod)method downloadCompleteBlock:(KDDownloadCompleteBlock)downloadCompleteBlock;
+
+//下载
++(instancetype)downloadRequestWithRelativeURL:(NSString *)relativeURL parameters:(NSDictionary *)parameters method:(KDRequestMethod)method downloadCompleteBlock:(KDDownloadCompleteBlock)downloadCompleteBlock;
 
 //下载请求初始化
 +(instancetype)downloadRequestWithURL:(NSString *)URL parameters:(NSDictionary *)parameters method:(KDRequestMethod)method progressBlock:(KDRequestProgressBlock)progressBlock downloadCompleteBlock:(KDDownloadCompleteBlock)downloadCompleteBlock;

@@ -11,6 +11,8 @@
 		5B100A921D5CB11700260048 /* user_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B100A901D5CB11700260048 /* user_icon.png */; };
 		5B100A951D5CB40900260048 /* KDUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B100A941D5CB40900260048 /* KDUserModel.m */; };
 		5B100A991D5CB52D00260048 /* KDUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B100A981D5CB52D00260048 /* KDUserManager.m */; };
+		5B136E571DC5DD6E004EB2F2 /* KDChangePWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B136E551DC5DD6E004EB2F2 /* KDChangePWDViewController.m */; };
+		5B136E581DC5DD6E004EB2F2 /* KDChangePWDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B136E561DC5DD6E004EB2F2 /* KDChangePWDViewController.xib */; };
 		5B1B0C621D7C62A2004F5B39 /* KDSellerReplyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1B0C611D7C62A2004F5B39 /* KDSellerReplyView.m */; };
 		5B1B0C681D7C634C004F5B39 /* KDEvalueTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1B0C661D7C634C004F5B39 /* KDEvalueTableCell.m */; };
 		5B1B0C691D7C634C004F5B39 /* KDEvalueTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B1B0C671D7C634C004F5B39 /* KDEvalueTableCell.xib */; };
@@ -19,6 +21,12 @@
 		5B1B0C751D7DB1BB004F5B39 /* KDFoodEvalueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1B0C731D7DB1BB004F5B39 /* KDFoodEvalueViewController.m */; };
 		5B1B0C761D7DB1BB004F5B39 /* KDFoodEvalueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B1B0C741D7DB1BB004F5B39 /* KDFoodEvalueViewController.xib */; };
 		5B1B0C791D7DB2B6004F5B39 /* KDFoodEvalueViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1B0C781D7DB2B6004F5B39 /* KDFoodEvalueViewModel.m */; };
+		5B2348021DD8711B0060F973 /* KDBillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2348001DD8711B0060F973 /* KDBillViewController.m */; };
+		5B2348031DD8711B0060F973 /* KDBillViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B2348011DD8711B0060F973 /* KDBillViewController.xib */; };
+		5B2348071DD871930060F973 /* KDBillTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2348051DD871930060F973 /* KDBillTableCell.m */; };
+		5B2348081DD871930060F973 /* KDBillTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B2348061DD871930060F973 /* KDBillTableCell.xib */; };
+		5B23480B1DD8744C0060F973 /* KDBillViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B23480A1DD8744C0060F973 /* KDBillViewModel.m */; };
+		5B23480E1DD874620060F973 /* KDBillModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B23480D1DD874620060F973 /* KDBillModel.m */; };
 		5B31BADB1D54C7EA004B3E45 /* RouterFiles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B31BADA1D54C7EA004B3E45 /* RouterFiles.plist */; };
 		5B31BADE1D54C86A004B3E45 /* KDMallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B31BADD1D54C86A004B3E45 /* KDMallViewController.m */; };
 		5B31BAE21D54C9DE004B3E45 /* KDDropMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B31BAE11D54C9DE004B3E45 /* KDDropMenu.m */; };
@@ -103,6 +111,7 @@
 		5B8C04801D69C16B004DA05E /* KDOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8C047E1D69C16B004DA05E /* KDOrderModel.m */; };
 		5B8C04831D69E05F004DA05E /* KDBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8C04821D69E05F004DA05E /* KDBaseViewModel.m */; };
 		5B8C04861D69E1F0004DA05E /* KDUnhandleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8C04851D69E1F0004DA05E /* KDUnhandleViewModel.m */; };
+		5B8DF2811DD2193B004D1313 /* KDAddBankViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8DF2801DD2193B004D1313 /* KDAddBankViewModel.m */; };
 		5B91AFE01D44C8C10064562D /* fast_meal_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B91AFD81D44C8C10064562D /* fast_meal_selected@2x.png */; };
 		5B91AFE11D44C8C10064562D /* fast_meal_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B91AFD91D44C8C10064562D /* fast_meal_selected@3x.png */; };
 		5B91AFE21D44C8C10064562D /* main_page_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B91AFDA1D44C8C10064562D /* main_page_selected@2x.png */; };
@@ -139,6 +148,7 @@
 		5B95B2501DB272EA00C55EA5 /* image_placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B95B24E1DB272EA00C55EA5 /* image_placeholder@2x.png */; };
 		5B95B2511DB272EA00C55EA5 /* image_placeholder@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B95B24F1DB272EA00C55EA5 /* image_placeholder@3x.png */; };
 		5B9747001D50D0BB000EEF8E /* KDMainPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9746FF1D50D0BB000EEF8E /* KDMainPageModel.m */; };
+		5B97F3401DCF696800FB1C33 /* KDShopManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B97F33F1DCF696800FB1C33 /* KDShopManager.m */; };
 		5B9DCF6A1D47A6C600DD409A /* KDMainPageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9DCF691D47A6C600DD409A /* KDMainPageViewModel.m */; };
 		5B9DCF6D1D48F1E900DD409A /* KDShopCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9DCF6C1D48F1E900DD409A /* KDShopCellTableViewCell.m */; };
 		5B9DCF701D48F20800DD409A /* KDActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9DCF6F1D48F20800DD409A /* KDActivityView.m */; };
@@ -207,8 +217,13 @@
 		5BB2A5161DB213D4009C32CD /* KDFoodLabelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB2A5151DB213D4009C32CD /* KDFoodLabelModel.m */; };
 		5BB2A51A1DB21D41009C32CD /* KDSetFoodLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB2A5181DB21D41009C32CD /* KDSetFoodLabelViewController.m */; };
 		5BB2A51B1DB21D41009C32CD /* KDSetFoodLabelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB2A5191DB21D41009C32CD /* KDSetFoodLabelViewController.xib */; };
+		5BB6B55D1DCB88D800860CB5 /* KDBusinessStatisticsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB6B55C1DCB88D800860CB5 /* KDBusinessStatisticsViewModel.m */; };
 		5BC2F2691D5630920020E9BE /* gray_right_array@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BC2F2671D5630920020E9BE /* gray_right_array@2x.png */; };
 		5BC2F26A1D5630920020E9BE /* gray_right_array@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BC2F2681D5630920020E9BE /* gray_right_array@3x.png */; };
+		5BC758A51DCB805D00AF362B /* KDSaleStatisticInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC758A41DCB805D00AF362B /* KDSaleStatisticInfoModel.m */; };
+		5BC758A71DCB863F00AF362B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC758A61DCB863F00AF362B /* CoreGraphics.framework */; };
+		5BC758A91DCB864C00AF362B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC758A81DCB864C00AF362B /* UIKit.framework */; };
+		5BC758AB1DCB865C00AF362B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC758AA1DCB865C00AF362B /* Foundation.framework */; };
 		5BC8E5F41DBCB38B007A4DE0 /* KDCheckView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC8E5F31DBCB38B007A4DE0 /* KDCheckView.m */; };
 		5BCA7BEF1D6DE4C20090EA0F /* KDEditFoodItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA7BED1D6DE4C20090EA0F /* KDEditFoodItemViewController.m */; };
 		5BCA7BF01D6DE4C20090EA0F /* KDEditFoodItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BCA7BEE1D6DE4C20090EA0F /* KDEditFoodItemViewController.xib */; };
@@ -221,11 +236,24 @@
 		5BCEDBDE1D1C2A3100EBD946 /* KDRouterManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEDBDD1D1C2A3100EBD946 /* KDRouterManger.m */; };
 		5BCEDBE21D1FB5DF00EBD946 /* KDLoggerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEDBE11D1FB5DF00EBD946 /* KDLoggerManager.m */; };
 		5BCEDBE51D1FBA1F00EBD946 /* KDDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEDBE41D1FBA1F00EBD946 /* KDDeviceInfo.m */; };
+		5BCF85861DC78A3C00068B3D /* KDAddBankCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF85841DC78A3C00068B3D /* KDAddBankCardViewController.m */; };
+		5BCF85871DC78A3C00068B3D /* KDAddBankCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF85851DC78A3C00068B3D /* KDAddBankCardViewController.xib */; };
 		5BD91D121D0BF366006F64BE /* KDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD91D111D0BF366006F64BE /* KDBaseViewController.m */; };
 		5BD91D191D0BF643006F64BE /* KDDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD91D181D0BF643006F64BE /* KDDefines.m */; };
 		5BD91D211D0BFD6B006F64BE /* KDBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD91D201D0BFD6B006F64BE /* KDBaseModel.m */; };
 		5BD91D251D0C0578006F64BE /* KDNetworkReachableManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD91D241D0C0578006F64BE /* KDNetworkReachableManager.m */; };
 		5BD91D2A1D0C5128006F64BE /* KDAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD91D291D0C5128006F64BE /* KDAppearance.m */; };
+		5BD91EFF1DC64091006399C4 /* statistic_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BD91EFB1DC64091006399C4 /* statistic_background@2x.png */; };
+		5BD91F001DC64091006399C4 /* statistic_background@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BD91EFC1DC64091006399C4 /* statistic_background@3x.png */; };
+		5BD91F011DC64091006399C4 /* statistic_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BD91EFD1DC64091006399C4 /* statistic_icon.png */; };
+		5BD91F031DC643BD006399C4 /* bank_card.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BD91F021DC643BD006399C4 /* bank_card.png */; };
+		5BDDCF671DC8DE7F0028EC06 /* KDBankCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCF661DC8DE7F0028EC06 /* KDBankCardView.m */; };
+		5BDDCF6A1DC8DF870028EC06 /* KDBankModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCF691DC8DF870028EC06 /* KDBankModel.m */; };
+		5BDDCF6F1DCA2B0E0028EC06 /* bank_icon_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BDDCF6B1DCA2B0E0028EC06 /* bank_icon_1.png */; };
+		5BDDCF701DCA2B0E0028EC06 /* bank_icon_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BDDCF6C1DCA2B0E0028EC06 /* bank_icon_2.png */; };
+		5BDDCF711DCA2B0E0028EC06 /* bg_image_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BDDCF6D1DCA2B0E0028EC06 /* bg_image_1.png */; };
+		5BDDCF721DCA2B0E0028EC06 /* bg_image_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BDDCF6E1DCA2B0E0028EC06 /* bg_image_2.png */; };
+		5BDDCF751DCA2B4F0028EC06 /* KDMyBankCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCF741DCA2B4F0028EC06 /* KDMyBankCardViewController.m */; };
 		5BE2B3B31D8533AB00D848CA /* KDShopInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2B3B11D8533AB00D848CA /* KDShopInfoViewController.m */; };
 		5BE2B3B41D8533AB00D848CA /* KDShopInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE2B3B21D8533AB00D848CA /* KDShopInfoViewController.xib */; };
 		5BE2B3B71D85358200D848CA /* KDShopInfoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2B3B61D85358200D848CA /* KDShopInfoViewModel.m */; };
@@ -239,6 +267,7 @@
 		5BE3C0BA1D9806AC00BCFB2A /* KDSearchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE3C0B91D9806AC00BCFB2A /* KDSearchViewModel.m */; };
 		5BE3C0BD1D981C9100BCFB2A /* KDErrorPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE3C0BC1D981C9100BCFB2A /* KDErrorPageView.m */; };
 		5BE3C0BF1D981CB800BCFB2A /* KDErrorPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE3C0BE1D981CB800BCFB2A /* KDErrorPageView.xib */; };
+		5BE94A4D1DCCD26B005A481F /* KDPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE94A4C1DCCD26B005A481F /* KDPickerView.m */; };
 		775CEA995711C67CD7C292B4 /* libPods-KuaiDianForSeller.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0BC42266F2C83D0EEE5A2E /* libPods-KuaiDianForSeller.a */; };
 		B87879B9C23D89C17368ADA5 /* libPods-KuaiDianForSeller.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 250F2444DBCCD0AF25E451D4 /* libPods-KuaiDianForSeller.a */; };
 /* End PBXBuildFile section */
@@ -256,6 +285,9 @@
 		5B100A941D5CB40900260048 /* KDUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDUserModel.m; path = "登录/Model/KDUserModel.m"; sourceTree = "<group>"; };
 		5B100A971D5CB52D00260048 /* KDUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDUserManager.h; path = UserManager/KDUserManager.h; sourceTree = "<group>"; };
 		5B100A981D5CB52D00260048 /* KDUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDUserManager.m; path = UserManager/KDUserManager.m; sourceTree = "<group>"; };
+		5B136E541DC5DD6E004EB2F2 /* KDChangePWDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDChangePWDViewController.h; path = "设置/ViewController/KDChangePWDViewController.h"; sourceTree = "<group>"; };
+		5B136E551DC5DD6E004EB2F2 /* KDChangePWDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDChangePWDViewController.m; path = "设置/ViewController/KDChangePWDViewController.m"; sourceTree = "<group>"; };
+		5B136E561DC5DD6E004EB2F2 /* KDChangePWDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KDChangePWDViewController.xib; path = "设置/ViewController/KDChangePWDViewController.xib"; sourceTree = "<group>"; };
 		5B1B0C601D7C62A2004F5B39 /* KDSellerReplyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDSellerReplyView.h; path = "管理/View/KDSellerReplyView.h"; sourceTree = "<group>"; };
 		5B1B0C611D7C62A2004F5B39 /* KDSellerReplyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDSellerReplyView.m; path = "管理/View/KDSellerReplyView.m"; sourceTree = "<group>"; };
 		5B1B0C651D7C634C004F5B39 /* KDEvalueTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDEvalueTableCell.h; path = "管理/View/KDEvalueTableCell.h"; sourceTree = "<group>"; };
@@ -270,6 +302,16 @@
 		5B1B0C741D7DB1BB004F5B39 /* KDFoodEvalueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KDFoodEvalueViewController.xib; path = "管理/ViewController/KDFoodEvalueViewController.xib"; sourceTree = "<group>"; };
 		5B1B0C771D7DB2B6004F5B39 /* KDFoodEvalueViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDFoodEvalueViewModel.h; path = "管理/ViewModel/KDFoodEvalueViewModel.h"; sourceTree = "<group>"; };
 		5B1B0C781D7DB2B6004F5B39 /* KDFoodEvalueViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDFoodEvalueViewModel.m; path = "管理/ViewModel/KDFoodEvalueViewModel.m"; sourceTree = "<group>"; };
+		5B2347FF1DD8711B0060F973 /* KDBillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDBillViewController.h; path = "设置/ViewController/KDBillViewController.h"; sourceTree = "<group>"; };
+		5B2348001DD8711B0060F973 /* KDBillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDBillViewController.m; path = "设置/ViewController/KDBillViewController.m"; sourceTree = "<group>"; };
+		5B2348011DD8711B0060F973 /* KDBillViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KDBillViewController.xib; path = "设置/ViewController/KDBillViewController.xib"; sourceTree = "<group>"; };
+		5B2348041DD871930060F973 /* KDBillTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDBillTableCell.h; path = "设置/View/KDBillTableCell.h"; sourceTree = "<group>"; };
+		5B2348051DD871930060F973 /* KDBillTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDBillTableCell.m; path = "设置/View/KDBillTableCell.m"; sourceTree = "<group>"; };
+		5B2348061DD871930060F973 /* KDBillTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KDBillTableCell.xib; path = "设置/View/KDBillTableCell.xib"; sourceTree = "<group>"; };
+		5B2348091DD8744C0060F973 /* KDBillViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDBillViewModel.h; path = "设置/ViewModel/KDBillViewModel.h"; sourceTree = "<group>"; };
+		5B23480A1DD8744C0060F973 /* KDBillViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDBillViewModel.m; path = "设置/ViewModel/KDBillViewModel.m"; sourceTree = "<group>"; };
+		5B23480C1DD874620060F973 /* KDBillModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDBillModel.h; path = "设置/Model/KDBillModel.h"; sourceTree = "<group>"; };
+		5B23480D1DD874620060F973 /* KDBillModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDBillModel.m; path = "设置/Model/KDBillModel.m"; sourceTree = "<group>"; };
 		5B31BADA1D54C7EA004B3E45 /* RouterFiles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = RouterFiles.plist; path = Router/RouterFiles.plist; sourceTree = "<group>"; };
 		5B31BADC1D54C86A004B3E45 /* KDMallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDMallViewController.h; path = "主页/ViewController/KDMallViewController.h"; sourceTree = "<group>"; };
 		5B31BADD1D54C86A004B3E45 /* KDMallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDMallViewController.m; path = "主页/ViewController/KDMallViewController.m"; sourceTree = "<group>"; };
@@ -393,6 +435,8 @@
 		5B8C04821D69E05F004DA05E /* KDBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDBaseViewModel.m; path = BaseClass/KDBaseModel/KDBaseViewModel.m; sourceTree = "<group>"; };
 		5B8C04841D69E1F0004DA05E /* KDUnhandleViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDUnhandleViewModel.h; path = "未处理/ViewModel/KDUnhandleViewModel.h"; sourceTree = "<group>"; };
 		5B8C04851D69E1F0004DA05E /* KDUnhandleViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDUnhandleViewModel.m; path = "未处理/ViewModel/KDUnhandleViewModel.m"; sourceTree = "<group>"; };
+		5B8DF27F1DD2193B004D1313 /* KDAddBankViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDAddBankViewModel.h; path = "设置/ViewModel/KDAddBankViewModel.h"; sourceTree = "<group>"; };
+		5B8DF2801DD2193B004D1313 /* KDAddBankViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDAddBankViewModel.m; path = "设置/ViewModel/KDAddBankViewModel.m"; sourceTree = "<group>"; };
 		5B91AFD81D44C8C10064562D /* fast_meal_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fast_meal_selected@2x.png"; path = "Resource/Tabbar/fast_meal_selected@2x.png"; sourceTree = "<group>"; };
 		5B91AFD91D44C8C10064562D /* fast_meal_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fast_meal_selected@3x.png"; path = "Resource/Tabbar/fast_meal_selected@3x.png"; sourceTree = "<group>"; };
 		5B91AFDA1D44C8C10064562D /* main_page_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "main_page_selected@2x.png"; path = "Resource/Tabbar/main_page_selected@2x.png"; sourceTree = "<group>"; };
@@ -450,6 +494,8 @@
 		5B95B24F1DB272EA00C55EA5 /* image_placeholder@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "image_placeholder@3x.png"; path = "管理/Resource/image_placeholder@3x.png"; sourceTree = "<group>"; };
 		5B9746FE1D50D0BB000EEF8E /* KDMainPageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDMainPageModel.h; path = "主页/Model/KDMainPageModel.h"; sourceTree = "<group>"; };
 		5B9746FF1D50D0BB000EEF8E /* KDMainPageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDMainPageModel.m; path = "主页/Model/KDMainPageModel.m"; sourceTree = "<group>"; };
+		5B97F33E1DCF696800FB1C33 /* KDShopManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDShopManager.h; path = ShopManager/KDShopManager.h; sourceTree = "<group>"; };
+		5B97F33F1DCF696800FB1C33 /* KDShopManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDShopManager.m; path = ShopManager/KDShopManager.m; sourceTree = "<group>"; };
 		5B9DCF681D47A6C600DD409A /* KDMainPageViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDMainPageViewModel.h; path = "主页/ViewModel/KDMainPageViewModel.h"; sourceTree = "<group>"; };
 		5B9DCF691D47A6C600DD409A /* KDMainPageViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDMainPageViewModel.m; path = "主页/ViewModel/KDMainPageViewModel.m"; sourceTree = "<group>"; };
 		5B9DCF6B1D48F1E900DD409A /* KDShopCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDShopCellTableViewCell.h; path = "主页/View/KDShopCellTableViewCell.h"; sourceTree = "<group>"; };
@@ -550,8 +596,15 @@
 		5BB2A5171DB21D41009C32CD /* KDSetFoodLabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDSetFoodLabelViewController.h; path = "管理/ViewController/KDSetFoodLabelViewController.h"; sourceTree = "<group>"; };
 		5BB2A5181DB21D41009C32CD /* KDSetFoodLabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDSetFoodLabelViewController.m; path = "管理/ViewController/KDSetFoodLabelViewController.m"; sourceTree = "<group>"; };
 		5BB2A5191DB21D41009C32CD /* KDSetFoodLabelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KDSetFoodLabelViewController.xib; path = "管理/ViewController/KDSetFoodLabelViewController.xib"; sourceTree = "<group>"; };
+		5BB6B55B1DCB88D800860CB5 /* KDBusinessStatisticsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDBusinessStatisticsViewModel.h; path = "管理/ViewModel/KDBusinessStatisticsViewModel.h"; sourceTree = "<group>"; };
+		5BB6B55C1DCB88D800860CB5 /* KDBusinessStatisticsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDBusinessStatisticsViewModel.m; path = "管理/ViewModel/KDBusinessStatisticsViewModel.m"; sourceTree = "<group>"; };
 		5BC2F2671D5630920020E9BE /* gray_right_array@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gray_right_array@2x.png"; path = "Resource/CommonImages/订单/gray_right_array@2x.png"; sourceTree = "<group>"; };
 		5BC2F2681D5630920020E9BE /* gray_right_array@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gray_right_array@3x.png"; path = "Resource/CommonImages/订单/gray_right_array@3x.png"; sourceTree = "<group>"; };
+		5BC758A31DCB805D00AF362B /* KDSaleStatisticInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDSaleStatisticInfoModel.h; path = "管理/Model/KDSaleStatisticInfoModel.h"; sourceTree = "<group>"; };
+		5BC758A41DCB805D00AF362B /* KDSaleStatisticInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDSaleStatisticInfoModel.m; path = "管理/Model/KDSaleStatisticInfoModel.m"; sourceTree = "<group>"; };
+		5BC758A61DCB863F00AF362B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5BC758A81DCB864C00AF362B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5BC758AA1DCB865C00AF362B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5BC8E5F21DBCB38B007A4DE0 /* KDCheckView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDCheckView.h; path = "管理/View/KDCheckView.h"; sourceTree = "<group>"; };
 		5BC8E5F31DBCB38B007A4DE0 /* KDCheckView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDCheckView.m; path = "管理/View/KDCheckView.m"; sourceTree = "<group>"; };
 		5BCA7BEC1D6DE4C20090EA0F /* KDEditFoodItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDEditFoodItemViewController.h; path = "管理/ViewController/KDEditFoodItemViewController.h"; sourceTree = "<group>"; };
@@ -574,6 +627,9 @@
 		5BCEDBE11D1FB5DF00EBD946 /* KDLoggerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDLoggerManager.m; path = Utils/KDLoggerManager.m; sourceTree = "<group>"; };
 		5BCEDBE31D1FBA1F00EBD946 /* KDDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDDeviceInfo.h; path = Utils/KDDeviceInfo.h; sourceTree = "<group>"; };
 		5BCEDBE41D1FBA1F00EBD946 /* KDDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDDeviceInfo.m; path = Utils/KDDeviceInfo.m; sourceTree = "<group>"; };
+		5BCF85831DC78A3C00068B3D /* KDAddBankCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDAddBankCardViewController.h; path = "设置/ViewController/KDAddBankCardViewController.h"; sourceTree = "<group>"; };
+		5BCF85841DC78A3C00068B3D /* KDAddBankCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDAddBankCardViewController.m; path = "设置/ViewController/KDAddBankCardViewController.m"; sourceTree = "<group>"; };
+		5BCF85851DC78A3C00068B3D /* KDAddBankCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KDAddBankCardViewController.xib; path = "设置/ViewController/KDAddBankCardViewController.xib"; sourceTree = "<group>"; };
 		5BD91D101D0BF366006F64BE /* KDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDBaseViewController.h; path = BaseClass/KDBaseViewController.h; sourceTree = "<group>"; };
 		5BD91D111D0BF366006F64BE /* KDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDBaseViewController.m; path = BaseClass/KDBaseViewController.m; sourceTree = "<group>"; };
 		5BD91D171D0BF643006F64BE /* KDDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDDefines.h; path = KDDefines/KDDefines.h; sourceTree = "<group>"; };
@@ -584,6 +640,20 @@
 		5BD91D241D0C0578006F64BE /* KDNetworkReachableManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDNetworkReachableManager.m; path = Network/KDNetworkReachableManager.m; sourceTree = "<group>"; };
 		5BD91D281D0C5128006F64BE /* KDAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDAppearance.h; path = Utils/KDAppearance.h; sourceTree = "<group>"; };
 		5BD91D291D0C5128006F64BE /* KDAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDAppearance.m; path = Utils/KDAppearance.m; sourceTree = "<group>"; };
+		5BD91EFB1DC64091006399C4 /* statistic_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "statistic_background@2x.png"; path = "设置/Resource/statistic_background@2x.png"; sourceTree = "<group>"; };
+		5BD91EFC1DC64091006399C4 /* statistic_background@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "statistic_background@3x.png"; path = "设置/Resource/statistic_background@3x.png"; sourceTree = "<group>"; };
+		5BD91EFD1DC64091006399C4 /* statistic_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = statistic_icon.png; path = "设置/Resource/statistic_icon.png"; sourceTree = "<group>"; };
+		5BD91F021DC643BD006399C4 /* bank_card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bank_card.png; path = "设置/Resource/bank_card.png"; sourceTree = "<group>"; };
+		5BDDCF651DC8DE7F0028EC06 /* KDBankCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDBankCardView.h; path = "设置/View/KDBankCardView.h"; sourceTree = "<group>"; };
+		5BDDCF661DC8DE7F0028EC06 /* KDBankCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDBankCardView.m; path = "设置/View/KDBankCardView.m"; sourceTree = "<group>"; };
+		5BDDCF681DC8DF870028EC06 /* KDBankModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDBankModel.h; path = "设置/Model/KDBankModel.h"; sourceTree = "<group>"; };
+		5BDDCF691DC8DF870028EC06 /* KDBankModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDBankModel.m; path = "设置/Model/KDBankModel.m"; sourceTree = "<group>"; };
+		5BDDCF6B1DCA2B0E0028EC06 /* bank_icon_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bank_icon_1.png; path = "设置/Resource/bank_icon_1.png"; sourceTree = "<group>"; };
+		5BDDCF6C1DCA2B0E0028EC06 /* bank_icon_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bank_icon_2.png; path = "设置/Resource/bank_icon_2.png"; sourceTree = "<group>"; };
+		5BDDCF6D1DCA2B0E0028EC06 /* bg_image_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_image_1.png; path = "设置/Resource/bg_image_1.png"; sourceTree = "<group>"; };
+		5BDDCF6E1DCA2B0E0028EC06 /* bg_image_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_image_2.png; path = "设置/Resource/bg_image_2.png"; sourceTree = "<group>"; };
+		5BDDCF731DCA2B4F0028EC06 /* KDMyBankCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDMyBankCardViewController.h; path = "设置/ViewController/KDMyBankCardViewController.h"; sourceTree = "<group>"; };
+		5BDDCF741DCA2B4F0028EC06 /* KDMyBankCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDMyBankCardViewController.m; path = "设置/ViewController/KDMyBankCardViewController.m"; sourceTree = "<group>"; };
 		5BE2B3B01D8533AB00D848CA /* KDShopInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDShopInfoViewController.h; path = "管理/ViewController/KDShopInfoViewController.h"; sourceTree = "<group>"; };
 		5BE2B3B11D8533AB00D848CA /* KDShopInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDShopInfoViewController.m; path = "管理/ViewController/KDShopInfoViewController.m"; sourceTree = "<group>"; };
 		5BE2B3B21D8533AB00D848CA /* KDShopInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KDShopInfoViewController.xib; path = "管理/ViewController/KDShopInfoViewController.xib"; sourceTree = "<group>"; };
@@ -605,6 +675,8 @@
 		5BE3C0BB1D981C9100BCFB2A /* KDErrorPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDErrorPageView.h; path = BaseClass/KDErrorPageView.h; sourceTree = "<group>"; };
 		5BE3C0BC1D981C9100BCFB2A /* KDErrorPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDErrorPageView.m; path = BaseClass/KDErrorPageView.m; sourceTree = "<group>"; };
 		5BE3C0BE1D981CB800BCFB2A /* KDErrorPageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KDErrorPageView.xib; sourceTree = "<group>"; };
+		5BE94A4B1DCCD26B005A481F /* KDPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDPickerView.h; path = "管理/View/KDPickerView.h"; sourceTree = "<group>"; };
+		5BE94A4C1DCCD26B005A481F /* KDPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDPickerView.m; path = "管理/View/KDPickerView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -612,6 +684,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BC758AB1DCB865C00AF362B /* Foundation.framework in Frameworks */,
+				5BC758A91DCB864C00AF362B /* UIKit.framework in Frameworks */,
+				5BC758A71DCB863F00AF362B /* CoreGraphics.framework in Frameworks */,
 				5B93E3731D6864E60042E116 /* QuartzCore.framework in Frameworks */,
 				5B93E3721D6864E10042E116 /* Accelerate.framework in Frameworks */,
 				775CEA995711C67CD7C292B4 /* libPods-KuaiDianForSeller.a in Frameworks */,
@@ -708,6 +783,7 @@
 				5BACC56F1D77245E004B7D0A /* 已处理 */,
 				5BCA7BE61D6DE44D0090EA0F /* 管理 */,
 				5B93E35E1D65F74F0042E116 /* 设置 */,
+				5B97F33D1DCF690A00FB1C33 /* ShopManager */,
 				5B100A961D5CB50700260048 /* UserManager */,
 				5B31BADF1D54C9AE004B3E45 /* CommonView */,
 				5B91B0161D44F2410064562D /* CommonModels */,
@@ -828,6 +904,14 @@
 		5B8C044D1D699E20004DA05E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5BDDCF6B1DCA2B0E0028EC06 /* bank_icon_1.png */,
+				5BDDCF6C1DCA2B0E0028EC06 /* bank_icon_2.png */,
+				5BDDCF6D1DCA2B0E0028EC06 /* bg_image_1.png */,
+				5BDDCF6E1DCA2B0E0028EC06 /* bg_image_2.png */,
+				5BD91F021DC643BD006399C4 /* bank_card.png */,
+				5BD91EFB1DC64091006399C4 /* statistic_background@2x.png */,
+				5BD91EFC1DC64091006399C4 /* statistic_background@3x.png */,
+				5BD91EFD1DC64091006399C4 /* statistic_icon.png */,
 				5B8C044E1D699E51004DA05E /* help.png */,
 				5B8C044F1D699E51004DA05E /* server.png */,
 				5B8C04501D699E51004DA05E /* user.png */,
@@ -1065,6 +1149,10 @@
 				5B93E37A1D68A30F0042E116 /* KDAccountViewModel.m */,
 				5BA25E7D1D6B467F00885343 /* KDChangePWDViewModel.h */,
 				5BA25E7E1D6B467F00885343 /* KDChangePWDViewModel.m */,
+				5B8DF27F1DD2193B004D1313 /* KDAddBankViewModel.h */,
+				5B8DF2801DD2193B004D1313 /* KDAddBankViewModel.m */,
+				5B2348091DD8744C0060F973 /* KDBillViewModel.h */,
+				5B23480A1DD8744C0060F973 /* KDBillViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -1081,9 +1169,20 @@
 				5BA25E751D6B407A00885343 /* KDChangePhoneNumberViewController.h */,
 				5BA25E761D6B407A00885343 /* KDChangePhoneNumberViewController.m */,
 				5BA25E771D6B407A00885343 /* KDChangePhoneNumberViewController.xib */,
+				5B136E541DC5DD6E004EB2F2 /* KDChangePWDViewController.h */,
+				5B136E551DC5DD6E004EB2F2 /* KDChangePWDViewController.m */,
+				5B136E561DC5DD6E004EB2F2 /* KDChangePWDViewController.xib */,
 				5BCC32B51D6C84A5005EE10B /* KDMyMoneyViewController.h */,
 				5BCC32B61D6C84A5005EE10B /* KDMyMoneyViewController.m */,
 				5BCC32B71D6C84A5005EE10B /* KDMyMoneyViewController.xib */,
+				5BCF85831DC78A3C00068B3D /* KDAddBankCardViewController.h */,
+				5BCF85841DC78A3C00068B3D /* KDAddBankCardViewController.m */,
+				5BCF85851DC78A3C00068B3D /* KDAddBankCardViewController.xib */,
+				5BDDCF731DCA2B4F0028EC06 /* KDMyBankCardViewController.h */,
+				5BDDCF741DCA2B4F0028EC06 /* KDMyBankCardViewController.m */,
+				5B2347FF1DD8711B0060F973 /* KDBillViewController.h */,
+				5B2348001DD8711B0060F973 /* KDBillViewController.m */,
+				5B2348011DD8711B0060F973 /* KDBillViewController.xib */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1091,6 +1190,10 @@
 		5B93E3611D65F7760042E116 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5BDDCF681DC8DF870028EC06 /* KDBankModel.h */,
+				5BDDCF691DC8DF870028EC06 /* KDBankModel.m */,
+				5B23480C1DD874620060F973 /* KDBillModel.h */,
+				5B23480D1DD874620060F973 /* KDBillModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1100,8 +1203,22 @@
 			children = (
 				5B93E36B1D6601860042E116 /* KDPayBrandView.h */,
 				5B93E36C1D6601860042E116 /* KDPayBrandView.m */,
+				5BDDCF651DC8DE7F0028EC06 /* KDBankCardView.h */,
+				5BDDCF661DC8DE7F0028EC06 /* KDBankCardView.m */,
+				5B2348041DD871930060F973 /* KDBillTableCell.h */,
+				5B2348051DD871930060F973 /* KDBillTableCell.m */,
+				5B2348061DD871930060F973 /* KDBillTableCell.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		5B97F33D1DCF690A00FB1C33 /* ShopManager */ = {
+			isa = PBXGroup;
+			children = (
+				5B97F33E1DCF696800FB1C33 /* KDShopManager.h */,
+				5B97F33F1DCF696800FB1C33 /* KDShopManager.m */,
+			);
+			name = ShopManager;
 			sourceTree = "<group>";
 		};
 		5BA5C19E1D8C55B5008E9274 /* Categories */ = {
@@ -1265,6 +1382,8 @@
 				5B3896D31DB2530300E6F16A /* KDSetFoodLabelViewModel.m */,
 				5B6BA5631DB2989A00100AB3 /* KDEditFoodViewModel.h */,
 				5B6BA5641DB2989A00100AB3 /* KDEditFoodViewModel.m */,
+				5BB6B55B1DCB88D800860CB5 /* KDBusinessStatisticsViewModel.h */,
+				5BB6B55C1DCB88D800860CB5 /* KDBusinessStatisticsViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -1286,6 +1405,8 @@
 				5BB2A5151DB213D4009C32CD /* KDFoodLabelModel.m */,
 				5BAAD4D81DB9182D00D87EA3 /* KDCheckViewItemModel.h */,
 				5BAAD4D91DB9182D00D87EA3 /* KDCheckViewItemModel.m */,
+				5BC758A31DCB805D00AF362B /* KDSaleStatisticInfoModel.h */,
+				5BC758A41DCB805D00AF362B /* KDSaleStatisticInfoModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1368,6 +1489,8 @@
 				5BAAD4D51DB90FD700D87EA3 /* KDCheckViewItemCell.xib */,
 				5BC8E5F21DBCB38B007A4DE0 /* KDCheckView.h */,
 				5BC8E5F31DBCB38B007A4DE0 /* KDCheckView.m */,
+				5BE94A4B1DCCD26B005A481F /* KDPickerView.h */,
+				5BE94A4C1DCCD26B005A481F /* KDPickerView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1470,6 +1593,9 @@
 		E142138932BCF2E7684E3034 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5BC758AA1DCB865C00AF362B /* Foundation.framework */,
+				5BC758A81DCB864C00AF362B /* UIKit.framework */,
+				5BC758A61DCB863F00AF362B /* CoreGraphics.framework */,
 				5B93E3701D685D780042E116 /* QuartzCore.framework */,
 				5B93E36E1D685D720042E116 /* Accelerate.framework */,
 				250F2444DBCCD0AF25E451D4 /* libPods-KuaiDianForSeller.a */,
@@ -1548,6 +1674,7 @@
 				5B846B0F1D635BD500D536D9 /* eye@2x.png in Resources */,
 				5BA5C1B91D8D424F008E9274 /* taste4@2x.png in Resources */,
 				5B84D89C1D8055A5000F90E2 /* KDSaleActivityViewController.xib in Resources */,
+				5BDDCF6F1DCA2B0E0028EC06 /* bank_icon_1.png in Resources */,
 				5B85148A1D4F84DF00718FD2 /* b27_icon_star_gray@2x.png in Resources */,
 				5B91AFE61D44C8C10064562D /* order_selected@2x.png in Resources */,
 				5BA5C1B71D8D424F008E9274 /* taste2@2x.png in Resources */,
@@ -1555,16 +1682,20 @@
 				5BA5C19D1D8C4DC1008E9274 /* KDRightLinkTableCell.xib in Resources */,
 				5BAB46C71D82F71000B2687C /* Images.xcassets in Resources */,
 				5B84D8BF1D805D00000F90E2 /* activity4@3x.png in Resources */,
+				5BD91F001DC64091006399C4 /* statistic_background@3x.png in Resources */,
 				5B8C04721D69AD6B004DA05E /* KDOrderTableViewCell.xib in Resources */,
 				5B3F53FB1D0AF4F3004DB523 /* LaunchScreen.storyboard in Resources */,
 				5BAB46C41D82F6F200B2687C /* launchImage@3x.png in Resources */,
 				5BACC56B1D7721F8004B7D0A /* food_evalue_icon.png in Resources */,
+				5BDDCF711DCA2B0E0028EC06 /* bg_image_1.png in Resources */,
 				5B93E3661D65F7AA0042E116 /* KDSettingsViewController.xib in Resources */,
 				5BAB46CA1D830CAD00B2687C /* navi_bg@2x.png in Resources */,
 				5BE3C0B31D97F69D00BCFB2A /* KDSearchViewController.xib in Resources */,
 				5BACC5421D747A6C004B7D0A /* KDManageCollectionCell.xib in Resources */,
+				5BCF85871DC78A3C00068B3D /* KDAddBankCardViewController.xib in Resources */,
 				5B846B031D63596400D536D9 /* gray_sharp_right_array@2x.png in Resources */,
 				5BA25E791D6B407A00885343 /* KDChangePhoneNumberViewController.xib in Resources */,
+				5BD91EFF1DC64091006399C4 /* statistic_background@2x.png in Resources */,
 				5BACC56C1D7721F8004B7D0A /* restaurant_info_icon.png in Resources */,
 				5B84D8BD1D805D00000F90E2 /* activity2@3x.png in Resources */,
 				5B84D8BC1D805D00000F90E2 /* activity2@2x.png in Resources */,
@@ -1582,6 +1713,7 @@
 				5B8C04621D69A5AB004DA05E /* tabbar_setting_normal@3x.png in Resources */,
 				5BC2F26A1D5630920020E9BE /* gray_right_array@3x.png in Resources */,
 				5B8C045C1D69A1F5004DA05E /* tabbar_managent_normal@3x.png in Resources */,
+				5BD91F011DC64091006399C4 /* statistic_icon.png in Resources */,
 				5BACC5781D772505004B7D0A /* KDHandleListViewController.xib in Resources */,
 				5B3F53F81D0AF4F3004DB523 /* Assets.xcassets in Resources */,
 				5B100A921D5CB11700260048 /* user_icon.png in Resources */,
@@ -1602,6 +1734,7 @@
 				5B8506871DC23E750059680B /* KDBusinessStatisticsViewController.xib in Resources */,
 				5B31BAF21D54DC77004B3E45 /* up_trangle_red@3x.png in Resources */,
 				5BACC54D1D75C4A0004B7D0A /* speaker@2x.png in Resources */,
+				5BDDCF721DCA2B0E0028EC06 /* bg_image_2.png in Resources */,
 				5B846B0D1D635BD500D536D9 /* cell_phone@2x.png in Resources */,
 				5B31BAE91D54DA4F004B3E45 /* up_trangle@2x.png in Resources */,
 				5BAAD4D71DB90FD700D87EA3 /* KDCheckViewItemCell.xib in Resources */,
@@ -1621,6 +1754,7 @@
 				5BE3C0B61D9805D200BCFB2A /* search_icon.png in Resources */,
 				5BE3C0B71D9805D200BCFB2A /* search_icon@2x.png in Resources */,
 				5B31BAF11D54DC77004B3E45 /* up_trangle_red@2x.png in Resources */,
+				5BDDCF701DCA2B0E0028EC06 /* bank_icon_2.png in Resources */,
 				5B8C04521D699E51004DA05E /* server.png in Resources */,
 				5BE2B3BC1D8551B900D848CA /* KDCommonTextEditViewController.xib in Resources */,
 				5B49F1EE1D5EF8BB00E2FD8D /* KDRequetPath.plist in Resources */,
@@ -1631,12 +1765,16 @@
 				5B846B041D63596400D536D9 /* gray_sharp_right_array@3x.png in Resources */,
 				5BA5C1B51D8D424F008E9274 /* taste1@2x.png in Resources */,
 				5BACC56A1D7721F8004B7D0A /* edit_food_icon.png in Resources */,
+				5B2348081DD871930060F973 /* KDBillTableCell.xib in Resources */,
+				5B2348031DD8711B0060F973 /* KDBillViewController.xib in Resources */,
 				5B84D8C01D805D00000F90E2 /* activity8@2x.png in Resources */,
 				5B846B0B1D635BD500D536D9 /* book@2x.png in Resources */,
 				5B84D8C11D805D00000F90E2 /* activity8@3x.png in Resources */,
+				5B136E581DC5DD6E004EB2F2 /* KDChangePWDViewController.xib in Resources */,
 				5B91AFE21D44C8C10064562D /* main_page_selected@2x.png in Resources */,
 				5B846B101D635BD500D536D9 /* eye@3x.png in Resources */,
 				5BB032021D786C3B00813085 /* KDHandleListTableCell.xib in Resources */,
+				5BD91F031DC643BD006399C4 /* bank_card.png in Resources */,
 				5BB0320B1D7C0E5A00813085 /* KDHandleOrderDetailView.xib in Resources */,
 				5BAB46CB1D830CAD00B2687C /* navi_bg@3x.png in Resources */,
 				5B31BAEF1D54DC77004B3E45 /* navi_back_array@2x.png in Resources */,
@@ -1718,10 +1856,13 @@
 				5B66B3CD1D5EF7050004ADF4 /* KDNetworkManager.m in Sources */,
 				5BACC5411D747A6C004B7D0A /* KDManageCollectionCell.m in Sources */,
 				5BB2A51A1DB21D41009C32CD /* KDSetFoodLabelViewController.m in Sources */,
+				5B23480E1DD874620060F973 /* KDBillModel.m in Sources */,
 				5B9DCF701D48F20800DD409A /* KDActivityView.m in Sources */,
 				5BADDD4A1D7F13190012A105 /* KDEvalueFilterItemModel.m in Sources */,
+				5B136E571DC5DD6E004EB2F2 /* KDChangePWDViewController.m in Sources */,
 				5B91B0221D44F6F40064562D /* KDShopModel.m in Sources */,
 				5B91B0081D44DCF40064562D /* TADotView.m in Sources */,
+				5BC758A51DCB805D00AF362B /* KDSaleStatisticInfoModel.m in Sources */,
 				5BD91D2A1D0C5128006F64BE /* KDAppearance.m in Sources */,
 				5B31BAE21D54C9DE004B3E45 /* KDDropMenu.m in Sources */,
 				5BAAD4DA1DB9182D00D87EA3 /* KDCheckViewItemModel.m in Sources */,
@@ -1747,19 +1888,23 @@
 				5B91B0071D44DCF40064562D /* TAAnimatedDotView.m in Sources */,
 				5B3F53F01D0AF4F3004DB523 /* AppDelegate.m in Sources */,
 				5B66B3CF1D5EF7050004ADF4 /* KDRequestAPI.m in Sources */,
+				5BDDCF751DCA2B4F0028EC06 /* KDMyBankCardViewController.m in Sources */,
 				5BB2A5161DB213D4009C32CD /* KDFoodLabelModel.m in Sources */,
 				5B857CF51D537861006DA08A /* KDCommodityTableViewCell.m in Sources */,
 				5B100A991D5CB52D00260048 /* KDUserManager.m in Sources */,
+				5B2348071DD871930060F973 /* KDBillTableCell.m in Sources */,
 				5BAB46BE1D82F2C800B2687C /* KDTabBarController.m in Sources */,
 				5BA5C1A11D8C55F0008E9274 /* UIButton+NSIndexPath.m in Sources */,
 				5BE3C0AE1D97C16B00BCFB2A /* UIButton+BackgroundColor.m in Sources */,
 				5B78BD451D52331F007FAAD5 /* KDBaseTableViewCell.m in Sources */,
 				5BD91D121D0BF366006F64BE /* KDBaseViewController.m in Sources */,
+				5B23480B1DD8744C0060F973 /* KDBillViewModel.m in Sources */,
 				5B49F1F31D5F646E00E2FD8D /* KDLoginViewModel.m in Sources */,
 				5BA5C1951D884B53008E9274 /* KDLinkTableViewModel.m in Sources */,
 				5B8449B31DABCA0600B3FD90 /* KDFoodManageViewModel.m in Sources */,
 				5BA5C19C1D8C4DC1008E9274 /* KDRightLinkTableCell.m in Sources */,
 				5B857CF21D5377AA006DA08A /* KDCommodityModel.m in Sources */,
+				5BB6B55D1DCB88D800860CB5 /* KDBusinessStatisticsViewModel.m in Sources */,
 				5BA5C1921D884680008E9274 /* KDLeftLinkTableCell.m in Sources */,
 				5BD91D191D0BF643006F64BE /* KDDefines.m in Sources */,
 				5BA25E7F1D6B467F00885343 /* KDChangePWDViewModel.m in Sources */,
@@ -1768,6 +1913,7 @@
 				5BAAD4CE1DB66AB200D87EA3 /* KDAvatarViewController.m in Sources */,
 				5BCAA9451D4DF851006665D0 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				5BA5C1BF1D8D4BCE008E9274 /* KDFoodManageViewController.m in Sources */,
+				5B2348021DD8711B0060F973 /* KDBillViewController.m in Sources */,
 				5B93E37B1D68A30F0042E116 /* KDAccountViewModel.m in Sources */,
 				5BACC5571D75CCE0004B7D0A /* KDSegmentControl.m in Sources */,
 				5BE3C0BA1D9806AC00BCFB2A /* KDSearchViewModel.m in Sources */,
@@ -1779,8 +1925,10 @@
 				5B93E3651D65F7AA0042E116 /* KDSettingsViewController.m in Sources */,
 				5B6BA5651DB2989A00100AB3 /* KDEditFoodViewModel.m in Sources */,
 				5B91B00C1D44DCF40064562D /* UIView+SDExtension.m in Sources */,
+				5BDDCF671DC8DE7F0028EC06 /* KDBankCardView.m in Sources */,
 				5BCAA9441D4DF851006665D0 /* UITableView+FDIndexPathHeightCache.m in Sources */,
 				5B8C04801D69C16B004DA05E /* KDOrderModel.m in Sources */,
+				5BE94A4D1DCCD26B005A481F /* KDPickerView.m in Sources */,
 				5BCC32B81D6C84A5005EE10B /* KDMyMoneyViewController.m in Sources */,
 				5B91B0091D44DCF40064562D /* TAPageControl.m in Sources */,
 				5B91B0051D44DCF40064562D /* NSData+SDDataCache.m in Sources */,
@@ -1794,6 +1942,7 @@
 				5B8506861DC23E750059680B /* KDBusinessStatisticsViewController.m in Sources */,
 				5B85148C1D4F84DF00718FD2 /* CWStarRateView.m in Sources */,
 				5B3896D41DB2530300E6F16A /* KDSetFoodLabelViewModel.m in Sources */,
+				5B8DF2811DD2193B004D1313 /* KDAddBankViewModel.m in Sources */,
 				5B1B0C681D7C634C004F5B39 /* KDEvalueTableCell.m in Sources */,
 				5B9DCF6D1D48F1E900DD409A /* KDShopCellTableViewCell.m in Sources */,
 				5BC8E5F41DBCB38B007A4DE0 /* KDCheckView.m in Sources */,
@@ -1809,6 +1958,7 @@
 				5BADDD461D7F0F9D0012A105 /* KDEvalueFilterCollectionCell.m in Sources */,
 				5BE2B3BB1D8551B900D848CA /* KDCommonTextEditViewController.m in Sources */,
 				5BD91D251D0C0578006F64BE /* KDNetworkReachableManager.m in Sources */,
+				5BCF85861DC78A3C00068B3D /* KDAddBankCardViewController.m in Sources */,
 				5B31BADE1D54C86A004B3E45 /* KDMallViewController.m in Sources */,
 				5B84D8C41D805D32000F90E2 /* KDSaleActivityViewModel.m in Sources */,
 				5B8449B61DABCD0A00B3FD90 /* KDFoodCategoryModel.m in Sources */,
@@ -1816,10 +1966,12 @@
 				5B84D89B1D8055A5000F90E2 /* KDSaleActivityViewController.m in Sources */,
 				5BCA7BEF1D6DE4C20090EA0F /* KDEditFoodItemViewController.m in Sources */,
 				5BA25E7C1D6B42F800885343 /* KDChangePasswordViewModel.m in Sources */,
+				5BDDCF6A1DC8DF870028EC06 /* KDBankModel.m in Sources */,
 				5B857CF81D5381D0006DA08A /* NSString+Tools.m in Sources */,
 				5BACC55D1D75CF75004B7D0A /* KDScrollView.m in Sources */,
 				5B93E36D1D6601860042E116 /* KDPayBrandView.m in Sources */,
 				5B1B0C621D7C62A2004F5B39 /* KDSellerReplyView.m in Sources */,
+				5B97F3401DCF696800FB1C33 /* KDShopManager.m in Sources */,
 				5BCAA9471D4DF851006665D0 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				5B91B02D1D4504AB0064562D /* KDActionCollectionViewCell.m in Sources */,
 				5BE3C0B21D97F69D00BCFB2A /* KDSearchViewController.m in Sources */,

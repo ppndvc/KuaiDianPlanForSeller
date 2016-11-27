@@ -16,4 +16,7 @@
 //压缩图片尺寸
 + (UIImage *)compressWithSourceImage:(UIImage *)sourceImage targetWidth:(CGFloat)defineWidth;
 
+//获取类属性
++(NSArray *)getPropertiesOfClass:(Class)cls;
+
 @end

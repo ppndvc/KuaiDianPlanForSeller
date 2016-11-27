@@ -16,6 +16,9 @@
 
 @property(nonatomic,strong)NSMutableArray *foodListArray;
 
+@property(nonatomic,copy)ImageDownloadCompletedHandler handler;
+
+
 @end
 
 @implementation KDFoodManageViewModel
@@ -109,22 +112,6 @@
     
     [KDRequestAPI sendGetFoodListInfoRequestWithParam:foodID completeBlock:^(id responseObject, NSError *error) {
         
-        /*
-         {
-         classifyid = 1;
-         id = 6;
-         lab = 11;
-         logourl = "/root/img/demoUpload6a7d41c862304ecf4cd20ab306625a1d";
-         name = "\U91cc\U810a\U76d6\U996d";
-         price = 12;
-         remark = "\U6d4b\U8bd5\U7f13\U5b58";
-         soldinmonth = 0;
-         state = 0;
-         storeid = 1;
-         }
-         
-         */
-        
         if (error)
         {
             DDLogInfo(@"获取食品列表息请求失败：%@",error.localizedDescription);
@@ -148,6 +135,8 @@
                 
                 if (VALIDATE_ARRAY(foodArray))
                 {
+                    [ws startDownloadFoodImageWithArray:foodArray];
+                    
                     if (VALIDATE_ARRAY(ws.foodListArray))
                     {
                         if (ws.foodListArray.count > index)
@@ -200,5 +189,37 @@
 -(NSArray *)getAllTableData
 {
     return _categoryArray;
+}
+-(void)setFinishDownloadLogoHandler:(ImageDownloadCompletedHandler)handler
+{
+    _handler = handler;
+}
+-(void)startDownloadFoodImageWithArray:(NSArray *)foodArray
+{
+    if (VALIDATE_ARRAY(foodArray))
+    {
+        for (KDFoodItemModel *item in foodArray)
+        {
+            WS(ws);
+            if (![[KDCacheManager systemCache] objectForKey:item.imageURL])
+            {
+                [KDRequestAPI downloadFoodLogoWithFilePath:item.imageURL completeBlock:^(NSDictionary *fileData, NSString *filePath, NSError *error) {
+                    NSData *imageData = [fileData objectForKey:RESPONSE_PAYLOAD];
+                    if (VALIDATE_MODEL(imageData, @"NSData"))
+                    {
+                        UIImage *image = [[UIImage alloc] initWithData:imageData];
+                        if (VALIDATE_MODEL(image, @"UIImage"))
+                        {
+                            [[KDCacheManager systemCache] setObject:image forKey:item.imageURL];
+                            if (ws.handler)
+                            {
+                                ws.handler(image);
+                            }
+                        }
+                    }
+                }];
+            }
+        }
+    }
 }
 @end

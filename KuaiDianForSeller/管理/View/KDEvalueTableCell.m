@@ -15,6 +15,12 @@
 #define REPLYVIEW_WIDTH_RATE 0.8
 #define HORIZONTAL_PADDING 14
 
+@interface KDEvalueTableCell ()
+
+@property(nonatomic,strong)KDCustomerReplyModel *model;
+
+@end
+
 @implementation KDEvalueTableCell
 
 - (void)awakeFromNib
@@ -35,6 +41,7 @@
 {
     if (model && [model isKindOfClass:[KDCustomerReplyModel class]])
     {
+        _model = model;
         [_nameButton setTitle:model.replyerName forState:UIControlStateNormal];
         _headerImageView.image = [UIImage imageNamed:@""];
         [_starViewPanel updateScore:model.score];
@@ -75,4 +82,12 @@
     
     return CGSizeMake(size.width, height);
 }
+- (IBAction)onTapReplyButton:(id)sender
+{
+    if (_model && _evalueDelegate && [_evalueDelegate respondsToSelector:@selector(onTapReplyButtonWithModel:)])
+    {
+        [_evalueDelegate onTapReplyButtonWithModel:_model];
+    }
+}
+
 @end

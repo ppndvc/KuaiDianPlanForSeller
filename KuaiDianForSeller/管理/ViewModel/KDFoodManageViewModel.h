@@ -10,8 +10,12 @@
 
 @interface KDFoodManageViewModel : KDBaseViewModel
 
+//下载结束的回调
+-(void)setFinishDownloadLogoHandler:(ImageDownloadCompletedHandler)handler;
+
 //请求食品分类
 -(void)startRequestFoodCategoryInfoWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock;
+
 //请求foodid对应的食品列表
 -(void)startRequestFoodListWithID:(NSString *)foodID index:(NSInteger)index beginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock;
 

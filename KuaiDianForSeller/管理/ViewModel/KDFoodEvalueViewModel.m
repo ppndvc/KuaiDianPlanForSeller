@@ -12,11 +12,22 @@
 #import "KDEvalueFilterCollectionCell.h"
 #import "KDEvalueFilterItemModel.h"
 
+#define INIT_POSITION 1
+#define PAGE @"page"
+#define ROWS @"rows"
+
+
 @interface KDFoodEvalueViewModel ()
 
-@property(nonatomic,strong)NSArray *dataSource;
+@property(nonatomic,strong)NSMutableArray *dataSource;
 
 @property(nonatomic,strong)NSArray *collectionViewDataSource;
+
+@property(nonatomic,assign)NSInteger lastPosition;
+
+@property(nonatomic,strong)NSMutableArray *showDataSource;
+
+@property(nonatomic,assign)KDEvalueStarLevel currentFilterLevel;
 
 @end
 
@@ -27,33 +38,10 @@
     self = [super init];
     if (self)
     {
-        KDCustomerReplyModel *c1 = [[KDCustomerReplyModel alloc] init];
-        c1.replyerName = @"sdafadf";
-        c1.score = 4.5;
-        c1.content = @"日落时分，沏上一杯山茶，听一曲意境空远的《禅》，心神随此天籁，沉溺于玄妙的幻境里。仿佛我就是那穿梭于葳蕤山林中的一只飞鸟，时而盘旋穿梭，时而引吭高歌；仿佛我就是那潺潺流泻于山涧的一汪清泉，涟漪轻盈，浩淼长流；仿佛我就是那竦峙在天地间的一座山峦，伟岸高耸，从容绵延。我不相信佛，只是喜欢玄冥空灵的梵音经贝";
-        c1.date = @"1473084359";
-        c1.sellerReply = [[KDBaseReplyModel alloc] init];
-        c1.sellerReply.replyerName = @"管理员回复";
-        c1.sellerReply.date = @"1473084459";
-        c1.sellerReply.content = @"日落时分，沏上一杯山茶，听一曲意境空远的《禅》，心神随此天籁，沉溺于玄妙的幻境里。仿佛我就是那穿梭于葳蕤山林中的一只飞鸟，时而盘旋穿梭，时而引吭高歌；";
-        
-        KDCustomerReplyModel *c2 = [[KDCustomerReplyModel alloc] init];
-        c2.replyerName = @"sdafadf";
-        c2.score = 2.5;
-        c2.content = @"日落时分，沏上一杯山茶，听一曲意境空远的《禅》，心神随此天籁，沉溺于玄妙的幻境里。仿佛我就是那穿梭于葳蕤山林中的一只飞鸟，时而盘旋穿梭，时而引吭高歌；仿佛我就是那潺潺流泻于山涧的一汪清泉，涟漪轻盈，浩淼长流；仿佛我就是那竦峙在天地间的一座山峦，伟岸高耸，从容绵延";
-        c2.date = @"1473084359";
-        c2.sellerReply = [[KDBaseReplyModel alloc] init];
-        c2.sellerReply.replyerName = @"店铺小二回复";
-        c2.sellerReply.date = @"1473084459";
-        c2.sellerReply.content = @"日落时分，沏上一杯山茶，听一曲意境空远的《禅》，心神随此天籁，沉溺于玄妙的幻境里。仿佛我就是那穿梭于葳蕤山林中的一只飞鸟，时而盘旋穿梭，时而引吭高歌；茶，听一曲意境空远的《禅》，心神随此天籁，沉溺于玄妙的幻境里。仿佛我就是那穿梭于葳蕤山林中的一只飞鸟，时而盘旋穿梭，时而引吭高歌；仿佛我就是那潺潺流泻于山涧的一汪清泉，涟漪轻盈，浩淼长流；仿佛我就是那竦峙在天地间的一座山峦，伟岸高耸，从容绵延。我不相信佛，只是喜欢玄冥空灵的梵音经贝茶，听一曲意境空远的《禅》，心神随此天籁，沉溺于玄妙的幻境里。仿佛我就是那穿梭于葳蕤山林中的一只飞鸟，时而盘旋穿梭，时而引吭高歌；仿佛我就是那潺潺流泻于山涧的一汪清泉，涟漪轻盈，浩淼长流；仿佛我就是那竦峙在天地间的一座山峦，伟岸高耸，从容绵延。我不相信佛，只是喜欢玄冥空灵的梵音经贝";
-        
-        KDCustomerReplyModel *c3 = [[KDCustomerReplyModel alloc] init];
-        c3.replyerName = @"sdafadf";
-        c3.score = 2.5;
-        c3.content = @"日落时分，沏上一杯山茶，听一曲意境空远的《禅》，心神随此天籁，沉溺于玄妙的幻境里。仿佛我就是那穿梭于葳蕤山林中的一只飞鸟，时而盘旋穿梭，时而引吭高歌；仿佛我就是那潺潺流泻于山涧的一汪清泉，涟漪轻盈，浩淼长流；仿佛我就是那竦峙在天地间的一座山峦，伟岸高耸，从容绵延";
-        c3.date = @"1473084359";
-        
-        _dataSource = @[c1,c3,c2];
+        _dataSource = [NSMutableArray new];
+        _showDataSource = [NSMutableArray new];
+        _currentFilterLevel = KDNoneSpecific;
+        _lastPosition = INIT_POSITION;
         
         KDEvalueFilterItemModel *m1 = [[KDEvalueFilterItemModel alloc] init];
         m1.title = @"一星";
@@ -89,9 +77,9 @@
 -(NSInteger)tableViewRowsForSection:(NSInteger)section
 {
     NSInteger rows = 0;
-    if (_dataSource && _dataSource.count > 0)
+    if (_showDataSource && _showDataSource.count > 0)
     {
-        rows = _dataSource.count;
+        rows = _showDataSource.count;
     }
     return rows;
 }
@@ -100,9 +88,9 @@
 {
     if (cell && indexPath)
     {
-        if (_dataSource && _dataSource.count > indexPath.row)
+        if (_showDataSource && _showDataSource.count > indexPath.row)
         {
-            [((KDEvalueTableCell *)cell) configureCellWithModel:_dataSource[indexPath.row]];
+            [((KDEvalueTableCell *)cell) configureCellWithModel:_showDataSource[indexPath.row]];
         }
     }
 }
@@ -149,5 +137,177 @@
             [((KDEvalueFilterCollectionCell *)cell) configureCellWithModel:model];
         }
     }
+}
+
+#pragma mark - 网络请求
+
+-(void)refreshTableDataWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock
+{
+    [_dataSource removeAllObjects];
+    _lastPosition = INIT_POSITION;
+    [self startLoadTableDataWithBeginBlock:beginBlock completeBlock:completeBlock];
+}
+
+-(void)startLoadTableDataWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock
+{
+    //如果本地没有数据，就去请求，否则不作处理
+    if (!_dataSource || _dataSource.count <= 0)
+    {
+        [self startLoadTableDataWithPage:_lastPosition rowsPerPage:ROWS_PER_PAGE beginBlock:beginBlock completeBlock:completeBlock];
+    }
+}
+
+-(void)loadmoreTableDataWithBeginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock
+{
+    [self startLoadTableDataWithPage:_lastPosition rowsPerPage:ROWS_PER_PAGE beginBlock:beginBlock completeBlock:completeBlock];
+}
+
+-(void)startLoadTableDataWithPage:(NSInteger)page rowsPerPage:(NSInteger)rows beginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock
+{
+    
+    if (beginBlock)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            beginBlock();
+        });
+    }
+    
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    [dict setObject:[NSNumber numberWithInteger:page] forKey:PAGE];
+    [dict setObject:[NSNumber numberWithInteger:rows] forKey:ROWS];
+    
+    WS(ws);
+    
+    /*
+     {
+     anonymous = 1;
+     content = "\U95f2\U6765\U901b\U901b\U3002";
+     createtime = 1474550040000;
+     customerid = 1;
+     customername = "\U8363";
+     id = 7;
+     level = 2;
+     replies =             (
+     {
+     content = "\U4f7f\U52b2\U52a0\U6cb9";
+     createtime = 1475354559000;
+     evaluateid = 7;
+     id = 23;
+     sellerid = 13;
+     }
+     );
+     storeid = 1;
+     storename = "\U725b\U8089\U9762\U9986";
+     }
+     */
+
+    [KDRequestAPI sendGetFoodEvalueInfoWithParam:dict completeBlock:^(id responseObject, NSError *error) {
+       
+        __strong __typeof(ws) ss = ws;
+        if (error)
+        {
+            DDLogInfo(@"获取食品评价信息请求失败：%@",error.localizedDescription);
+            
+            if (completeBlock)
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completeBlock(NO,nil,error);
+                });
+            }
+        }
+        else
+        {
+            NSArray *array = [NSArray yy_modelArrayWithClass:[KDCustomerReplyModel class] json:[responseObject objectForKey:RESPONSE_PAYLOAD]];
+            
+            if (array && [array isKindOfClass:[NSArray class]] && array.count > 0)
+            {
+                [ss.dataSource addObjectsFromArray:array];
+                ss.lastPosition += array.count;
+                ss.showDataSource = [ss getFilterdDataArrayWithLevel:ss.currentFilterLevel];
+                
+                if (completeBlock)
+                {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        completeBlock(YES,nil,nil);
+                    });
+                }
+                
+            }
+            else
+            {
+                if (completeBlock)
+                {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        completeBlock(YES,nil,nil);
+                    });
+                }
+            }
+            
+        }
+    }];
+}
+
+-(void)sendReplyWithParams:(NSDictionary *)params beginBlock:(KDViewModelBeginCallBackBlock)beginBlock completeBlock:(KDViewModelCompleteCallBackBlock)completeBlock
+{
+    
+    if (beginBlock)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            beginBlock();
+        });
+    }
+    
+    [KDRequestAPI sendAddReplyRequestWithParam:params completeBlock:^(id responseObject, NSError *error) {
+        if (error)
+        {
+            DDLogInfo(@"添加回复请求失败：%@",error.localizedDescription);
+            
+            if (completeBlock)
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completeBlock(NO,nil,error);
+                });
+            }
+        }
+        else
+        {
+            if (completeBlock)
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completeBlock(YES,nil,nil);
+                });
+            }
+        }
+    }];
+}
+
+-(void)filterReplyWithStarLevel:(KDEvalueStarLevel)level
+{
+    if (level >= KDOneStar && level <= KDNoneSpecific)
+    {
+        if (level != _currentFilterLevel)
+        {
+            _currentFilterLevel = level;
+            _showDataSource = [self getFilterdDataArrayWithLevel:level];
+        }
+    }
+}
+-(NSMutableArray *)getFilterdDataArrayWithLevel:(KDEvalueStarLevel)level
+{
+    NSMutableArray *newArray = [[NSMutableArray alloc] init];
+    
+    if (level >= KDOneStar && level <= KDNoneSpecific && VALIDATE_ARRAY(_dataSource))
+    {
+        if (level == KDNoneSpecific)
+        {
+            newArray = _dataSource;
+        }
+        else
+        {
+            NSPredicate *pre = [NSPredicate predicateWithFormat:@"score == %d",(int)level];
+            newArray = [[NSMutableArray alloc] initWithArray:[_dataSource filteredArrayUsingPredicate:pre]];
+        }
+    }
+    return newArray;
 }
 @end

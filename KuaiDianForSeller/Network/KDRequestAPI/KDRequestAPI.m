@@ -27,6 +27,19 @@
 }
 +(void)sendGetUserInfoRequestWithCompleteBlock:(KDRequestCompletionBlock)completeBlock
 {
+    /*
+     createtime = 1470842686000;
+     lastip = "115.206.133.204";
+     money = 1;
+     password = 83d3d99f09a1b458c22d13ceea33f1cc;
+     phone = 13502051792;
+     salt = f57c4e0cbfa7799947483fda20fa73b0;
+     sellerid = 13;
+     sellername = test;
+     storeid = 1;
+     updatetime = 1477731202000;
+     valid = 1;
+     */
     DDLogInfo(@"==== 发送 获取用户信息请求 ====");
     KDRequest *request = [KDRequest requestWithRelativeURL:[[KDEnvironmentManager sharedInstance] getRequetPathForKey:GET_USERINFO_REQUEST_PATH] parameters:nil method:KDRequestMethodPost requestComplete:completeBlock];
     [[KDNetworkManager sharedManager] sendRequest:request];
@@ -158,5 +171,81 @@
     [[KDNetworkManager sharedManager] sendRequest:request];
 }
 
++(void)sendGetSaleStatisticInfoWithParam:(NSDictionary *)param completeBlock:(KDRequestCompletionBlock)completeBlock
+{
+    DDLogInfo(@"==== 发送 获取统计信息请求 ====");
+    DDLogInfo(@"==== 请求参数：%@ ====",param);
+    KDRequest *request = [KDRequest requestWithRelativeURL:[[KDEnvironmentManager sharedInstance] getRequetPathForKey:SALE_STATISTIC_REQUEST_PATH] parameters:param method:KDRequestMethodPost requestComplete:completeBlock];
+    [[KDNetworkManager sharedManager] sendRequest:request];
+}
 
++(void)sendGetFoodEvalueInfoWithParam:(NSDictionary *)param completeBlock:(KDRequestCompletionBlock)completeBlock
+{
+    DDLogInfo(@"==== 发送 获取食品评价信息请求 ====");
+    DDLogInfo(@"==== 请求参数：%@ ====",param);
+    KDRequest *request = [KDRequest requestWithRelativeURL:[[KDEnvironmentManager sharedInstance] getRequetPathForKey:GET_FOOD_EVALUE_INFO_REQUEST_PATH] parameters:param method:KDRequestMethodPost requestComplete:completeBlock];
+    [[KDNetworkManager sharedManager] sendRequest:request];
+}
++(void)sendGetBankCardInfoWithParam:(NSDictionary *)param completeBlock:(KDRequestCompletionBlock)completeBlock
+{
+    DDLogInfo(@"==== 发送 获取银行卡信息请求 ====");
+    DDLogInfo(@"==== 请求参数：%@ ====",param);
+    
+    NSString *sellerID = [[[KDUserManager sharedInstance] getUserInfo] identifier];
+    //需要在relativeurl后面追加用户的id（后台的rest风格）
+    NSString *requestURL = [NSString stringWithFormat:@"%@/%@",[[KDEnvironmentManager sharedInstance] getRequetPathForKey:GET_BANK_CARD_INFO_REQUEST_PATH],sellerID];
+    
+    KDRequest *request = [KDRequest requestWithRelativeURL:requestURL parameters:nil method:KDRequestMethodPost requestComplete:completeBlock];
+    [[KDNetworkManager sharedManager] sendRequest:request];
+}
+
++(void)sendAddBankCardRequestWithParam:(NSDictionary *)param completeBlock:(KDRequestCompletionBlock)completeBlock
+{
+    DDLogInfo(@"==== 发送 添加银行卡请求 ====");
+    DDLogInfo(@"==== 请求参数：%@ ====",param);
+    KDRequest *request = [KDRequest requestWithRelativeURL:[[KDEnvironmentManager sharedInstance] getRequetPathForKey:ADD_BANK_CARD_REQUEST_PATH] parameters:param method:KDRequestMethodPost requestComplete:completeBlock];
+    [[KDNetworkManager sharedManager] sendRequest:request];
+}
+
++(void)sendAddReplyRequestWithParam:(NSDictionary *)param completeBlock:(KDRequestCompletionBlock)completeBlock
+{
+    DDLogInfo(@"==== 发送 添加回复请求 ====");
+    DDLogInfo(@"==== 请求参数：%@ ====",param);
+    KDRequest *request = [KDRequest requestWithRelativeURL:[[KDEnvironmentManager sharedInstance] getRequetPathForKey:ADD_REPLY_REQUEST_PATH] parameters:param method:KDRequestMethodPost requestComplete:completeBlock];
+    [[KDNetworkManager sharedManager] sendRequest:request];
+}
+
++(void)sendGetBillDetailRequestWithParam:(NSDictionary *)param completeBlock:(KDRequestCompletionBlock)completeBlock
+{
+    DDLogInfo(@"==== 发送 获取账单信息请求 ====");
+    DDLogInfo(@"==== 请求参数：%@ ====",param);
+    KDRequest *request = [KDRequest requestWithRelativeURL:[[KDEnvironmentManager sharedInstance] getRequetPathForKey:GET_BILL_DETAIL_REQUEST_PATH] parameters:param method:KDRequestMethodPost requestComplete:completeBlock];
+    [[KDNetworkManager sharedManager] sendRequest:request];
+}
++(void)downloadFoodLogoWithFilePath:(NSString *)filePath completeBlock:(KDDownloadCompleteBlock)completeBlock
+{
+    DDLogInfo(@"==== 发送 下载菜品图片请求 ====");
+    DDLogInfo(@"==== 请求参数：%@ ====",filePath);
+    
+    if (VALIDATE_STRING(filePath))
+    {
+        KDRequest *request = [KDRequest downloadRequestWithRelativeURL:[[KDEnvironmentManager sharedInstance] getRequetPathForKey:DOWNLOAD_SHOP_LOGO_REQUEST_PATH] parameters:@{REQUEST_KEY_FILE_PATH:filePath} method:KDRequestMethodPost downloadCompleteBlock:completeBlock];
+        
+        [[KDNetworkManager sharedManager] sendRequest:request];
+    }
+}
+
++(void)downloadShopLogoWithFilePath:(NSString *)filePath completeBlock:(KDDownloadCompleteBlock)completeBlock
+{
+    DDLogInfo(@"==== 发送 下载店铺图片请求 ====");
+    DDLogInfo(@"==== 请求参数：%@ ====",filePath);
+    
+    if (VALIDATE_STRING(filePath))
+    {
+        KDRequest *request = [KDRequest downloadRequestWithRelativeURL:[[KDEnvironmentManager sharedInstance] getRequetPathForKey:DOWNLOAD_SHOP_LOGO_REQUEST_PATH] parameters:@{REQUEST_KEY_FILE_PATH:filePath} method:KDRequestMethodPost downloadCompleteBlock:completeBlock];
+        
+        [[KDNetworkManager sharedManager] sendRequest:request];
+    }
+
+}
 @end

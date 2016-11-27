@@ -29,7 +29,37 @@
     [self setNaviBarItemWithType:KDNavigationBackToPreviousVC];
     // Do any additional setup after loading the view from its nib.
 }
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    WS(ws);
+    [_viewModel startRequestUserInfoWithBeginBlock:^{
+        [ws showHUD];
+    } completeBlock:^(BOOL isSuccess, id params, NSError *error) {
+        if (isSuccess)
+        {
+            [ws.tableView reloadData];
+            [ws hideHUD];
+        }
+        else if (params)
+        {
+            [ws.tableView reloadData];
+            [ws hideHUD];
+        }
+        else
+        {
+            if (error)
+            {
+                [ws showErrorHUDWithStatus:error.localizedDescription];
+            }
+            else
+            {
+                [ws showErrorHUDWithStatus:HTTP_REQUEST_ERROR];
+            }
+        }
+    }];
+}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     NSInteger section = 0;
@@ -77,20 +107,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     KDActionModel *model = [_viewModel tableViewModelForIndexPath:indexPath];
-    if (model)
+    
+    if (VALIDATE_MODEL(model, @"KDActionModel") && VALIDATE_STRING(model.actionString))
     {
-        if ([model.title isEqualToString:BIND_PHONE_NUMBER])
-        {
-            [[KDRouterManger sharedManager] routeVCWithURL:model.actionString];
-        }
-        else if ([model.title isEqualToString:MY_MONEY])
-        {
-            [[KDRouterManger sharedManager] routeVCWithURL:model.actionString];
-        }
-        else if ([model.title isEqualToString:FEEDBACK])
-        {
-            
-        }
+        [[KDRouterManger sharedManager] routeVCWithURL:model.actionString];
     }
 }
 - (void)didReceiveMemoryWarning {

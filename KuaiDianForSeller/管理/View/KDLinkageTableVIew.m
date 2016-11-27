@@ -91,6 +91,12 @@ static NSString *kRightTableCellIdentifier = @"kRightTableCellIdentifier";
     [_viewModel updateRightTableData:array atIndex:index];
     [_rightTableView reloadData];
 }
+
+-(void)reloadRightTableViewData
+{
+    [_rightTableView reloadData];
+}
+
 -(void)setupUI
 {
     _leftTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];

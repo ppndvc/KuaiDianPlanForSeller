@@ -30,8 +30,11 @@ PODS:
   - MGSwipeTableCell (1.5.5)
   - MJPopupViewController (0.4)
   - MJRefresh (3.1.1)
+  - PNChart (0.8.9):
+    - UICountingLabel (~> 1.2.0)
   - Reachability (3.2)
   - SVProgressHUD (2.0.3)
+  - UICountingLabel (1.2.0)
   - YYCache (1.0.3)
   - YYImage (1.0.2):
     - YYImage/Core (= 1.0.2)
@@ -52,6 +55,7 @@ DEPENDENCIES:
   - MGSwipeTableCell
   - MJPopupViewController
   - MJRefresh
+  - PNChart
   - Reachability
   - SVProgressHUD
   - YYModel
@@ -68,13 +72,15 @@ SPEC CHECKSUMS:
   MGSwipeTableCell: bafeb5f351124544c9364ecbdf24c7b06a37d340
   MJPopupViewController: e9ad553a3145eb8126ba2748e872ae7fb25cc605
   MJRefresh: 70a47c5543b567cdaf70ead5a6e99ce820652eb9
+  PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
   YYCache: 282f35b5b0990833d0b7a06d864a87141a021da2
   YYImage: 2cc79ed49b9549b71c6715cefe7b0f5ab3d33abf
   YYModel: 63142c2f07c5c8c9d1c261689cf3827ea6ab2886
   YYWebImage: 8da75a611fd0d2e0f58a273f9ca0bc731614cb0d
 
-PODFILE CHECKSUM: afc133cbfb3681e1bd1a62354e79ebb6edcf06fc
+PODFILE CHECKSUM: 6cc5761fc6ffb73377fbe6967ef7f43fd3838458
 
 COCOAPODS: 1.0.1

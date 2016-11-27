@@ -134,7 +134,7 @@
         
         if (![KDUserManager isUserLogin])
         {
-//            [self showLoginVCWithAnimated:NO];
+            [self showLoginVCWithAnimated:NO];
         }
     }
 }

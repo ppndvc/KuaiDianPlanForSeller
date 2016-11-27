@@ -45,11 +45,11 @@
     {
         if([[KDEnvironmentManager sharedInstance] getEnvironmentType] == KDEnvironmentTypeOfTest)
         {
-            _systemCacheInDisk = [YYCache cacheWithName:[NSString stringWithFormat:@"%@_%@",_userID,kSystemCacheNameForTest]];
+            _systemCacheInDisk = [YYCache cacheWithName:kSystemCacheNameForTest];//[NSString stringWithFormat:@"%@_%@",_userID,kSystemCacheNameForTest]];
         }
         else
         {
-            _systemCacheInDisk = [YYCache cacheWithName:[NSString stringWithFormat:@"%@_%@",_userID,kSystemCacheName]];
+            _systemCacheInDisk = [YYCache cacheWithName:kSystemCacheName];//[NSString stringWithFormat:@"%@_%@",_userID,kSystemCacheName]];
         }
     }
     

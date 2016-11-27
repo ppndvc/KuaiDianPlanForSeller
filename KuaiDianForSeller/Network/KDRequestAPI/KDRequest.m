@@ -29,6 +29,11 @@
 {
     return [self downloadRequestWithURL:URL parameters:parameters method:method progressBlock:nil downloadCompleteBlock:downloadCompleteBlock];
 }
+//下载请求初始化
++(instancetype)downloadRequestWithRelativeURL:(NSString *)relativeURL parameters:(NSDictionary *)parameters method:(KDRequestMethod)method downloadCompleteBlock:(KDDownloadCompleteBlock)downloadCompleteBlock
+{
+   return [[KDRequest alloc] initRequestWithURL:nil relativeURL:relativeURL parameters:parameters method:method requestType:KDDownloadRequest attachment:nil timeoutInterval:LONG_TASK_TIMEOUT_INTERVAL constructBodyBlock:nil progressBlock:nil downloadSettingBlock:nil downloadCompleteBlock:downloadCompleteBlock requestComplete:nil];
+}
 
 //下载请求初始化
 +(instancetype)downloadRequestWithURL:(NSString *)URL parameters:(NSDictionary *)parameters method:(KDRequestMethod)method progressBlock:(KDRequestProgressBlock)progressBlock downloadCompleteBlock:(KDDownloadCompleteBlock)downloadCompleteBlock
@@ -213,7 +218,7 @@
 {
     NSError *finalError = nil;
     NSData *object = nil;
-    NSMutableDictionary *finalResponseDict = nil;
+    NSMutableDictionary *finalResponseDict = [[NSMutableDictionary alloc] init];
     
     if (error)
     {

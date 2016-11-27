@@ -8,12 +8,17 @@
 
 #import "KDUserManager.h"
 #import "KDCacheManager.h"
-#import "KDCacheManager.h"
+#import "KDShopModel.h"
 
 #define USER_INFO @"user_info"
+#define BANK_INFO @"bank_info"
+
 @interface KDUserManager()
 
 @property(nonatomic,strong)KDUserModel *storedUserInfo;
+
+@property(nonatomic,strong)KDBankModel *storedUserBankInfo;
+
 @end
 
 @implementation KDUserManager
@@ -54,6 +59,25 @@
     }
     
     return _storedUserInfo;
+}
+
+-(KDBankModel *)getUserBankInfo
+{
+    if (!_storedUserBankInfo)
+    {
+        _storedUserBankInfo = (KDBankModel *)[[KDCacheManager userCache] objectForKey:BANK_INFO];
+    }
+    
+    return _storedUserBankInfo;
+}
+
+-(void)updateUserBankInfo:(KDBankModel *)bankInfo
+{
+    if (VALIDATE_MODEL(bankInfo, @"KDBankModel"))
+    {
+        _storedUserBankInfo = bankInfo;
+        [[KDCacheManager userCache] setObject:_storedUserBankInfo forKey:BANK_INFO];
+    }
 }
 
 -(BOOL)updateUserInfo:(KDUserModel *)userInfo

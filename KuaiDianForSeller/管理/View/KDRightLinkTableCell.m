@@ -33,7 +33,7 @@
     if (model && [model isKindOfClass:[KDFoodItemModel class]])
     {
         _foodModel = model;
-//        _foodImageView.image = [UIImage imageNamed:_foodModel.imageURL];
+        _foodImageView.image = (UIImage *)[[KDCacheManager systemCache] objectForKey:_foodModel.imageURL];
         _titleLabel.text = _foodModel.name;
         NSString *totalPrice = [NSString stringWithFormat:@"￥%.1f",_foodModel.price];
         _priceLabel.text = totalPrice;
